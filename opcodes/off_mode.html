@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -276,7 +285,7 @@
               when the amplifier envelope generator expired.</li>
 </ul>
 
-<p>ARIA also adds <code class="language-plaintext highlighter-rouge">off_mode</code>=time which can be used to specify a time independent
+<p>ARIA also adds <code>off_mode</code>=time which can be used to specify a time independent
 of the sample release time using <a href="/opcodes/off_time">off_time</a>,
 and also <a href="/opcodes/off_shape">off_shape</a> and <a href="/opcodes/off_curve">off_curve</a>
 to control the curve of the fadeout. In ARIA, time is actually the default value
@@ -291,17 +300,17 @@ so these are equivalent in end result, but time is the true default value
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>off_mode=fast
+<pre><code>off_mode=fast
 
 off_mode=normal
-</code></pre></div></div>
+</code></pre>
 
 <p>Note that the default is fast, and not normal, which means that
 “normal isn’t normal”, and if normal is needed, it will need to be set explicitly.
 Normal is useful for legato instruments where a fading in the previous samples
 while the new one fades in is desirable, and can also be useful for making hi-hat
 muting behavior sound a little more natural. With longer release times,
-<code class="language-plaintext highlighter-rouge">off_mode</code>=normal is also a way to manage buildup in instruments which have a very
+<code>off_mode</code>=normal is also a way to manage buildup in instruments which have a very
 long sustain and can have the sound of several notes build up - for example,
 hammered dulcimers or ride cymbals.</p>
 
@@ -457,14 +466,9 @@ hammered dulcimers or ride cymbals.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

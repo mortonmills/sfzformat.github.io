@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -279,7 +288,7 @@ multitracking guitars, synthesizer oscillator unison etc.</p>
 second violins. Using just one octave of range for simplicity, this is our first
 violins example:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;
+<pre><code>&lt;global&gt;
 &lt;region&gt;sample=c4.wav key=48
 &lt;region&gt;sample=db4.wav key=49
 &lt;region&gt;sample=d4.wav key=50
@@ -293,7 +302,7 @@ violins example:</p>
 &lt;region&gt;sample=bb4.wav key=58
 &lt;region&gt;sample=b4.wav key=59
 &lt;region&gt;sample=c5.wav key=60
-</code></pre></div></div>
+</code></pre>
 
 <p>Using this for both first and second violins will result in two identical-sounding
 sections with the same timbre, but it’s easily possible to use the same samples
@@ -301,7 +310,7 @@ transposed, and get a different timbre. Instead of using the C4 sample to play C
 use the Db4 sample transposed down a half step to play C4. This can be done by
 using lokey, hikey and pitch_keycenter opcodes instead of just key.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;sample=c4.wav lokey=47 hikey=47 pitch_keycenter=48
+<pre><code>&lt;region&gt;sample=c4.wav lokey=47 hikey=47 pitch_keycenter=48
 &lt;region&gt;sample=db4.wav lokey=48 hikey=48 pitch_keycenter=49
 &lt;region&gt;sample=d4.wav lokey=49 hikey=49 pitch_keycenter=50
 &lt;region&gt;sample=eb4.wav lokey=50 hikey=50 pitch_keycenter=51
@@ -314,12 +323,12 @@ using lokey, hikey and pitch_keycenter opcodes instead of just key.</p>
 &lt;region&gt;sample=bb4.wav lokey=57 hikey=57 pitch_keycenter=58
 &lt;region&gt;sample=b4.wav lokey=58 hikey=58 pitch_keycenter=59
 &lt;region&gt;sample=c5.wav lokey=59 hikey=59 pitch_keycenter=60
-</code></pre></div></div>
+</code></pre>
 
 <p>Howerver, in most cases it’s easier to use the key and transpose opcodes instead,
 and set the transpose amount for all the transposed regions at once.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;
+<pre><code>&lt;global&gt;
 transpose=-1
 &lt;region&gt;sample=c4.wav key=47
 &lt;region&gt;sample=db4.wav key=48
@@ -334,7 +343,7 @@ transpose=-1
 &lt;region&gt;sample=bb4.wav key=57
 &lt;region&gt;sample=b4.wav key=58
 &lt;region&gt;sample=c5.wav key=59
-</code></pre></div></div>
+</code></pre>
 
 <p>This still requires changing the key opcode for every region, however. Doing
 this editing manually on large sample sets would be time-consuming, but
@@ -351,7 +360,7 @@ both sections. So, we can instead use the next-to-highest note, transposed up.
 This might not sound very consistent with the rest, but under these limitations,
 it can be a reasonable compromise.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;
+<pre><code>&lt;global&gt;
 transpose=-1
 &lt;region&gt;sample=db4.wav key=48
 &lt;region&gt;sample=d4.wav key=49
@@ -366,7 +375,7 @@ transpose=-1
 &lt;region&gt;sample=b4.wav key=58
 &lt;region&gt;sample=c5.wav key=59
 &lt;region&gt;sample=b4.wav key=60 transpose=1
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="transposition-values">
         
@@ -386,7 +395,7 @@ emulation.</p>
 <p>Transposing down by a minor third while preserving the range in our example, and
 filling in the lost top of the range by transposing upwards might look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;
+<pre><code>&lt;global&gt;
 transpose=-3
 &lt;region&gt;sample=eb4.wav key=48
 &lt;region&gt;sample=e4.wav key=49
@@ -401,7 +410,7 @@ transpose=-3
 &lt;region&gt;sample=a4.wav key=58 transpose=1
 &lt;region&gt;sample=bb4.wav key=59 transpose=1
 &lt;region&gt;sample=b4.wav key=60 transpose=1
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="unison-by-transposition">
         
@@ -415,7 +424,7 @@ transpose=-3
 note will trigger two regions, and we now will have the sound of an ensemble which
 is twice as large as what was actually sampled.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 &lt;region&gt;sample=c4.wav key=48
 &lt;region&gt;sample=db4.wav key=49
 &lt;region&gt;sample=d4.wav key=50
@@ -445,7 +454,7 @@ transpose=-1
 &lt;region&gt;sample=b4.wav key=58
 &lt;region&gt;sample=c5.wav key=59
 &lt;region&gt;sample=b4.wav key=60 transpose=1
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="unison-by-round-robin">
         
@@ -462,16 +471,16 @@ by using different round robins for each simultaneously playing sample. This
 is how guitar multitracking is often emulated. Using one note with four round
 robins as an example:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;seq_length=4 key=48
+<pre><code>&lt;group&gt;seq_length=4 key=48
 &lt;region&gt;sample=c4_rr1.wav seq_position=1
 &lt;region&gt;sample=c4_rr2.wav seq_position=2
 &lt;region&gt;sample=c4_rr3.wav seq_position=3
 &lt;region&gt;sample=c4_rr4.wav seq_position=4
-</code></pre></div></div>
+</code></pre>
 
 <p>We can create two by offsetting the round robins like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;seq_length=4 key=48
+<pre><code>&lt;group&gt;seq_length=4 key=48
 &lt;region&gt;sample=c4_rr1.wav seq_position=1
 &lt;region&gt;sample=c4_rr2.wav seq_position=2
 &lt;region&gt;sample=c4_rr3.wav seq_position=3
@@ -481,14 +490,14 @@ robins as an example:</p>
 &lt;region&gt;sample=c4_rr2.wav seq_position=1
 &lt;region&gt;sample=c4_rr3.wav seq_position=2
 &lt;region&gt;sample=c4_rr4.wav seq_position=3
-</code></pre></div></div>
+</code></pre>
 
 <p>The group headers aren’t necessary and everything could be under one group,
 but for organizational purposes, they can make things easier.</p>
 
 <p>Or three, or a maximum of four:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;seq_length=4 key=48
+<pre><code>&lt;group&gt;seq_length=4 key=48
 &lt;region&gt;sample=c4_rr1.wav seq_position=1
 &lt;region&gt;sample=c4_rr2.wav seq_position=2
 &lt;region&gt;sample=c4_rr3.wav seq_position=3
@@ -508,7 +517,7 @@ but for organizational purposes, they can make things easier.</p>
 &lt;region&gt;sample=c4_rr2.wav seq_position=3
 &lt;region&gt;sample=c4_rr3.wav seq_position=4
 &lt;region&gt;sample=c4_rr4.wav seq_position=1
-</code></pre></div></div>
+</code></pre>
 
 <p>Note that this will not work well with random round robins, as it’s
 possible that the same sample will be randomly selected for multiple
@@ -526,7 +535,7 @@ regions.</p>
 in synthesizers etc. Spreading the above quad-tracked guitar in stereo
 is simple:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;seq_length=4 key=48
+<pre><code>&lt;group&gt;seq_length=4 key=48
 pan=-100
 &lt;region&gt;sample=c4_rr1.wav seq_position=1
 &lt;region&gt;sample=c4_rr2.wav seq_position=2
@@ -550,7 +559,7 @@ pan=50
 &lt;region&gt;sample=c4_rr2.wav seq_position=3
 &lt;region&gt;sample=c4_rr3.wav seq_position=4
 &lt;region&gt;sample=c4_rr4.wav seq_position=1
-</code></pre></div></div>
+</code></pre>
 
 <p>It’s also possible to apply slight detuning to each voice. That’s probably
 not common with guitars, and unnecessary with section recordings where natural
@@ -561,14 +570,14 @@ to create multiple voices, and this is an especially viable approach for
 synthesizers. The amount of detune, as well as width, can be modulated. Here
 is an example of a saw oscillator with seven voices.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;sample=*saw
+<pre><code>&lt;region&gt;sample=*saw
 &lt;region&gt;pitch_oncc100=20 pan_oncc101=100 sample=*saw
 &lt;region&gt;pitch_oncc100=-20 pan_oncc101=-100 sample=*saw
 &lt;region&gt;pitch_oncc100=30 pan_oncc101=67 sample=*saw
 &lt;region&gt;pitch_oncc100=-30 pan_oncc101=-67 sample=*saw
 &lt;region&gt;pitch_oncc100=40 pan_oncc101=33 sample=*saw
 &lt;region&gt;pitch_oncc100=-40 pan_oncc101=-33 sample=*saw
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="legato">
         
@@ -610,7 +619,7 @@ depth, in the initial phase of the vibrato humanization LFOs, and in the fade ti
 the legato regions. The shallower vibrato and slower legato of the transposed regions
 emulate less confident, more hesitant players.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;
+<pre><code>&lt;global&gt;
 //Basic global stuff shared by all voices
 ampeg_release=0.25
 ampeg_attack_oncc106=1
@@ -728,7 +737,7 @@ offset=5000 offset_random=500
 ampeg_attack=0.58
 ampeg_vel2attack=-0.43
 #include "mappings/t2/ord_sus_map.sfz"
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="round-robin-neighbor-borrowing">
         
@@ -747,7 +756,7 @@ or increasing the amonut of available round robins.</p>
 approaches, or both at once. Let’s use sequential round robins for this
 example, with a very small note range and three round robins sampled.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;
+<pre><code>&lt;global&gt;
 seq_length=3
 
 &lt;group&gt;
@@ -769,7 +778,7 @@ seq_position=3
 &lt;region&gt;sample=c5_rr3.wav key=60
 &lt;region&gt;sample=c#5_rr3.wav key=61
 &lt;region&gt;sample=d5_rr3.wav key=62
-</code></pre></div></div>
+</code></pre>
 
 <p>We can double the amount of round robins by using a transposed
 sample from a neighboring note for every other note in the
@@ -780,7 +789,7 @@ and transposed notes for positions four through six. So, we
 increase the sequence length to six, and alternate between
 transposed and untransposed samples like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;
+<pre><code>&lt;global&gt;
 seq_length=6
 
 &lt;group&gt;
@@ -818,7 +827,7 @@ seq_position=6
 &lt;region&gt;sample=c#5_rr3.wav key=60 transpose=-1
 &lt;region&gt;sample=d5_rr3.wav key=61 transpose=-1
 &lt;region&gt;sample=c#5_rr3.wav key=62 transpose=1
-</code></pre></div></div>
+</code></pre>
 
 <p>It’s also possible to triple the amount of round robins by
 borrowing neighbors in both upwards and downwards direction
@@ -955,14 +964,9 @@ especially in the case of drums.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

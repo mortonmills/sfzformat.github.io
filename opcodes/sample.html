@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -307,28 +316,28 @@ be unchanged in pitch.</p>
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sample=A3.wav
+<pre><code>sample=A3.wav
 sample=..\Samples\close\c4_pp_rr3.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>Each engine can also support custom oscillators. For example, ARIA supports
 using this opcode for some basic synthesized sound waves such as:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sample=*sine
+<pre><code>sample=*sine
 sample=*saw
 sample=*square
 sample=*triangle
 sample=*tri
 sample=*noise
 sample=*silence
-</code></pre></div></div>
+</code></pre>
 
 <p>Tri is an alias for triangle. For cases where we don’t want to actually play a sample but want a region to
 exist and be played (for example, to mute other sounds when using
 <a href="/opcodes/group">group</a> and <a href="/opcodes/off_by">off_by</a>, the silence
 value can be very convenient.</p>
 
-<p>Note that in this case the <code class="language-plaintext highlighter-rouge">*</code> is a real character and not a wildcard.</p>
+<p>Note that in this case the <code>*</code> is a real character and not a wildcard.</p>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
@@ -477,14 +486,9 @@ value can be very convenient.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

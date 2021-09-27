@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -290,14 +299,14 @@ especially convenient in conjunction with the ‹<a href="/headers/master">maste
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include "header.sfz"
+<pre><code>#include "header.sfz"
 #include "note_map.sfz"
 #include "legato/dynfade_legato_first_map.sfz"
-</code></pre></div></div>
+</code></pre>
 
 <p>Here’s an example of how #include and master can be used together:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;
+<pre><code>&lt;global&gt;
 loop_mode=one_shot
 off_mode=normal
 tune=-1200 //Everything is tuned down an octave, then tuned back up with its own tune param
@@ -326,7 +335,7 @@ ampeg_sustain_oncc38=-100
 tune_cc55=-250
 #include "mappings/bobobo_tenor_l_1.sfz"
 #include "mappings/bobobo_tenor_l_2.sfz"
-</code></pre></div></div>
+</code></pre>
 
 <p>Using #include with <a href="/opcodes/define">#define</a> in the same instrument requires care,
 especially if the same value has to be #defined to have different settings at
@@ -482,14 +491,9 @@ when loading an instrument. However, a workaround there is to use #include to pu
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

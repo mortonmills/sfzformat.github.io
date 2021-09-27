@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -264,8 +273,8 @@
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
 					<article><h1>‹curve›</h1><p>One curve header is used to define each curve.
-The values for various points along the curve can then be set, from <code class="language-plaintext highlighter-rouge">v000</code> to <code class="language-plaintext highlighter-rouge">v127</code>.
-The default is <code class="language-plaintext highlighter-rouge">v000=0</code> and <code class="language-plaintext highlighter-rouge">v127=1</code>. Any points along the curve not defined explicitly
+The values for various points along the curve can then be set, from <code>v000</code> to <code>v127</code>.
+The default is <code>v000=0</code> and <code>v127=1</code>. Any points along the curve not defined explicitly
 will be interpolated linearly between points which are defined.</p>
 
 <p>There are default built-in curves in ARIA. If no curve is specified for a
@@ -283,17 +292,17 @@ used by CC10 panning by default)</li>
 </ol>
 
 <p>These can be overwritten, but as they are used by the engine for their normal
-functions, it’s safer to use <code class="language-plaintext highlighter-rouge">curve_index</code> numbers of 7 and above for custom curves.
+functions, it’s safer to use <code>curve_index</code> numbers of 7 and above for custom curves.
 Curve_index in ARIA can be any integer from 0 to 255.</p>
-      <h5 id="examples">
+      <h2 id="examples">
         
         
           Examples <a href="#examples" class="toc-anchor">#</a>
         
         
-      </h5>
+      </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;curve&gt;curve_index=17
+<pre><code>&lt;curve&gt;curve_index=17
 v000=0
 v095=1
 v127=1
@@ -302,12 +311,12 @@ v127=1
 v000=0
 v095=0.5
 v127=1
-</code></pre></div></div>
+</code></pre>
 
 <p>Here’s a scenario using one MIDI CC to control the amplitude of two samples
 along two different curves.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;
+<pre><code>&lt;region&gt;
 amplitude_oncc110=100
 amplitude_curvecc110=9
 sample=bigger.wav
@@ -328,15 +337,15 @@ v127=1
 v000=0
 v063=1
 v127=0.1
-</code></pre></div></div>
+</code></pre>
 
 <p>And how to use the default curve 1 to create a tuning control which
 goes down and up, with the pitch unmodulated when the control is in
 the middle.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pitch_oncc27=100
+<pre><code>pitch_oncc27=100
 pitch_curvecc27=1
-</code></pre></div></div>
+</code></pre>
 					</article>
 				</div>
 				<div class="col-md-3">
@@ -463,14 +472,9 @@ pitch_curvecc27=1
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

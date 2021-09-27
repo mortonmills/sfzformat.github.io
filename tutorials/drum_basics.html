@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -280,33 +289,33 @@ one-shot samples could be made using only the region header, and two opcodes
 and hi-hat samples on their standard General MIDI notes, this could be the
 entire SFZ file:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=36 sample=kick.wav
+<pre><code>&lt;region&gt;key=36 sample=kick.wav
 &lt;region&gt;key=38 sample=snare.wav
 &lt;region&gt;key=42 sample=closedhat.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>This would work. Load this into an SFZ player, hit the C on MIDI note 36, and
 you get the kick sample playing. However, each sound would play only while a
 note is held. With drums it’s usually a good idea to play the entire sample, so
 a very short note will result in a complete drum hit sounding. We can do that
 with the <a href="/opcodes/loop_mode">loop_mode</a> opcode, which is also used for
-looping (as the name implies), but <code class="language-plaintext highlighter-rouge">loop_mode=one_shot</code> causes the sampler to
+looping (as the name implies), but <code>loop_mode=one_shot</code> causes the sampler to
 play the entire sample from start to end, ignoring note off.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=36 loop_mode=one_shot sample=kick.wav
+<pre><code>&lt;region&gt;key=36 loop_mode=one_shot sample=kick.wav
 &lt;region&gt;key=38 loop_mode=one_shot sample=snare.wav
 &lt;region&gt;key=42 loop_mode=one_shot sample=closedhat.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>There’s no need to set the one_shot for each region, though. We can simplify
 our life by using the ‹<a href="/headers/global">global</a>› header like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot
+<pre><code>&lt;global&gt;loop_mode=one_shot
 
 &lt;region&gt;key=36 sample=kick.wav
 &lt;region&gt;key=38 sample=snare.wav
 &lt;region&gt;key=42 sample=closedhat.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>This is basically all that’s required to take, for example, some of
 Wave Alchemy’s very nice free samples of TR-808 or Tanzbar drum machines,
@@ -324,22 +333,22 @@ also called velocity layers.</em></p>
 kind of loud and loud - we have four dynamic layers. Let’s say the files for
 these layers are named like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kick_vl1.wav
+<pre><code>kick_vl1.wav
 kick_vl2.wav
 kick_vl3.wav
 kick_vl4.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>To trigger the quiet sample at low MIDI note velocities, we’d use the
 <a href="/opcodes/lovel">lovel and hivel</a> opcodes like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=36 lovel=0 hivel=31 sample=kick_vl1.wav
-</code></pre></div></div>
+<pre><code>&lt;region&gt;key=36 lovel=0 hivel=31 sample=kick_vl1.wav
+</code></pre>
 
 <p>All four hits with velocity ranges assigned, evenly splitting the full 0 to 127
 velocity range into four, would look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=36
+<pre><code>&lt;region&gt;key=36
 lovel=0 hivel=31
 sample=kick_vl1.wav
 &lt;region&gt;key=36
@@ -351,20 +360,20 @@ sample=kick_vl3.wav
 &lt;region&gt;key=36
 lovel=96 hivel=127
 sample=kick_vl4.wav
-</code></pre></div></div>
+</code></pre>
 <p>This can, again, be simplified. The defalut value for lovel is 0, and for hivel
 it’s 127, so we don’t need to specify setting them to those numbers. Also, we
 can use a ‹<a href="/headers/group">group</a>› header to make the key opcode the same
 across all four regions:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot
+<pre><code>&lt;global&gt;loop_mode=one_shot
 
 &lt;group&gt;key=36
 &lt;region&gt;hivel=31 sample=kick_vl1.wav
 &lt;region&gt;lovel=32 hivel=63 sample=kick_vl2.wav
 &lt;region&gt;lovel=64 hivel=95 sample=kick_vl3.wav
 &lt;region&gt;lovel=96 sample=kick_vl4.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>However, the quiet samples will play quieter than they should - because of
 standard velocity tracking, each sample would play at full volume if the
@@ -373,14 +382,14 @@ velocity which is equal to its hivel value. This can be done in various ways,
 and the way we recommend is the <a href="/opcodes/amp_velcurve_N">amp_velcurve_N</a>
 opcode, like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot
+<pre><code>&lt;global&gt;loop_mode=one_shot
 
 &lt;group&gt;key=36
 &lt;region&gt;hivel=31 amp_velcurve_31=1 sample=kick_vl1.wav
 &lt;region&gt;lovel=32 hivel=63 amp_velcurve_63=1 sample=kick_vl2.wav
 &lt;region&gt;lovel=64 hivel=95 amp_velcurve_95=1 sample=kick_vl3.wav
 &lt;region&gt;lovel=96 sample=kick_vl4.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>Let’s say that each dynamic layer also contains four round robins - four samples
 with roughly the same dynamic. This allows us to include some variation, and
@@ -388,7 +397,7 @@ sound more natural - fast parts won’t sound like a “machine gun”. There ar
 basic ways to put round robins to use. One is to use the <a href="/opcodes/seq_length">seq_length</a>
 and <a href="/opcodes/seq_position">seq_position</a> opcodes, like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot
+<pre><code>&lt;global&gt;loop_mode=one_shot
 
 &lt;group&gt;key=36 hivel=31 amp_velcurve_31=1 seq_length=4
 &lt;region&gt;seq_position=1 sample=kick_vl1_rr1.wav
@@ -410,7 +419,7 @@ and <a href="/opcodes/seq_position">seq_position</a> opcodes, like this:</p>
 &lt;region&gt;seq_position=2 sample=kick_vl4_rr2.wav
 &lt;region&gt;seq_position=3 sample=kick_vl4_rr3.wav
 &lt;region&gt;seq_position=4 sample=kick_vl4_rr4.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>That’s a kick drum with four dynamic layers and four sequential round robins.
 As you might have noticed, we’re repeating the key=36 and seq_length=4 opcodes
@@ -425,7 +434,7 @@ way or the above sequential way, the answer is “it depends”. It seems that m
 instruments use sequential, though. This is how random round robins would be
 set up for our kick drum samples:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot
+<pre><code>&lt;global&gt;loop_mode=one_shot
 
 &lt;group&gt;key=36 hivel=31 amp_velcurve_31=1
 &lt;region&gt;hirand=0.25 sample=kick_vl1_rr1.wav
@@ -447,12 +456,12 @@ set up for our kick drum samples:</p>
 &lt;region&gt;lorand=0.25 hirand=0.5 sample=kick_vl4_rr2.wav
 &lt;region&gt;lorand=0.5 hirand=0.75 sample=kick_vl4_rr3.wav
 &lt;region&gt;lorand=0.75 sample=kick_vl4_rr4.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>If we go back to sequential round robins and add a snare with only
 three round robins, plus a few comments, the resulting SFZ would look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// This is an example of a basic drum kit mapping
+<pre><code>// This is an example of a basic drum kit mapping
 // All samples set to play in their entirety when a note is received
 
 &lt;global&gt;loop_mode=one_shot
@@ -498,7 +507,7 @@ three round robins, plus a few comments, the resulting SFZ would look like this:
 &lt;region&gt;seq_position=1 sample=snare_vl4_rr1.wav
 &lt;region&gt;seq_position=2 sample=snare_vl4_rr2.wav
 &lt;region&gt;seq_position=3 sample=snare_vl4_rr3.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>This is almost all the information needed to map basic drum kits in SFZ. Almost,
 because well-sampled hi-hats will have many different articulations, and that
@@ -629,14 +638,9 @@ creates some additional considerations, which we will describe on <a href="/tuto
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

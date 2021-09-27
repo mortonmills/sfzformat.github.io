@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -265,8 +274,8 @@
 				<div class="col-md-9">
 					<article><h1>fil_gain / fil2_gain</h1><p>Gain for lsh, hsh and peq filter types.</p>
 
-<p><code class="language-plaintext highlighter-rouge">fil_gain</code> and <code class="language-plaintext highlighter-rouge">fil2_gain</code> are used by the additional ARIA extension
-filter types <code class="language-plaintext highlighter-rouge">lsh</code> (low shelf), <code class="language-plaintext highlighter-rouge">hsh</code> (high shelf) and <code class="language-plaintext highlighter-rouge">peq</code>
+<p><code>fil_gain</code> and <code>fil2_gain</code> are used by the additional ARIA extension
+filter types <code>lsh</code> (low shelf), <code>hsh</code> (high shelf) and <code>peq</code>
 (parametric EQ). This allows the two filters to instead be used
 as additional EQ bands, on top of SFZ’s regular three bands. It
 also allows shelving EQ.</p>
@@ -283,13 +292,13 @@ and uses the <a href="eqN_type">eqN_type</a> opcode.</p>
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fil_type=lsh
+<pre><code>fil_type=lsh
 cutoff=150
 fil_gain=-6
 fil2_type=hsh
 cutoff2=80000
 fil2_gain=3
-</code></pre></div></div>
+</code></pre>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
@@ -449,14 +458,9 @@ fil2_gain=3
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

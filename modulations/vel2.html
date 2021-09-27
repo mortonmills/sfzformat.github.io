@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -265,13 +274,13 @@
 				<div class="col-md-9">
 					<article><h1>(eg type)_vel2(target)</h1><p>The <strong>velocity_to</strong> modulations time, in seconds, can be calculated as:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(target) time = (eg type)_(target) + (eg type)_vel2(target) * velocity / 127
-</code></pre></div></div>
+<pre><code>(target) time = (eg type)_(target) + (eg type)_vel2(target) * velocity / 127
+</code></pre>
 
 <p>and the sustain level, in percentage, as:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sustain level = (eg type)_sustain + (eg type)_vel2sustain
-</code></pre></div></div>
+<pre><code>sustain level = (eg type)_sustain + (eg type)_vel2sustain
+</code></pre>
 
 <p>Range is -100 seconds to 100 seconds, but in most typical cases, the effect of
 velocity on envelope delay and attack times will be negative, and the effect
@@ -279,13 +288,13 @@ of velocity on other envelope parameters positive. This would make a sound have
 a faster attack and a slower decay when a note has higher velocity, with attack
 of 0.5 seconds at 0 velocity and 0.1 seconds at 127 velocity:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ampeg_attack=0.5
+<pre><code>ampeg_attack=0.5
 ampeg_vel2attack=-0.4
 ampeg_decay=0.5
 ampeg_vel2decay=1
 ampeg_sustain=50
 ampeg_release=0.25
-</code></pre></div></div>
+</code></pre>
       <h2 id="eq">
         
         
@@ -421,14 +430,9 @@ ampeg_release=0.25
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

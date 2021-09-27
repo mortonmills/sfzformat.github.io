@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -270,12 +279,12 @@ sample a folk flute whose lowest note is a D. If the lowest five notes are
 D, E, F#, G and A, and there is one sample available for each note, they could
 be mapped like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=50 sample=d4.wav
+<pre><code>&lt;region&gt;key=50 sample=d4.wav
 &lt;region&gt;key=52 sample=e4.wav
 &lt;region&gt;key=54 sample=f#4.wav
 &lt;region&gt;key=55 sample=g4.wav
 &lt;region&gt;key=57 sample=a4.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>This would work well enough to make a sound when a MIDI note corresponding to
 one of the sampled pitches is played. However, playing notes inbetween
@@ -287,12 +296,12 @@ If a sample does not need to cover multiple notes, it can still use key. Whether
 to use the D or E sample to cover the D# in our example is a judgment call -
 which sounds better?</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;lokey=50 hikey=51 pitch_keycenter=50 sample=d4.wav
+<pre><code>&lt;region&gt;lokey=50 hikey=51 pitch_keycenter=50 sample=d4.wav
 &lt;region&gt;lokey=52 hikey=53 pitch_keycenter=52 sample=e4.wav
 &lt;region&gt;key=54 sample=f#4.wav
 &lt;region&gt;lokey=55 hikey=55 pitch_keycenter=56 sample=g4.wav
 &lt;region&gt;key=57 sample=a4.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>The samples will play as long as a note is held, but when the note is released,
 they will end suddenly, which is probably not realistic for a flute sound, or
@@ -300,13 +309,13 @@ indeed most other instruments. We’ll need to apply a volume envelope with a
 release time set, which can be applied to all regions.
 The <a href="/opcodes/ampeg_release">ampeg_release</a> opcode accomplishes this.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;ampeg_release=0.3
+<pre><code>&lt;global&gt;ampeg_release=0.3
 
 &lt;region&gt;lokey=50 hikey=51 pitch_keycenter=50 sample=d4.wav
 &lt;region&gt;lokey=52 hikey=53 pitch_keycenter=52 sample=e4.wav
 &lt;region&gt;key=54 sample=f#4.wav
 &lt;region&gt;key=55 sample=g4.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>If we have samples at various dynamics, such as quiet and loud, we could use
 note velocity to choose which sample is played - however, while this makes
@@ -319,7 +328,7 @@ D4 and E4 samples as an example, and controlling the dynamics with CC1 (mod whee
 The <a href="/opcodes/amp_veltrack">amp_veltrack</a> opcode is set to 0,
 so that velocity does not affect volume.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0
+<pre><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0
 
 &lt;group&gt;lokey=50 hikey=51 pitch_keycenter=50
 &lt;region&gt;sample=d4_p.wav xfin_locc1=0 xfin_hicc1=42 xfout_locc1=43 xfout_hicc1=85
@@ -329,7 +338,7 @@ so that velocity does not affect volume.</p>
 &lt;region&gt;sample=e4_p.wav xfin_locc1=0 xfin_hicc1=42 xfout_locc1=43 xfout_hicc1=85
 &lt;region&gt;sample=e4_mf.wav xfin_locc1=43 xfin_hicc1=85 xfout_locc1=86 xfout_hicc1=127
 &lt;region&gt;sample=e4_f.wav xfin_locc1=86 xfin_hicc1=127
-</code></pre></div></div>
+</code></pre>
 
 <p>Now, CC1 would first fade in the quiet sample when it was between 0 and 42.
 From 43 to 85, the quiet sample is faded out and the medium sample faded in.
@@ -348,7 +357,7 @@ instrument to be sampled in more detail, and the SFZ format is flexible enough
 to allow this, or even allow different amounts of dynamic layers or round robins
 for different notes within the same articulation.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0
+<pre><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0
 
 &lt;group&gt;lokey=50 hikey=51 pitch_keycenter=50 hicc11=63
 &lt;region&gt;sample=d4_p.wav xfin_locc1=0 xfin_hicc1=42 xfout_locc1=43 xfout_hicc1=85
@@ -364,14 +373,14 @@ for different notes within the same articulation.</p>
 &lt;group&gt;lokey=52 hikey=53 pitch_keycenter=52 locc11=64
 &lt;region&gt;sample=e4_ft_p.wav xfin_locc1=0 xfin_hicc1=63 xfout_locc1=64 xfout_hicc1=127
 &lt;region&gt;sample=e4_ft_f.wav xfin_locc1=64 xfin_hicc1=127
-</code></pre></div></div>
+</code></pre>
 
 <p>Another, probably more common, way is to use keyswitches. If we define the
 keyswitch range as the C and C# below our lowest D using
 <a href="/opcodes/sw_lokey">sw_lokey/sw_hikey</a>, we can then use
 <a href="/opcodes/sw_last">sw_last</a> to select articulations.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0 sw_lokey=48 sw_hikey=49
+<pre><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0 sw_lokey=48 sw_hikey=49
 
 &lt;group&gt;lokey=50 hikey=51 pitch_keycenter=50 sw_last=48
 &lt;region&gt;sample=d4_p.wav xfin_locc1=0 xfin_hicc1=42 xfout_locc1=43 xfout_hicc1=85
@@ -387,7 +396,7 @@ keyswitch range as the C and C# below our lowest D using
 &lt;group&gt;lokey=52 hikey=53 pitch_keycenter=52 sw_last=49
 &lt;region&gt;sample=e4_ft_p.wav xfin_locc1=0 xfin_hicc1=63 xfout_locc1=64 xfout_hicc1=127
 &lt;region&gt;sample=e4_ft_f.wav xfin_locc1=64 xfin_hicc1=127
-</code></pre></div></div>
+</code></pre>
 
 <p>There are other possibilities - for example, since velocity is not needed to
 control dynamics, we could use that to select articulations using
@@ -406,7 +415,7 @@ monophonic instrument with no multiple microphone positions sampled, it’s enou
 to put all samples in the same group, and have that group muted whenever a new
 note from that group is played.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0 sw_lokey=48 sw_hikey=49 group=1 off_by=1
+<pre><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0 sw_lokey=48 sw_hikey=49 group=1 off_by=1
 
 &lt;group&gt;lokey=50 hikey=51 pitch_keycenter=50 sw_last=48
 &lt;region&gt;sample=d4_p.wav xfin_locc1=0 xfin_hicc1=42 xfout_locc1=43 xfout_hicc1=85
@@ -422,14 +431,14 @@ note from that group is played.</p>
 &lt;group&gt;lokey=52 hikey=53 pitch_keycenter=52 sw_last=49
 &lt;region&gt;sample=e4_ft_p.wav xfin_locc1=0 xfin_hicc1=63 xfout_locc1=64 xfout_hicc1=127
 &lt;region&gt;sample=e4_ft_f.wav xfin_locc1=64 xfin_hicc1=127
-</code></pre></div></div>
+</code></pre>
 
 <p>However, this cuts off the note suddenly, creating a gap before the next note
 can reach full volume. That problem can be fixed by setting <a href="/opcodes/off_mode">off_mode</a>
 to normal, which will make the notes being muted fade out gradually over the
 duration previously specified with the ampeg_release opcode.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0 sw_lokey=48 sw_hikey=49
+<pre><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0 sw_lokey=48 sw_hikey=49
 
 group=1 off_by=1 off_mode=normal
 &lt;group&gt;lokey=50 hikey=51 pitch_keycenter=50 sw_last=48
@@ -446,7 +455,7 @@ group=1 off_by=1 off_mode=normal
 &lt;group&gt;lokey=52 hikey=53 pitch_keycenter=52 sw_last=49
 &lt;region&gt;sample=e4_ft_p.wav xfin_locc1=0 xfin_hicc1=63 xfout_locc1=64 xfout_hicc1=127
 &lt;region&gt;sample=e4_ft_f.wav xfin_locc1=64 xfin_hicc1=127
-</code></pre></div></div>
+</code></pre>
 
 <p>This is enough to make a basic monophonic wind instrument, vocal, or other
 monophonic instrument. There are more possibilities - better legato, vibrato
@@ -579,14 +588,9 @@ earlier, this should also be enough to make a basic sampled piano or guitar.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

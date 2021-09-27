@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -274,13 +283,13 @@
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#define $KICKKEY 36
+<pre><code>#define $KICKKEY 36
 #define $LOWEBENDT 507
-</code></pre></div></div>
+</code></pre>
 
 <p>The defined variables can then be used like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+<pre><code>&lt;control&gt;
 #define $KICKKEY 36
 #define $SNAREKEY 38
 #define $HATKEY 42
@@ -288,12 +297,12 @@
 &lt;region&gt;key=$KICKKEY sample=kick.wav
 &lt;region&gt;key=$SNAREKEY sample=snare.wav
 &lt;region&gt;key=$HATKEY sample=closedhat.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>This can be used to make an instrument easier to configure - for example, to
 change key maps, MIDI CC assignments, pitch bend ranges etc. which can then be
 used repeatedly in the SFZ file, but can be easily changed just by editing their
-<code class="language-plaintext highlighter-rouge">#define</code> value in one place.</p>
+<code>#define</code> value in one place.</p>
 
 <p>Using #define as a constant with a single value thorughout an instrument works
 easily. Defining the same variable to have multiple values at different points in the
@@ -450,14 +459,9 @@ values in a separate file.  In simple tests, that has been successful.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

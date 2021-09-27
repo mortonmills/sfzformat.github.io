@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -265,7 +274,7 @@
 				<div class="col-md-9">
 					<article><h1>sw_previous</h1><p>Previous note value. The region will play if last note-on message was equal to <code>sw_previous</code> value.</p>
 
-<p><code class="language-plaintext highlighter-rouge">sw_previous</code> can be entered in either MIDI note numbers (0 to 127) or
+<p><code>sw_previous</code> can be entered in either MIDI note numbers (0 to 127) or
 in MIDI note names (C-1 to G9)</p>
       <h2 id="example">
         
@@ -275,11 +284,11 @@ in MIDI note names (C-1 to G9)</p>
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sw_previous=60
-</code></pre></div></div>
+<pre><code>sw_previous=60
+</code></pre>
 
 <p>Note that unlike <a href="/opcodes/sw_last">sw_last</a>, the note specified by
-<code class="language-plaintext highlighter-rouge">sw_previous</code> doesn’t need to fall
+<code>sw_previous</code> doesn’t need to fall
 in the <a href="sw_lokey">sw_lokey</a> / <a href="sw_lokey">sw_hikey</a> range.
 This is useful for true sampled legato.</p>
 
@@ -430,14 +439,9 @@ This is useful for true sampled legato.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

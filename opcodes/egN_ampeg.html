@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -273,7 +282,7 @@
       </h2>
 
 <p>Generate a standard ADSR shape FlexEG envelope</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;
+<pre><code>&lt;region&gt;
 sample=*sine
 
 eg1_time1=1 eg1_level1=1
@@ -281,7 +290,7 @@ eg1_time2=1 eg1_level2=.5 eg1_sustain=2
 eg1_time3=1 eg1_level3=0
 
 eg1_ampeg=1 //ARIA boolean value, 1=true, 0=false
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="practical-considerations">
         
@@ -291,23 +300,23 @@ eg1_ampeg=1 //ARIA boolean value, 1=true, 0=false
         
       </h2>
 
-<p><code class="language-plaintext highlighter-rouge">egN_ampeg</code> allows the regions envelope to be controlled by the FlexEG: egN completely.
+<p><code>egN_ampeg</code> allows the regions envelope to be controlled by the FlexEG: egN completely.
 This is only needed for the amplitude envelope, and is a special case.
-There is no <code class="language-plaintext highlighter-rouge">egN_pitcheg</code> or <code class="language-plaintext highlighter-rouge">egN_fileg</code>, using <code class="language-plaintext highlighter-rouge">egN_pitch</code> &amp; <code class="language-plaintext highlighter-rouge">egN_cutoffX</code> is enough.</p>
+There is no <code>egN_pitcheg</code> or <code>egN_fileg</code>, using <code>egN_pitch</code> &amp; <code>egN_cutoffX</code> is enough.</p>
 
 <p>The FlexEG can also work with the standard ampeg envelope, to achieve this add:</p>
 
-<p><code class="language-plaintext highlighter-rouge">egN_amplitude=</code></p>
+<p><code>egN_amplitude=</code></p>
 
-<p>The total envelope will be calculated as: <code class="language-plaintext highlighter-rouge">egN</code> * <code class="language-plaintext highlighter-rouge">ampeg</code></p>
+<p>The total envelope will be calculated as: <code>egN</code> * <code>ampeg</code></p>
 
 <p>It is also possible to use CC modulation:</p>
 
-<p><code class="language-plaintext highlighter-rouge">egN_amplitude_onccX=</code></p>
+<p><code>egN_amplitude_onccX=</code></p>
 
 <p>In order to allow MIDI Note-On velocity to modulate the envelope level, use cc 131:</p>
 
-<p><code class="language-plaintext highlighter-rouge">eg1_amplitude_oncc131=100</code></p>
+<p><code>eg1_amplitude_oncc131=100</code></p>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
@@ -456,14 +465,9 @@ There is no <code class="language-plaintext highlighter-rouge">egN_pitcheg</code
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

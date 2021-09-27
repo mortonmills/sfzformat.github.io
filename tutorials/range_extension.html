@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -282,7 +291,7 @@ can prove useful.</p>
 we want to be able to play the notes for another octave above the highest
 currently avaialble note.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;sample=c4.wav key=48
+<pre><code>&lt;region&gt;sample=c4.wav key=48
 &lt;region&gt;sample=db4.wav key=49
 &lt;region&gt;sample=d4.wav key=50
 &lt;region&gt;sample=eb4.wav key=51
@@ -295,15 +304,15 @@ currently avaialble note.</p>
 &lt;region&gt;sample=bb4.wav key=58
 &lt;region&gt;sample=b4.wav key=59
 &lt;region&gt;sample=c5.wav key=60
-</code></pre></div></div>
+</code></pre>
 
 <p>The simplest way is to just stretch the highest note. Using
 lokey, hikey and pitch_keycenter as separate opcodes is 
 better than using key and transpose, as it allows one region
 to cover a wide range of pitches.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;sample=c5.wav lokey=60 hikey=72 pitch_keycenter=60
-</code></pre></div></div>
+<pre><code>&lt;region&gt;sample=c5.wav lokey=60 hikey=72 pitch_keycenter=60
+</code></pre>
 
 <p>Note that ARIA will produce no sound if asked to transpose
 a sample more than four octaves up - if that is needed,
@@ -330,7 +339,7 @@ scale.</p>
 
 <p>Let’s say we have a simple pentatonic xylophone.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;sample=c4.wav key=48
+<pre><code>&lt;region&gt;sample=c4.wav key=48
 &lt;region&gt;sample=d4.wav key=50
 &lt;region&gt;sample=f4.wav key=53
 &lt;region&gt;sample=g4.wav key=55
@@ -341,7 +350,7 @@ scale.</p>
 &lt;region&gt;sample=g5.wav key=67
 &lt;region&gt;sample=a5.wav key=69
 &lt;region&gt;sample=c6.wav key=72
-</code></pre></div></div>
+</code></pre>
 
 <p>This would work similar as above, covering every
 pitch with the nearest available note. Whether
@@ -352,7 +361,7 @@ The below example goes up and doesn’t extend the range
 beyond the highest or lowest available sample, only
 fills in the gaps.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;sample=c4.wav lokey=48 hikey=49 pitch_keycenter=48
+<pre><code>&lt;region&gt;sample=c4.wav lokey=48 hikey=49 pitch_keycenter=48
 &lt;region&gt;sample=d4.wav lokey=50 hikey=51 pitch_keycenter=50
 &lt;region&gt;sample=f4.wav lokey=52 hikey=44 pitch_keycenter=53
 &lt;region&gt;sample=g4.wav lokey=55 hikey=56 pitch_keycenter=55
@@ -363,7 +372,7 @@ fills in the gaps.</p>
 &lt;region&gt;sample=g5.wav lokey=67 hikey=68 pitch_keycenter=67
 &lt;region&gt;sample=a5.wav lokey=69 hikey=70 pitch_keycenter=69
 &lt;region&gt;sample=c6.wav lokey=71 hikey=72 pitch_keycenter=72
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="alternating-several-samples">
         
@@ -378,14 +387,14 @@ become obviously audible that the entire top octave uses
 the same sample. We could use the top two or three samples
 instead, and alternate them like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;sample=c5.wav key=60
+<pre><code>&lt;region&gt;sample=c5.wav key=60
 &lt;region&gt;sample=bb4.wav lokey=61 hikey=61 pitch_keycenter=58
 &lt;region&gt;sample=b4.wav lokey=62 hikey=62 pitch_keycenter=59
 &lt;region&gt;sample=c5.wav lokey=63 hikey=63 pitch_keycenter=60
 &lt;region&gt;sample=bb4.wav lokey=64 hikey=64 pitch_keycenter=58
 &lt;region&gt;sample=b4.wav lokey=65 hikey=65 pitch_keycenter=59
 &lt;region&gt;sample=c5.wav lokey=66 hikey=66 pitch_keycenter=60
-</code></pre></div></div>
+</code></pre>
 
 <p>…and so on, continuing to the highest desired note.</p>
     
@@ -403,7 +412,7 @@ in both minor and major triads. There might not be a good way
 to get around this with the sample set we have above, but if we
 have two round robins, we could do something like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 seq_length=2
 &lt;region&gt;sample=c4_rr1.wav key=48
 &lt;region&gt;sample=db4_rr1.wav key=49
@@ -459,7 +468,7 @@ seq_position=2
 &lt;region&gt;sample=bb4_rr2.wav lokey=70 hikey=70 pitch_keycenter=58
 &lt;region&gt;sample=b4_rr2.wav lokey=71 hikey=71 pitch_keycenter=59
 &lt;region&gt;sample=c5_rr2.wav lokey=72 hikey=72 pitch_keycenter=60
-</code></pre></div></div>
+</code></pre>
 
 <p>This is obviously much more complicated than the simple version
 we started with, and the extra complexity might not be worth it
@@ -603,14 +612,9 @@ which will need to be stretched.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

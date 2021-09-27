@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -265,7 +274,7 @@
 				<div class="col-md-9">
 					<article><h1>group</h1><p>Exclusive group number for this region.</p>
 
-<p>ARIA adds also the <code class="language-plaintext highlighter-rouge">polyphony_group</code> alias to reduce the confusion between
+<p>ARIA adds also the <code>polyphony_group</code> alias to reduce the confusion between
 the group opcode and the ‹<a href="/headers/group">group</a>› header.</p>
       <h2 id="examples">
         
@@ -275,18 +284,18 @@ the group opcode and the ‹<a href="/headers/group">group</a>› header.</p>
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>group=3
+<pre><code>group=3
 
 group=334
-</code></pre></div></div>
+</code></pre>
 
-<p>The <code class="language-plaintext highlighter-rouge">group</code> opcode is used together with <a href="off_by">off_by</a> to make something monophonic.</p>
+<p>The <code>group</code> opcode is used together with <a href="off_by">off_by</a> to make something monophonic.</p>
 
 <p>For example, the flute is by nature a monophonic instrument, so if a flute were
 recorded with one microphone and had one set of samples, it would make sense to
 set all its samples to have one group. A guitar is polyphonic, but each string
 is monophonic, so a six-string guitar would naturally be split into six groups -
-one per string. In these cases, the <code class="language-plaintext highlighter-rouge">group</code> number will be equal to the <a href="off_by">off_by</a>
+one per string. In these cases, the <code>group</code> number will be equal to the <a href="off_by">off_by</a>
 number.</p>
 
 <p>This is also commonly used with hi-hats - this is an example of where things can
@@ -294,7 +303,7 @@ get more sophisticated with a large number of groups involved, as it’s possibl
 to set more closed hi-hat sounds mute more open ones, but not vice-versa, and it’s
 also quite possible that there are separate close mic, overhead and room samples.</p>
 
-<p><code class="language-plaintext highlighter-rouge">group</code> and <a href="off_by">off_by</a> can also be used in other contexts where one sound
+<p><code>group</code> and <a href="off_by">off_by</a> can also be used in other contexts where one sound
 should cause another to stop but enforcing monophony is not the goal - for example,
 a crash cymbal doesn’t need to be monophonic, as allowing the sound to build up
 is reasonably natural, but if we wanted to implement a cymbal choke, then the
@@ -462,14 +471,9 @@ an extremely large number for one group, but it’s obviously not recommended.</
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

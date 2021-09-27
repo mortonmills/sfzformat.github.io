@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -274,10 +283,10 @@
 <p>Computed when the note is triggered,
 remains the same for that region for as long as the region plays.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pitch_random=10
+<pre><code>pitch_random=10
 
 pitch_random=400
-</code></pre></div></div>
+</code></pre>
 
 <p>Useful for humanizing the pitch of instruments with naturally imprecise
 intonation, especially when playing multiple regions in unison.</p>
@@ -290,20 +299,20 @@ intonation, especially when playing multiple regions in unison.</p>
         
       </h2>
 
-<p>In ARIA this is unipolar, and equivalent to <code class="language-plaintext highlighter-rouge">pitch_oncc135</code>.
-So, if <code class="language-plaintext highlighter-rouge">pitch_random</code> is set to 20, the region will play at pitches tuned by an
+<p>In ARIA this is unipolar, and equivalent to <code>pitch_oncc135</code>.
+So, if <code>pitch_random</code> is set to 20, the region will play at pitches tuned by an
 amount in the range from 0 cents to +20 cents. In order to get pitch to fluctuate
 between -20 and +20 cents, there would be two ways to get there, either by
 applying a fixed shift of -20 cents and a random shift of up to 40 cents:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pitch=-20
+<pre><code>pitch=-20
 pitch_random=40
-</code></pre></div></div>
+</code></pre>
 
 <p>Or use CC136, which is bipolar random from -1 to 1:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pitch_oncc136=20
-</code></pre></div></div>
+<pre><code>pitch_oncc136=20
+</code></pre>
 <p>In rcg sfz and Cakewalk, this is bipolar.</p>
 
 
@@ -453,14 +462,9 @@ pitch_random=40
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

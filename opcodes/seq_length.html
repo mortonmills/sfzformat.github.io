@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -266,7 +275,7 @@
 					<article><h1>seq_length</h1><p>Sequence length, used together with <a href='/opcodes/seq_position'>seq_position</a> to use samples as round robins.</p>
 
 <p>The player will keep an internal counter creating a consecutive note-on sequence
-for each region, starting at 1 and resetting at <code class="language-plaintext highlighter-rouge">seq_length</code>.</p>
+for each region, starting at 1 and resetting at <code>seq_length</code>.</p>
       <h2 id="example">
         
         
@@ -275,13 +284,13 @@ for each region, starting at 1 and resetting at <code class="language-plaintext 
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>seq_length=3
-</code></pre></div></div>
+<pre><code>seq_length=3
+</code></pre>
 
 <p>A typical usage for a kick drum with four round robins, and a snare with three
 round robins, would look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;key=36 seq_length=4
+<pre><code>&lt;group&gt;key=36 seq_length=4
 &lt;region&gt;seq_position=1 sample=kick_rr1.wav
 &lt;region&gt;seq_position=2 sample=kick_rr2.wav
 &lt;region&gt;seq_position=3 sample=kick_rr3.wav
@@ -291,7 +300,7 @@ round robins, would look like this:</p>
 &lt;region&gt;seq_position=1 sample=snare_rr1.wav
 &lt;region&gt;seq_position=2 sample=snare_rr2.wav
 &lt;region&gt;seq_position=3 sample=snare_rr3.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>An alternative to this is using <a href="/opcodes/lorand">lorand / hirand</a> for
 random, instead of sequential, round robins. If there are enough samples
@@ -464,14 +473,9 @@ the counter exceeds the highest seq_position will result in no sound.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

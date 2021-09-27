@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -284,7 +293,7 @@ transition, unless the next note has an extremely fast attack. Therefore, at lea
 will need to be specified in most cases - though most instruments will need to specify that even
 if not using legato.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0 sw_lokey=48 sw_hikey=49
+<pre><code>&lt;global&gt;ampeg_release=0.3 amp_veltrack=0 sw_lokey=48 sw_hikey=49
 
 group=1 off_by=1 off_mode=normal
 &lt;group&gt;lokey=50 hikey=51 pitch_keycenter=50 sw_last=48
@@ -301,7 +310,7 @@ group=1 off_by=1 off_mode=normal
 &lt;group&gt;lokey=52 hikey=53 pitch_keycenter=52 sw_last=49
 &lt;region&gt;sample=e4_ft_p.wav xfin_locc1=0 xfin_hicc1=63 xfout_locc1=64 xfout_hicc1=127
 &lt;region&gt;sample=e4_ft_f.wav xfin_locc1=64 xfin_hicc1=127
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="legato-regions">
         
@@ -337,7 +346,7 @@ would then be group 3 and also be muted by group 2. As with hi-hat muting, if th
 are multiple mic positions in separate files, each mic position will need its own
 polyphony groups.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;off_mode=time
+<pre><code>&lt;global&gt;off_mode=time
 off_time=1
 amp_veltrack=0
 
@@ -354,13 +363,13 @@ group=2
 off_by=2
 //Sample map goes here
 #include "mappings/6_a_map.sfz"
-</code></pre></div></div>
+</code></pre>
 
 <p>As this does not use velocity to control note volume, that frees up velocity for
 something else, so in this specific case velocity is repurposed to shorten the
 attack time on the legato notes, which makes the patch more intuitively playable.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;off_mode=time
+<pre><code>&lt;global&gt;off_mode=time
 off_time=1
 amp_veltrack=0
 
@@ -378,7 +387,7 @@ group=3
 off_by=3
 //Sample map goes here
 #include "mappings/6_a_map.sfz"
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="portamento">
         
@@ -402,7 +411,7 @@ is used to make the pitch change happen. CC140 is the ARIA extension CC for pitc
 delta, and being the difference in pitch between the previous note and the
 current note, it sets the depth of the glide envelope.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;eg06_sustain=1 //Pitch envelope setup for legato slides
+<pre><code>&lt;global&gt;eg06_sustain=1 //Pitch envelope setup for legato slides
 eg06_level0=-1 //Envelope starts away from the note pitch
 eg06_time0=0
 eg06_pitch_oncc140=100 //This is the pitch depth
@@ -416,14 +425,14 @@ eg06_level1=0 //At the end of the envelope, return to base pitch
 //Typical stuff for monophonic instruments
 off_mode=normal
 ampeg_release_oncc104=2
-</code></pre></div></div>
+</code></pre>
 
 <p>All the sample regions are then basically duplicated in non-legato and legato
 versions. Here’s an example non-legato region with trigger
 set to first and no eg06_time_oncc109 set. The group and off_by work just like
 in the above examples.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 trigger=first
 off_mode=normal
 group=1
@@ -432,14 +441,14 @@ off_by=1
 &lt;region&gt;
 sample=..\Samples\arco_looped\c4_sustain.wav
 pitch_keycenter=48
-</code></pre></div></div>
+</code></pre>
 
 <p>And the corresponding legato region with trigger set to legato, the eg06 glide
 envelope time control, and also an attack time, to let the note fade in
 more gradually, with this controlled by CC100 rather than velocity, as the
 example above. This is another option.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 trigger=legato
 off_mode=normal
 group=1
@@ -451,7 +460,7 @@ ampeg_attack_oncc100=0.5
 &lt;region&gt;
 sample=..\Samples\arco_looped\c4_sustain.wav
 pitch_keycenter=48
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="true-sampled-legato">
         
@@ -467,7 +476,7 @@ to choose which sample plays for the legato regions. If the samples would includ
 both the legato transition and the complete sustain of the following note, things
 would be very simple:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 // Legato transitions and the complete sustain of the next note both in the same sample
 trigger=legato
 group=2
@@ -482,14 +491,14 @@ off_mode=normal
 // Leg transitions down
 &lt;region&gt; sample=legatovib_c5_a4.wav key=A4 sw_previous=C5
 &lt;region&gt; sample=legatovib_c5_g4.wav key=G4 sw_previous=C5
-</code></pre></div></div>
+</code></pre>
 
 <p>Recording the full sustain after every transition adds greatly to the recording
 time, diskspace and RAM use, however. It may be necessary in some cases, such as
 solo vocals, but in other cases it’s possible to use transition samples which
 are short, then fade in the regular sustain sample.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 // Legato transitions in one sample, crossfaded into standard sustain in another sample
 trigger=legato
 group=2
@@ -509,12 +518,59 @@ off_mode=normal
 &lt;region&gt; sample=sustainvib_c5.wav key=C5 ampeg_attack=0.3 offset=5000 ampeg_attack_shape=3.8
 &lt;region&gt; sample=sustainvib_a4.wav key=A4 ampeg_attack=0.3 offset=5000 ampeg_attack_shape=3.8
 &lt;region&gt; sample=sustainvib_g4.wav key=G4 ampeg_attack=0.3 offset=5000 ampeg_attack_shape=3.8
-</code></pre></div></div>
+</code></pre>
 
 <p>Another consideration is that for instruments with a wide range, it may not be worthwhile
 to record every possible transition, and only record transitions of up to one octave, for
-example. Defaulting to simple crossfade is an option here. This is left as an exercise to
-the reader.</p>
+example. The <a href="/extensions/midi_ccs">extended CCs</a> do not always behave quite like other CCs,
+necessitating using hdcc in ARIA, but the below works for a legato vocal with a range of
+less than two octaves.</p>
+
+<pre><code>&lt;global&gt;
+off_mode=time
+off_time=0.4
+ampeg_release=0.3
+
+&lt;group&gt;
+trigger=first
+group=1
+off_by=1
+#include "modules/vowel_sustain_a.sfz"
+
+&lt;group&gt;
+trigger=legato
+group=1
+off_by=1
+ampeg_attack=0.1
+ampeg_hold=0.3
+ampeg_decay=0.6
+ampeg_sustain=0
+hihdcc141=12.1
+#include "modules/vowel_transition_a.sfz"
+
+&lt;group&gt;
+trigger=legato
+group=2
+off_by=1
+delay=0.3
+ampeg_attack=0.2
+offset=40000
+hihdcc141=12.1
+#include "modules/vowel_sustain_a.sfz"
+
+&lt;group&gt;
+trigger=legato
+group=1
+off_by=1
+ampeg_attack=0.1
+lohdcc141=12.9
+hihdcc141=24
+offset=12000
+#include "modules/vowel_sustain_a.sfz"
+</code></pre>
+
+<p>It would also be possible to use CC 140 in a similar way in an instrument which,
+for example, had legato transitions recorded ascending but not descending.</p>
 					</article>
 				</div>
 				<div class="col-md-3">
@@ -641,14 +697,9 @@ the reader.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

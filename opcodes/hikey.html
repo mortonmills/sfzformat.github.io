@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -266,7 +275,7 @@
 					<article><h1>lokey / hikey</h1><p>Determine the high boundary of a certain <a href='/headers/region'>region</a>.</p>
 
 <p>When a region only covers one note, it is generally more convenient to use
-<a href="/opcodes/key">key</a> instead of <code class="language-plaintext highlighter-rouge">hikey</code> and <code class="language-plaintext highlighter-rouge">lokey</code>. When <code class="language-plaintext highlighter-rouge">hikey</code> and <code class="language-plaintext highlighter-rouge">lokey</code> are used,
+<a href="/opcodes/key">key</a> instead of <code>hikey</code> and <code>lokey</code>. When <code>hikey</code> and <code>lokey</code> are used,
 they will usually need to be used together with <a href="/opcodes/pitch_keycenter">pitch_keycenter</a>.</p>
 
 <p>In the SFZ 1 specification, the allowed range is 0 to 127. However, SFZ 2 additionally
@@ -282,20 +291,20 @@ for example, pedal noises which are triggered whether any keys are pressed or no
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt; sample=*sine lokey=c5 hikey=c6
-</code></pre></div></div>
+<pre><code>&lt;region&gt; sample=*sine lokey=c5 hikey=c6
+</code></pre>
 
 <p>As with the <a href="key">key</a> opcode, the values can also be MIDI note numbers:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt; sample=*sine lokey=72 hikey=84
-</code></pre></div></div>
+<pre><code>&lt;region&gt; sample=*sine lokey=72 hikey=84
+</code></pre>
 
 <p>When an instrument is sampled every minor third, this kind of usage will be common:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt; sample=a4.wav  lokey=68 hikey=70 pitch_keycenter=69
+<pre><code>&lt;region&gt; sample=a4.wav  lokey=68 hikey=70 pitch_keycenter=69
 &lt;region&gt; sample=c5.wav  lokey=71 hikey=73 pitch_keycenter=72
 &lt;region&gt; sample=eb5.wav lokey=74 hikey=76 pitch_keycenter=75
-</code></pre></div></div>
+</code></pre>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
@@ -444,14 +453,9 @@ for example, pedal noises which are triggered whether any keys are pressed or no
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

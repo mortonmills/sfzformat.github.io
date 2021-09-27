@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -271,9 +280,9 @@ for the specified velocity. N can be from 0 to 127.</p>
 
 <p>The player will interpolate lineraly between specified opcodes for unspecified ones:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>amp_velcurve_1=0.2 amp_velcurve_3=0.3
+<pre><code>amp_velcurve_1=0.2 amp_velcurve_3=0.3
 // amp_velcurve_2 is calculated to 0.25
-</code></pre></div></div>
+</code></pre>
 
 <p>If amp_velcurve_127 is not specified, the player will assign it the value of 1.</p>
       <h2 id="examples">
@@ -289,17 +298,17 @@ so that low-velocity notes will still produce a fairly loud sound. This is simil
 (but probably not quite identical mathematically) to setting amp_veltrack to less
 than 100.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// linear, compressed dynamic range
+<pre><code>// linear, compressed dynamic range
 // amplitude changes from 0.5 to 1
 amp_velcurve_1=0.5
-</code></pre></div></div>
+</code></pre>
 
 <p>It can also be used to set up a specific velocity response.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>amp_velcurve_1=0.1
+<pre><code>amp_velcurve_1=0.1
 amp_velcurve_63=0.25
 amp_velcurve_95=0.5
-</code></pre></div></div>
+</code></pre>
 
 <p>This opcode is also often used with dynamic layers to make each sample play at its full
 amplitude at the top of its velocity layer, as shown below for a kick drum with
@@ -308,20 +317,20 @@ below the lovel or above the hivel for a particular region. So, in practice, thi
 ends up meaning just setting amp_velcurve_N=1 with N being equal to the hivel value for
 each layer.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;hivel=31 amp_velcurve_31=1 sample=kick_vl1.wav
+<pre><code>&lt;region&gt;hivel=31 amp_velcurve_31=1 sample=kick_vl1.wav
 &lt;region&gt;lovel=32 hivel=63 amp_velcurve_63=1 sample=kick_vl2.wav
 &lt;region&gt;lovel=64 hivel=95 amp_velcurve_95=1 sample=kick_vl3.wav
 &lt;region&gt;lovel=96 sample=kick_vl4.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>This could also be combined with the first example so that velocity 1 hits will still
 be reasonably audible.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;hivel=31 amp_velcurve_1=0.3 amp_velcurve_31=1 sample=kick_vl1.wav
+<pre><code>&lt;region&gt;hivel=31 amp_velcurve_1=0.3 amp_velcurve_31=1 sample=kick_vl1.wav
 &lt;region&gt;lovel=32 hivel=63 amp_velcurve_63=1 sample=kick_vl2.wav
 &lt;region&gt;lovel=64 hivel=95 amp_velcurve_95=1 sample=kick_vl3.wav
 &lt;region&gt;lovel=96 sample=kick_vl4.wav
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="practical-considerations">
         
@@ -501,14 +510,9 @@ more risk of confusion than benefit to doing this.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

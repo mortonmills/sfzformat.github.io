@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -268,8 +277,8 @@
 <p>It’s possible for one LFO to use sub waveforms in addition to the main waveform.
 This can be used to create more complex LFOs.
 Up to 8 waveforms can be used in one LFO.
-The second waveform is set by <code class="language-plaintext highlighter-rouge">lfoN_scale2</code>, the third by <code class="language-plaintext highlighter-rouge">lfoN_scale3</code> etc.
-Using <code class="language-plaintext highlighter-rouge">lfoN_scale</code> with no number after the scale sets the scale
+The second waveform is set by <code>lfoN_scale2</code>, the third by <code>lfoN_scale3</code> etc.
+Using <code>lfoN_scale</code> with no number after the scale sets the scale
 for the main waveform, which is perhaps not needed very often.
 Scale will likely mostly be used on the sub waveforms,
 but it can also be set for the main waveform if needed.</p>
@@ -281,11 +290,11 @@ but it can also be set for the main waveform if needed.</p>
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_scale2=0.5
+<pre><code>lfo01_scale2=0.5
 lfo03_scale=0.7
-</code></pre></div></div>
+</code></pre>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_wave=12 //S&amp;H style LFO used here for randomization
+<pre><code>lfo01_wave=12 //S&amp;H style LFO used here for randomization
 lfo01_pitch=10
 lfo01_freq=2
 lfo01_freq_oncc1=3
@@ -294,7 +303,7 @@ lfo01_wave2=1 //Sine waveform for the secondary waveform
 lfo01_ratio2=4 //4 times faster
 lfo01_offset2=0 //No offset
 lfo01_scale2=0.3 //Shallower than the main wave
-</code></pre></div></div>
+</code></pre>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
@@ -443,14 +452,9 @@ lfo01_scale2=0.3 //Shallower than the main wave
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -265,12 +274,12 @@
 				<div class="col-md-9">
 					<article><h1>xfin_loccN / xfin_hiccN</h1><p>Fade in control based on MIDI CC.</p>
 
-<p><code class="language-plaintext highlighter-rouge">xfin_loccN</code> and <code class="language-plaintext highlighter-rouge">xfin_hiccN</code> set the range of values in the MIDI continuous
+<p><code>xfin_loccN</code> and <code>xfin_hiccN</code> set the range of values in the MIDI continuous
 controller N which will perform a fade-in in the region.</p>
 
 <p>The volume of the region will be zero for values of the MIDI continuous
-controller N lower than or equal to <code class="language-plaintext highlighter-rouge">xfin_loccN</code>, and maximum (as defined by the
-volume opcode) for values greater than or equal to <code class="language-plaintext highlighter-rouge">xfin_hiccN</code>.</p>
+controller N lower than or equal to <code>xfin_loccN</code>, and maximum (as defined by the
+volume opcode) for values greater than or equal to <code>xfin_hiccN</code>.</p>
       <h2 id="examples">
         
         
@@ -279,16 +288,16 @@ volume opcode) for values greater than or equal to <code class="language-plainte
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xfin_locc1=64
+<pre><code>xfin_locc1=64
 xfin_hicc1=127
-</code></pre></div></div>
+</code></pre>
 
 <p>This is used alongside <a href="xfout_loccN">xfout_loccN / xfout_hiccN</a> to create
 crossfaded dynamic layers for sustained instruments, for example to use the mod
 wheel to crossfade quiet tuba sustain samples to loud tuba sustain samples.
 It could also be used to crossfade wavetable samples, use one control to blend
 multiple microphone perspectives etc.
-When there are multiple regions under the same note wtih <code class="language-plaintext highlighter-rouge">xfin_loccN</code>, <code class="language-plaintext highlighter-rouge">xfin_hiccN</code>,
+When there are multiple regions under the same note wtih <code>xfin_loccN</code>, <code>xfin_hiccN</code>,
 <a href="xfout_loccN">xfout_loccN and xfout_hiccN</a> used to determine which regions
 are currently heard (and at what volume),
 all regions will be triggered - but some of them may play at zero volume,
@@ -445,14 +454,9 @@ volume from being triggered and consuming resources.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

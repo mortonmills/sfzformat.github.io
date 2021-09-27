@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -273,11 +282,11 @@ Let’s start with a simple hi-hat with closed hit, foot chik, half-open and ope
 samples, with the latter two on the same key and degree of openness selected by
 MIDI CC 4 - the common hi-hat pedal assignment in electronic drum kits.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=42 sample=hh_closed.wav
+<pre><code>&lt;region&gt;key=42 sample=hh_closed.wav
 &lt;region&gt;key=44 sample=hh_chik.wav
 &lt;region&gt;key=46 sample=hh_half_open.wav hicc4=63
 &lt;region&gt;key=46 sample=hh_open.wav locc4=64
-</code></pre></div></div>
+</code></pre>
       <h2 id="simple-self-muting">
         
         
@@ -296,14 +305,14 @@ Setting <a href="/opcodes/off_mode">off_mode</a> to normal and using <a href="/o
 or <a href="/opcodes/off_time">off_time</a> to set the time it takes for
 the previous sample to fade out also helps this sound a bit more natural.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 off_mode=normal
 ampeg_release=0.07
 &lt;region&gt;key=42 sample=hh_closed.wav group=1 off_by=1
 &lt;region&gt;key=44 sample=hh_chik.wav group=1 off_by=1
 &lt;region&gt;key=46 sample=hh_half_open.wav hicc4=63 group=1 off_by=1
 &lt;region&gt;key=46 sample=hh_open.wav locc4=64 group=1 off_by=1
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="hierarchical-self-muting">
         
@@ -337,7 +346,7 @@ header are completely separate concepts - “group” for the remainder of this
 article refers to the opcode, not the header, though group headers are also used
 in the code examples.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 // Here are the hi-hat samples
 off_mode=normal
 ampeg_release=0.07
@@ -368,7 +377,7 @@ ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
 loop_mode=loop_continuous off_mode=fast
 ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
 &lt;region&gt; key=44
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="special-treatment-of-foot-splashes">
         
@@ -404,7 +413,7 @@ MIDI that’s supposed to be the cowbell note), we’d need to set up one more g
 and have that mute itself. It will also need to be muted by all other types of
 hi-hat hits, except for fully open hits.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 //Here are the hi-hat samples
 off_mode=normal
 ampeg_release=0.07
@@ -454,7 +463,7 @@ ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
 ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
 &lt;region&gt; key=44
 &lt;region&gt; key=54
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="limiting-polyphony">
         
@@ -479,7 +488,7 @@ in practice, unless playing unrealistically dense trap hi-hat patterns, because
 they don’t ring very long anyway. Limiting the polyphony for the foot splash is
 not necessary at all, because it mutes itself.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 //Here are the hi-hat samples
 off_mode=normal
 ampeg_release=0.07
@@ -528,7 +537,7 @@ loop_mode=loop_continuous off_mode=fast
 ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
 ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
 &lt;region&gt; key=44
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="edge-cases">
         
@@ -557,7 +566,7 @@ the hi-hat’s <a href="/opcodes/amplitude">amplitude</a>, and applying a <a hre
 keep the amplitude at 100% unless the pedal is a good deal more closed than it was when the sample
 was triggered.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 //Here are the hi-hat samples
 off_mode=normal
 ampeg_release=0.07
@@ -579,7 +588,7 @@ v000=0.1
 v037=0.7
 v077=1
 v127=1
-</code></pre></div></div>
+</code></pre>
 
 <p>Using smoothing on the amplitude modulation helps avoid sudden jumps, though playing an
 open hit, closing the hi-hat pedal most of the way and then reopening it will still
@@ -624,7 +633,7 @@ groups which have polyphony will also have to be multiplied by the same factor.
 Here is an example with close and overhead, with slightly longer fadeout times
 for the more distant overhead mics:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 //Here are the hi-hat samples
 off_mode=normal
 
@@ -688,7 +697,7 @@ loop_mode=loop_continuous off_mode=fast
 ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
 ampeg_attack=0 ampeg_decay=0 ampeg_sustain=0 ampeg_release=0
 &lt;region&gt; key=44
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="header-organization">
         
@@ -729,7 +738,7 @@ the overhead mics and no room mic to be created without breaking anything, as
 each mic’s samples have separate groups. Having different polyphony numbers for
 different mics can result in an inconsistent sound, so it is not recommended.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 off_mode=normal
 
 //Bow hits
@@ -763,7 +772,7 @@ sample=ride_choke_oh.wav
 &lt;region&gt;
 key=71 ampeg_attack=0.15 group=43
 sample=ride_choke_rm.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>It is also possible to use &lt;[note_polyphony]&gt;(/opcodes/note_polyphony) here, which
 has the advantage of allowing &lt;[note_selfmask]&gt;(/opcodes/note_selfmask) to be used. This
@@ -781,7 +790,7 @@ is tracked separately for each MIDI note value.</p>
 <p>The above example modified to use note_polyphony instead of polyphony would look
 like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 off_mode=normal
 
 //Bow hits
@@ -815,7 +824,7 @@ sample=ride_choke_oh.wav
 &lt;region&gt;
 key=71 ampeg_attack=0.15 group=43
 sample=ride_choke_rm.wav
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="another-approach-to-limiting-polyphony">
         
@@ -837,7 +846,7 @@ will build up the most and bell hits the least. Of course, it’s not very possi
 to modulate the buildup of a cymbal in the real world, but that doesn’t mean it
 can’t be useful in the sampled world.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 off_mode=normal
 ampeg_release=0.1
 
@@ -870,7 +879,7 @@ sample=ride_edge_oh.wav
 key=59 group=42 off_by=42
 ampeg_release_oncc100=8
 sample=ride_edge_rm.wav
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="deep-sampled-hi-hat-example">
         
@@ -887,7 +896,7 @@ open, half open, open, foot chik, foot splash and pedal return samples, with
 separate shank and tip hits for tightly closed, closed, loosely closed and
 quarter open might look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+<pre><code>&lt;control&gt;
 //Key assignments - hi-hat
 #define $htclstkey 42
 #define $htchkkey 44
@@ -1303,7 +1312,7 @@ v000=0.1
 v037=0.7
 v077=1
 v127=1
-</code></pre></div></div>
+</code></pre>
 					</article>
 				</div>
 				<div class="col-md-3">
@@ -1430,14 +1439,9 @@ v127=1
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

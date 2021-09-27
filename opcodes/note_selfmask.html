@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -272,13 +281,13 @@
 <p>Default self-masking behavior is that higher-or-equal-velocity notes turn off
 lower-velocity notes, but lower-velocity notes do not turn off
 higher-velocity notes. A new note will always play.
-To be more precise, assuming a <code class="language-plaintext highlighter-rouge">note_polyphony=1</code>, the self-masking behavior by default is:</p>
+To be more precise, assuming a <code>note_polyphony=1</code>, the self-masking behavior by default is:</p>
 <ul>
   <li>If a low-velocity note is playing, a higher-or-equal velocity note kills the low-
 velocity note.</li>
   <li>If a high-velocity note is playing, a strictly-lower-velocity note will play without
 killing the high-velocity note.
-The <code class="language-plaintext highlighter-rouge">note_polyphony</code> opcode is thus not a strict polyphony limit but more of a hint for
+The <code>note_polyphony</code> opcode is thus not a strict polyphony limit but more of a hint for
 the instrument behavior. This behavior is indeed generally desirable when playing repeated
 piano notes, ride cymbals, hammered dulcimers etc. With note_selfmask set to off,
 notes turn off notes with the same pitch regardless of velocity, which generally
@@ -293,8 +302,8 @@ within the set limit, and can sound right for certain instruments.</li>
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>note_selfmask=off
-</code></pre></div></div>
+<pre><code>note_selfmask=off
+</code></pre>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
@@ -442,14 +451,9 @@ within the set limit, and can sound right for certain instruments.</li>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

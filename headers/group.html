@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -271,7 +280,7 @@ opcode as an alias for group, to reduce this confusion.</p>
 with the &lt;group&gt; opcode, and the parameters enumerated on it last till the next
 group opcode, or till the end of the file.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 ampeg_attack=0.04 ampeg_release=0.45
 &lt;region&gt; sample=trumpet_pp_c4.wav key=c4
 &lt;region&gt; sample=trumpet_pp_c#4.wav key=c#4
@@ -282,20 +291,20 @@ ampeg_attack=0.04 ampeg_release=0.45
 ampeg_attack=0.03 ampeg_release=0.42
 &lt;region&gt; sample=trumpet_pp_e4.wav key=e4
 &lt;region&gt; sample=trumpet_pp_f4.wav key=f4
-</code></pre></div></div>
+</code></pre>
 
 <p>If the same opcode is defined at both the group and region levels, the region
 setting overrides the group setting and is used. If an opcode is defined under
 the global level and group level but not region, the group setting overrides
 the global setting. For example:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;
+<pre><code>&lt;group&gt;
 ampeg_attack=0.04 ampeg_release=0.45
 &lt;region&gt; sample=trumpet_pp_c4.wav key=c4
 &lt;region&gt; ampeg_attack=0.05 sample=trumpet_pp_c#4.wav key=c#4
 &lt;region&gt; sample=trumpet_pp_d4.wav key=d4
 &lt;region&gt; sample=trumpet_pp_d#4.wav key=d#4
-</code></pre></div></div>
+</code></pre>
 
 <p>With the above code, C#4 would use an attack time of 0.05 seconds,
 while C4, D4 and D#4 would use the 0.04 seconds set at the group level.</p>
@@ -425,14 +434,9 @@ while C4, D4 and D#4 would use the 0.04 seconds set at the group level.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

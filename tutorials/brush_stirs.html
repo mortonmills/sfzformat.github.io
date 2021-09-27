@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -319,10 +328,10 @@ the purposes of this example they can be half the length of speed 1.</p>
 drum hit, and using a simple <a href="/modulations/envelope_generators#sfz-1-egs">volume envelope</a>
 to fade this sample in over a time, and then fade it out.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=26 loop_mode=one_shot
+<pre><code>&lt;region&gt;key=26 loop_mode=one_shot
 sample=snare_stir_speed_1.wav
 ampeg_attack=1.0 ampeg_decay=1.0 ampeg_sustain=0
-</code></pre></div></div>
+</code></pre>
 
 <p>The resulting volume envelope will look something like this. The illustrations are
 not precise, only general shapes.</p>
@@ -334,13 +343,13 @@ faster speed on top of it near the stir’s peak, with half the duration
 of the base layer. We use ampeg_delay to delay the start of the second
 layer by the same amount, so the peaks of both layers align in time.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=26 loop_mode=one_shot
+<pre><code>&lt;region&gt;key=26 loop_mode=one_shot
 sample=snare_stir_speed_1.wav
 ampeg_attack=1.0 ampeg_decay=1.0 ampeg_sustain=0
 &lt;region&gt;key=26 loop_mode=one_shot
 sample=snare_stir_speed_3.wav
 ampeg_delay=0.5 ampeg_attack=0.5 ampeg_decay=0.5 ampeg_sustain=0
-</code></pre></div></div>
+</code></pre>
 
 <p><img src="/assets/img/tutorials/brush_stirs/stir2.jpg" class="img-fluid" alt="Two layer stir envelopes" /></p>
     
@@ -358,7 +367,7 @@ envelope durations. Extremely short stirs, lasting only a small fraction
 of a second, are obviously not going to sound realistic, so we can use
 a minimum value to prevent that. Let’s use CC1 (standard mod wheel).</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=26 loop_mode=one_shot
+<pre><code>&lt;region&gt;key=26 loop_mode=one_shot
 sample=snare_stir_speed_1.wav
 ampeg_attack=0.1 ampeg_decay=0.1 ampeg_sustain=0
 ampeg_attackcc1=0.4 ampeg_decaycc1=0.4
@@ -366,7 +375,7 @@ ampeg_attackcc1=0.4 ampeg_decaycc1=0.4
 sample=snare_stir_speed_3.wav
 ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
 ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="making-the-shape-more-realistic">
         
@@ -385,7 +394,7 @@ so the peak will remain aligned at all values of the modulation
 parameter. The attack stage should generally be shorter than the hold
 stage.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=26 loop_mode=one_shot
+<pre><code>&lt;region&gt;key=26 loop_mode=one_shot
 sample=snare_stir_speed_1.wav
 ampeg_attack=0.05 ampeg_hold=0.05 ampeg_decay=0.1 ampeg_sustain=0
 ampeg_attackcc1=0.05 ampeg_holdcc1=0.35 ampeg_decaycc1=0.4
@@ -393,7 +402,7 @@ ampeg_attackcc1=0.05 ampeg_holdcc1=0.35 ampeg_decaycc1=0.4
 sample=snare_stir_speed_3.wav
 ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
 ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
-</code></pre></div></div>
+</code></pre>
 
 <p><img src="/assets/img/tutorials/brush_stirs/stir3.jpg" class="img-fluid" alt="Stir envelopes using hold in base layer" /></p>
 
@@ -402,7 +411,7 @@ with linear envelopes. Changing the envelope curves accomplishes this,
 though the initial attack envelope of the base layer can remain
 linear. The below values seem like a decent start.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;key=26 loop_mode=one_shot
+<pre><code>&lt;region&gt;key=26 loop_mode=one_shot
 sample=snare_stir_speed_1.wav
 ampeg_attack=0.05 ampeg_hold=0.05 ampeg_decay=0.1 ampeg_sustain=0
 ampeg_attackcc1=0.05 ampeg_holdcc1=0.35 ampeg_decaycc1=0.4
@@ -412,7 +421,7 @@ sample=snare_stir_speed_3.wav
 ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
 ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
 ampeg_attack_shape=3.5 ampeg_decay_shape=-1.4
-</code></pre></div></div>
+</code></pre>
 
 <p><img src="/assets/img/tutorials/brush_stirs/stir4.jpg" class="img-fluid" alt="Stir envelopes with curves" /></p>
     
@@ -433,7 +442,7 @@ sharp-envelope and flat-envelope regions, or use locc/hicc to select between
 several pre-baked <a href="/opcodes/ampeg_attack_shape">envelope shapes</a>. Here’s an
 example of the latter method.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;key=26 loop_mode=one_shot
+<pre><code>&lt;group&gt;key=26 loop_mode=one_shot
 
 &lt;region&gt;hicc100=42
 sample=snare_stir_speed_1.wav
@@ -467,7 +476,7 @@ sample=snare_stir_speed_3.wav
 ampeg_delay=0.05 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
 ampeg_delaycc1=0.25 ampeg_attackcc1=0.25 ampeg_decaycc1=0.25
 ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="adding-ornaments">
         
@@ -484,7 +493,7 @@ to trigger short ornaments which will add a brief extra sound to the
 stir, thus emulating a momentary acceleration of the brush. We can use
 one of the higher stir speeds for this.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;key=27 loop_mode=one_shot sample=snare_stir_speed_2.wav
+<pre><code>&lt;group&gt;key=27 loop_mode=one_shot sample=snare_stir_speed_2.wav
 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
 ampeg_attackcc1=0.2 ampeg_decaycc1=0.2
 
@@ -496,7 +505,7 @@ ampeg_attack_shape=3.5 ampeg_decay_shape=-1.4
 
 &lt;region&gt;hicc100=42
 ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="accents">
         
@@ -512,7 +521,7 @@ short, aggressive stirs, or added on top of basic stirs to create more complex
 patterns. The difference in the SFZ here is that the attack curve shape can be applied to
 the attack portion as well, and there is no hold stage in the envelope.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;key=28 loop_mode=one_shot
+<pre><code>&lt;group&gt;key=28 loop_mode=one_shot
 
 &lt;region&gt;hicc100=42
 sample=snare_stir_speed_2.wav
@@ -546,7 +555,7 @@ sample=snare_stir_speed_4.wav
 ampeg_attack=0.05 ampeg_decay=0.05 ampeg_sustain=0
 ampeg_attackcc1=0.05 ampeg_decaycc1=0.2
 ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="muting">
         
@@ -573,7 +582,7 @@ out of the mute groups and can be layered on top of other sounds without muting 
 For a more sophisticated use of mute groups with other pieces of the drum kit,
 please see <a href="/tutorials/cymbal_muting">cymbal muting</a>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;global&gt;loop_mode=one_shot off_mode=normal
+<pre><code>&lt;global&gt;loop_mode=one_shot off_mode=normal
 ampeg_release=0.1 ampeg_releasecc1=0.2
 
 &lt;group&gt;key=26
@@ -675,7 +684,7 @@ group=2 off_by=2
 
 &lt;region&gt;group=1 off_by=1
 &lt;region&gt;group=2 off_by=2
-</code></pre></div></div>
+</code></pre>
 
 <p>It is, of course, possible to apply <a href="/opcodes/seq_position">round robins</a> and <a href="/opcodes/lovel">dynamic layers</a> to this,
 just like any other drum sound. That is left as an exercise to the reader.</p>
@@ -700,12 +709,12 @@ at the beginning, looping or crossfading noisy samples is very easy as there are
 no phase issues. We also set the <a href="/opcodes/loop_mode">loop_mode</a> opcode to continuous
 instead of the one_shot setting used in the earlier approach.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;group&gt;key=26 loop_mode=continuous ampeg_release=0.25
+<pre><code>&lt;group&gt;key=26 loop_mode=continuous ampeg_release=0.25
 &lt;region&gt;sample=snare_stir_speed_1.wav xfin_locc1=0 xfin_hicc1=31 xfout_locc1=32 xfout_hicc1=63
 &lt;region&gt;sample=snare_stir_speed_2.wav xfin_locc1=32 xfin_hicc1=63 xfout_locc1=64 xfout_hicc1=95
 &lt;region&gt;sample=snare_stir_speed_3.wav xfin_locc1=64 xfin_hicc1=95 xfout_locc1=96 xfout_hicc1=127
 &lt;region&gt;sample=snare_stir_speed_4.wav xfin_locc1=96 xfin_hicc1=127
-</code></pre></div></div>
+</code></pre>
 
 <p>In practice, this approach has proven more difficult to use, with it being easy
 to sound obviously unrealistic by moving the MIDI CC parameter too quickly or
@@ -854,14 +863,9 @@ and playablity.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

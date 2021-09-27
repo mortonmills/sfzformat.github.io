@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -282,17 +291,17 @@ to what the opcode would normally do. These are: <a href="/opcodes/offset">offse
 <p>For example, this would have a sample offset of 500 when the modulating CC is
 at 0, and a sample offset of 1000 when the modulating CC is at max:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>offset=500
+<pre><code>offset=500
 offset_cc100=500
-</code></pre></div></div>
+</code></pre>
 
 <p>It’s also possible to just specify the modulation, in which case the
 default value is what will be modulated. The defaults for offset, delay and
 EQ band gain are 0, so this would result in the offset being modulated between
 0 and 1000:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>offset_cc100=1000
-</code></pre></div></div>
+<pre><code>offset_cc100=1000
+</code></pre>
     
       <h2 id="modulating-default-values">
         
@@ -308,8 +317,8 @@ bandwidth and center frequency also have non-zero defaults,
 for example eq2_freq is 500 if not specified. So, this would modulate the center
 frequency of the second EQ band between 500 and 1500 if eq2_freq is left at default:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eq2_freqcc110=1000
-</code></pre></div></div>
+<pre><code>eq2_freqcc110=1000
+</code></pre>
     
       <h2 id="velocity-tracking-keytracking-and-randomization">
         
@@ -323,18 +332,18 @@ frequency of the second EQ band between 500 and 1500 if eq2_freq is left at defa
 bandwidth) can additionally be modulated by velocity. For example, if we want to
 make a sound brighter when the velocity is higher, we might use something like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eq1_vel2gain=-6
+<pre><code>eq1_vel2gain=-6
 eq2_vel2gain=12
 eq2_vel2freq=500
-</code></pre></div></div>
+</code></pre>
 
 <p>The <a href="/opcodes/xfin_loccN">xfin</a>/<a href="/opcodes/xfout_loccN">xfout</a> CCs are also a
 way to fade sounds in and out using MIDI CC. An example of one note with two
 dynamic layers being crossfaded:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt;sample=e4_ft_p.wav xfin_locc1=0 xfin_hicc1=63 xfout_locc1=64 xfout_hicc1=127
+<pre><code>&lt;region&gt;sample=e4_ft_p.wav xfin_locc1=0 xfin_hicc1=63 xfout_locc1=64 xfout_hicc1=127
 &lt;region&gt;sample=e4_ft_f.wav xfin_locc1=64 xfin_hicc1=127
-</code></pre></div></div>
+</code></pre>
 
 <p>In addition to MIDI CC, crossfades can also use MIDI note number and velocity as
 modulation sources, and the <a href="/opcodes/xf_cccurve">xf_cccurve</a>, <a href="/opcodes/xf_keycurve">xf_keycurve</a>
@@ -348,11 +357,11 @@ velocity. The nomenclature for volume is a little confusing, with <a href="/opco
 “gain” in the name, while the others are called <a href="/opcodes/amp_random">amp_random</a>,
 <a href="/opcodes/amp_keytrack">amp_keytrack</a> and <a href="/opcodes/amp_veltrack">amp_veltrack</a>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gain_cc80=-6
+<pre><code>gain_cc80=-6
 amp_random=3
 amp_keytrack=-1.3
 amp_veltrack=80
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="lfos-and-envelopes">
         
@@ -368,29 +377,29 @@ depth can be modulated by MIDI CC. Each LFO also has a simple envelope with
 delay and fade, but modulating the duration of these is not allowed under the
 SFZ1 spec (though it is with SFZ2 LFOs). Here’s a typical pitch vibrato LFO:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pitchlfo_freq=2
+<pre><code>pitchlfo_freq=2
 pitchlfo_freqcc50=10
 pitchlfo_depthcc51=33
-</code></pre></div></div>
+</code></pre>
 
 <p>Each envelope parameter can also be modulated by CC, or by velocity. Here’s a
 exmple setup for a synth-style ADSR volume envelope (hold is not specified so the
 default hold value of 0 is used) controlled by CCs and some initial
 minimum values set for attack and release, along with a default sustain of 0:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ampeg_attack=0.001
+<pre><code>ampeg_attack=0.001
 ampeg_attack_oncc40=1
 ampeg_decay_oncc41=4
 ampeg_sustain=1
 ampeg_sustain_oncc42=100
 ampeg_release=0.1
 ampeg_release_oncc43=0.9
-</code></pre></div></div>
+</code></pre>
 
 <p>Modulating envelope parameters with velocity allows, for example, setting up a filter
 on an acid bass which will sweep farther with higher velocity, and also sweep faster.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cutoff=120
+<pre><code>cutoff=120
 resonance=12
 fileg_attack=0.5
 fileg_decay=1
@@ -398,7 +407,7 @@ fileg_depth=500
 fileg_vel2attack=-0.4
 fileg_vel2decay=-0.8
 fileg_vel2depth=4000
-</code></pre></div></div>
+</code></pre>
 
 <p>If something is not described above, then modulating it is not possible under the
 SFZ1 specification, and will require <a href="/tutorials/sfz2_modulations">using SFZ2</a>
@@ -529,14 +538,9 @@ or possibly some extension opcodes.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

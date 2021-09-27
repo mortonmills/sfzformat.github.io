@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -184,7 +183,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -204,6 +208,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -336,15 +345,15 @@ but that’s a coincidence.</p>
 
   <ul>
     <li>
-      <p><a href="/tutorials/drum_basics">Drum basics</a> - covers <code class="language-plaintext highlighter-rouge">global</code>, <code class="language-plaintext highlighter-rouge">group</code> and
-<code class="language-plaintext highlighter-rouge">region</code> headers, <code class="language-plaintext highlighter-rouge">sample</code>, <code class="language-plaintext highlighter-rouge">key</code>, <code class="language-plaintext highlighter-rouge">lovel</code> / <code class="language-plaintext highlighter-rouge">hivel</code>, <code class="language-plaintext highlighter-rouge">amp_velcurve_N</code>,
-<code class="language-plaintext highlighter-rouge">seq_length</code>, <code class="language-plaintext highlighter-rouge">seq_position</code> and <code class="language-plaintext highlighter-rouge">lorand</code> / <code class="language-plaintext highlighter-rouge">hirand</code>.</p>
+      <p><a href="/tutorials/drum_basics">Drum basics</a> - covers <code>global</code>, <code>group</code> and
+<code>region</code> headers, <code>sample</code>, <code>key</code>, <code>lovel</code> / <code>hivel</code>, <code>amp_velcurve_N</code>,
+<code>seq_length</code>, <code>seq_position</code> and <code>lorand</code> / <code>hirand</code>.</p>
     </li>
     <li>
       <p><a href="/tutorials/sustained_note_basics">Sustained note basics</a> - using a flute
 as an example.
-Adds <code class="language-plaintext highlighter-rouge">lokey</code> / <code class="language-plaintext highlighter-rouge">hikey</code>, <code class="language-plaintext highlighter-rouge">pitch_keycenter</code>, <code class="language-plaintext highlighter-rouge">xfin</code> / <code class="language-plaintext highlighter-rouge">xfout</code>, <code class="language-plaintext highlighter-rouge">locc</code> / <code class="language-plaintext highlighter-rouge">hicc</code>,
-<code class="language-plaintext highlighter-rouge">keyswitching</code>, <code class="language-plaintext highlighter-rouge">group</code>, <code class="language-plaintext highlighter-rouge">off_by</code> and <code class="language-plaintext highlighter-rouge">off_mode</code>.</p>
+Adds <code>lokey</code> / <code>hikey</code>, <code>pitch_keycenter</code>, <code>xfin</code> / <code>xfout</code>, <code>locc</code> / <code>hicc</code>,
+<code>keyswitching</code>, <code>group</code>, <code>off_by</code> and <code>off_mode</code>.</p>
     </li>
   </ul>
 
@@ -360,8 +369,8 @@ asymmetrical vibrato, and even filter wobble.</p>
 true sampled legato.</p>
     </li>
     <li>
-      <p><a href="/tutorials/cymbal_muting">Cymbal muting</a> - using <code class="language-plaintext highlighter-rouge">group</code>, <code class="language-plaintext highlighter-rouge">off_by</code>, <code class="language-plaintext highlighter-rouge">off_mode</code>
-and <code class="language-plaintext highlighter-rouge">polyphony</code> to make hi-hat and cymbal notes mute previous notes
+      <p><a href="/tutorials/cymbal_muting">Cymbal muting</a> - using <code>group</code>, <code>off_by</code>, <code>off_mode</code>
+and <code>polyphony</code> to make hi-hat and cymbal notes mute previous notes
 in a musically useful way.</p>
     </li>
     <li>
@@ -494,14 +503,9 @@ in a musically useful way.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

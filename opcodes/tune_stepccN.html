@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -265,7 +274,7 @@
 				<div class="col-md-9">
 					<article><h1>tune / pitch</h1><p>The fine tuning for the sample, in cents.</p>
 
-<p>Range of <code class="language-plaintext highlighter-rouge">tune</code> in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least
+<p>Range of <code>tune</code> in the SFZ1 spec is ±1 semitone, from -100 to 100, though at least
 in ARIA, it seems a broader range is supported, at least -2400 to 2400 cents.</p>
       <h2 id="examples">
         
@@ -275,10 +284,10 @@ in ARIA, it seems a broader range is supported, at least -2400 to 2400 cents.</p
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tune=33
+<pre><code>tune=33
 tune=-30
 tune=94
-</code></pre></div></div>
+</code></pre>
 
 <p>Uses include correcting the intonation of naturally off-pitch samples, and
 detuning unison voices.</p>
@@ -289,16 +298,16 @@ the pitch down by the tuning range, then have modulation move it up by twice the
 tuning range, so that when the control is at the midpoint, the region will play at
 its orignal, unmodulated pitch. For a range of 100 cents this would look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tune=-100
+<pre><code>tune=-100
 pitch_oncc27=200
-</code></pre></div></div>
+</code></pre>
 
 <p>Another way is to use default <a href="/headers/curve">curve</a> 1 which ranges from -1 to 1,
 and set the pitch control to the tuning range.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pitch_oncc27=100
+<pre><code>pitch_oncc27=100
 pitch_curvecc27=1
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="practical-considerations">
         
@@ -308,7 +317,7 @@ pitch_curvecc27=1
         
       </h2>
 
-<p>In ARIA, <code class="language-plaintext highlighter-rouge">tune_*ccN</code> can also be used as an alias for <code class="language-plaintext highlighter-rouge">pitch_*ccN</code> (see below).</p>
+<p>In ARIA, <code>tune_*ccN</code> can also be used as an alias for <code>pitch_*ccN</code> (see below).</p>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
@@ -489,14 +498,9 @@ pitch_curvecc27=1
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

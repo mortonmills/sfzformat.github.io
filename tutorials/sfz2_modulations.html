@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -334,13 +343,13 @@ desired target.</p>
 <p>The available modulation targets for LFOs are These destinations are
 added as a suffix to ‘lfoN_’. For example</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch=100
-</code></pre></div></div>
+<pre><code>lfo01_pitch=100
+</code></pre>
 
 <p>makes LFO 01 affect pitch with a max depth of 100 cents.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo03_freq_lfo01_oncc117=1.3
-</code></pre></div></div>
+<pre><code>lfo03_freq_lfo01_oncc117=1.3
+</code></pre>
 
 <p>would make LFO 03 add up to 1.3 Hertz to
 the frequency of LFO 01, with the amount modulated by MIDI CC 117.</p>
@@ -447,19 +456,19 @@ the first and second filter:</p>
 and volume vibrato (tremolo) with the rate, pitch vibrato depth, tremolo
 depth, delay and fade each controlled by a separate MIDI CC parameter:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch_oncc111=22 // Vibrato LFO
+<pre><code>lfo01_pitch_oncc111=22 // Vibrato LFO
 lfo01_freq=2
 lfo01_freq_oncc113=7
 lfo01_delay_oncc114=0.500
 lfo01_fade_oncc115=0.500
 lfo01_volume=0 // This LFO also does tremolo
 lfo01_volume_oncc112=2
-</code></pre></div></div>
+</code></pre>
 
 <p>And an LFO which does just pitch vibrato, and has a second LFO modulating its
 rate to create some unsteadiness:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch_oncc111=22 // Vibrato LFO
+<pre><code>lfo01_pitch_oncc111=22 // Vibrato LFO
 lfo01_freq=2
 lfo01_freq_oncc113=7
 lfo01_delay_oncc114=0.500
@@ -469,12 +478,12 @@ lfo2_freq_lfo1_oncc116=3   //Affect the rate of the other LFO for unsteady vibra
 lfo02_wave=1
 lfo02_freq=0.1
 lfo02_freq_oncc116=0.9
-</code></pre></div></div>
+</code></pre>
 
 <p>For randomized humanization, the extended MIDI CC 135 can be used to randomize the
 initial phase and speed of the second LFO.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch_oncc111=22 // Vibrato LFO
+<pre><code>lfo01_pitch_oncc111=22 // Vibrato LFO
 lfo01_freq=2
 lfo01_freq_oncc113=7
 lfo01_delay_oncc114=0.500
@@ -486,7 +495,7 @@ lfo02_freq=0.1
 lfo02_freq_oncc116=0.8
 lfo02_phase_oncc135=1
 lfo02_freq_oncc135=0.2
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="envelopes">
         
@@ -523,8 +532,8 @@ to create these envelopes are:</p>
 <p>Similarly to LFOs, envelopes have assignable modulation targets. These
 destinations are added as a suffix to ‘egN_’  - so, for example:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eg01_pitch=2400
-</code></pre></div></div>
+<pre><code>eg01_pitch=2400
+</code></pre>
 
 <p>would have envelope 01 modulate pitch, with an envelope depth of 2400 cents.</p>
 
@@ -601,14 +610,14 @@ destinations are added as a suffix to ‘egN_’  - so, for example:</p>
 lower, with the depth and time modulated by MIDI CCs. The envelope will statt at a lower
 value at envelope point 0, and return the pitch to normal at envelope point 1.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eg01_sustain=1 //Pitch envelope setup for slides
+<pre><code>eg01_sustain=1 //Pitch envelope setup for slides
 eg01_level0=1
 eg01_level1=0
 eg01_time0=0
 eg01_time1=0
 eg01_pitch_oncc100=-1200
 eg01_time1_oncc101=1
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="using-lfos-and-evelopes-togehter">
         
@@ -630,7 +639,7 @@ to lower the pitch by the same amount as the vibrato depth. Using an envelope fo
 allows us to delay the onset of the vibrato (again, an important element of idiomatic
 saxophone vibrato) without a discontinuous jump in pitch.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch_oncc111=20 //Saxy vibrato LFO - goes down from the main pitch
+<pre><code>lfo01_pitch_oncc111=20 //Saxy vibrato LFO - goes down from the main pitch
 lfo01_freq=2
 lfo01_freq_oncc112=8
 lfo01_phase=0.25 //To make it start at the top
@@ -644,7 +653,7 @@ eg01_time0=0
 eg01_time1=0
 eg01_time1_oncc116=1
 eg01_time2=0
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="using-sfz1-and-sfz2-modulations-together">
         
@@ -659,14 +668,14 @@ the above using the SFZ1 pitch envelope, as it is sufficient in this case, with 
 LFO. Setting the initial phase and modulating the delay with MIDI CC would not be possible
 with the SFZ1 pitch LFO.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lfo01_pitch_oncc111=20 //Saxy vibrato LFO - goes down from the main pitch
+<pre><code>lfo01_pitch_oncc111=20 //Saxy vibrato LFO - goes down from the main pitch
 lfo01_freq=2
 lfo01_freq_oncc112=8
 lfo01_phase=0.25 //To make it start at the top
 lfo01_delay_oncc116=1
 pitcheg_delay_oncc116=1 //Pitch envelope to drop the central pitch when sax vibrato kicks in
 pitcheg_depth_oncc111=-20
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="smoothccn-and-stepccn">
         
@@ -813,14 +822,9 @@ being a very useful one.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

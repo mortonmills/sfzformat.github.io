@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -277,7 +286,7 @@ category of opcodes:</p>
 fileg (filter) and pitcheg (pitch).</p>
 
 <p>The EG destinations are represented by (eg type) in the below list - so
-<code class="language-plaintext highlighter-rouge">ampeg_attack</code> would be the amplitude envelope attack, <code class="language-plaintext highlighter-rouge">pitcheg_sustain</code> would be
+<code>ampeg_attack</code> would be the amplitude envelope attack, <code>pitcheg_sustain</code> would be
 the pitch envelope sustain level etc.</p>
 
 <p>These are 6-points Delay-Attack-Hold-Decay-Sustain-Release.</p>
@@ -289,7 +298,7 @@ the pitch envelope sustain level etc.</p>
   <li><a href="/opcodes/ampeg_decay">(eg type)_decay_oncc</a></li>
   <li><a href="/opcodes/ampeg_delay">(eg type)_delay</a></li>
   <li><a href="/opcodes/ampeg_delay">(eg type)_delay_oncc</a></li>
-  <li><a href="/opcodes/ampeg_depth">(eg type)_depth</a></li>
+  <li><a href="/opcodes/fileg_depth">(eg type)_depth</a></li>
   <li><a href="/opcodes/ampeg_hold">(eg type)_hold</a></li>
   <li><a href="/opcodes/ampeg_hold">(eg type)_hold_oncc</a></li>
   <li><a href="/opcodes/ampeg_release">(eg type)_release</a></li>
@@ -498,14 +507,9 @@ with an envelope depth of 2400 cents.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

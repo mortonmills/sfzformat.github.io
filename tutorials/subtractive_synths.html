@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -290,7 +299,7 @@ subtracted from the sound by filter, the volume envelope is probably
 the most fundamental modulation. Here is an <a href="/opcodes/ampeg_attack">AHDSR envelope</a> including
 <a href="/headers/control">control</a> parameter labels and defaults.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+<pre><code>&lt;control&gt;
 label_cc100=Attack time
 label_cc101=Hold time
 label_cc102=Decay time
@@ -311,7 +320,7 @@ ampeg_hold_oncc101=1
 ampeg_decay_oncc102=5
 ampeg_sustain_oncc103=100
 ampeg_release_oncc104=2
-</code></pre></div></div>
+</code></pre>
 
 <p>An ADSR envelope would simple leave out the <a href="/opcodes/ampeg_hold">hold</a> stage control,
 leaving the default hold time of zero.</p>
@@ -353,7 +362,7 @@ organic. That’s set per oscillator, rather than globally, like
 this, with CC 18 selecting the oscillator, and CC 106 being the
 envelope soften:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;master&gt;
+<pre><code>&lt;master&gt;
 locc18=11
 hicc18=20
 ampeg_decay_oncc106=1.25
@@ -396,7 +405,7 @@ hicc18=70
 &lt;master&gt;
 locc18=71
 #include "mappings/unitra_all.sfz"
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="basic-filter">
         
@@ -411,7 +420,7 @@ with <a href="/opcodes/cutoff">cutoff</a> and <a href="/opcodes/resonance">reson
 adjustable <a href="/extensions/midi_ccs">velocity</a> tracking using <a href="/opcodes/varNN_mod">var</a>
 a two-stage <a href="/opcodes/fileg_attack">filter cutoff envelope</a>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+<pre><code>&lt;control&gt;
 label_cc120=Filter cutoff
 label_cc121=Resonance
 label_cc124=Veltrack
@@ -442,7 +451,7 @@ fileg_attack=0
 fileg_attackcc126=0.5
 fileg_decay=0.001
 fileg_decaycc127=2
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="filter-keytracking">
         
@@ -478,7 +487,7 @@ at all standard, and means the base cutoff has moderate
 positive keytracking while the cutoff modulation has
 negative keytracking.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//By default, cutoff modulation is measured in cents
+<pre><code>//By default, cutoff modulation is measured in cents
 //To make the modulation not keytrack, we make a kludge
 //Using var
 cutoff=250
@@ -489,17 +498,17 @@ var02_curvecc120=0
 var02_oncc133=1
 var02_curvecc133=11
 fil_keytrack=70
-</code></pre></div></div>
+</code></pre>
 
 <p>At the end of the SFZ file, the <a href="/headers/curve">curve</a> is then specified:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;curve&gt;
+<pre><code>&lt;curve&gt;
 curve_index=11
 v000=1
 v024=1
 v084=0.63
 v127=0.25
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="more-filter-possibilities">
         
@@ -535,7 +544,7 @@ vibrato section.</p>
 (for wobble). Here is a typical setup using one <a href="/modulations/lfo">LFO</a> to modulate
 all three.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+<pre><code>&lt;control&gt;
 label_cc111=Vibrato to pitch
 label_cc112=Vibrato speed
 label_cc113=Vibrato to cutoff
@@ -555,7 +564,7 @@ lfo01_volume_oncc114=6
 //Wobble
 lfo01_cutoff=0
 lfo01_cutoff_oncc113=3600
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="humanized-vibrato">
         
@@ -579,7 +588,7 @@ useful for creating more complex pads, for example. Similar
 principles could also be used to emulate analog oscillators’
 much more subtle pitch drift.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+<pre><code>&lt;control&gt;
 label_cc111=Vibrato to pitch
 label_cc112=Vibrato speed
 label_cc113=Vibrato to cutoff
@@ -624,7 +633,7 @@ lfo04_phase_oncc135=1
 lfo04_freq=0.01
 lfo04_freq_oncc135=0.25 //Randomly from almost not moving at all to still pretty slow
 lfo04_volume_oncc117=1.5 //Slight volume changes
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="unison-and-detune">
         
@@ -658,7 +667,7 @@ in stereo - not width.</p>
 is applied globally to effecitvely randomize each voice’s phase. With
 true single-cycle waveforms, the max offset would have to be set to
 match each voice’s max sample length.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+<pre><code>&lt;control&gt;
 label_cc25=Unison
 label_cc26=Width
 label_cc27=Detune
@@ -691,7 +700,7 @@ pan_cc26=100
 tune_cc27=33
 amplitude_cc25=100
 #include "sample_map_transposed_2.sfz"
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="more-complex-detune">
         
@@ -710,7 +719,7 @@ any typical hardware analog synthesizer’s feature set, but it
 does have something in common with the way real world choirs
 or instrumental ensembles find a commmon pitch.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+<pre><code>&lt;control&gt;
 label_cc25=Unison
 label_cc26=Width
 label_cc27=Detune
@@ -752,7 +761,7 @@ tune_cc27=33
 pitcheg_depth_oncc28=150
 pitcheg_decay_oncc29=5
 #include "sample_map_transposed_2.sfz"
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="waveform-selection-and-oscillator-mixing">
         
@@ -788,7 +797,7 @@ tutorial</a>.</p>
 settings, along with oscillator selection and mixing, are inside SFZ files
 added via the <a href="/opcodes/include">include</a> directives.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+<pre><code>&lt;control&gt;
 label_cc15=Bass Osc Vol
 label_cc16=Bass Osc Sel
 label_cc17=Osc 1 Vol
@@ -945,7 +954,7 @@ v000=1
 v024=1
 v084=0.63
 v127=0.25
-</code></pre></div></div>
+</code></pre>
 					</article>
 				</div>
 				<div class="col-md-3">
@@ -1072,14 +1081,9 @@ v127=0.25
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

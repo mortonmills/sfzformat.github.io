@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -275,27 +284,27 @@ names (C-1 to G9)</p>
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sw_down=C3
+<pre><code>sw_down=C3
 sw_down=24
 sw_up=25
-</code></pre></div></div>
+</code></pre>
 
-<p>The difference between <code class="language-plaintext highlighter-rouge">sw_down</code> and <a href="/opcodes/sw_last">sw_last</a> is that  <code class="language-plaintext highlighter-rouge">sw_last</code>
+<p>The difference between <code>sw_down</code> and <a href="/opcodes/sw_last">sw_last</a> is that  <code>sw_last</code>
 is a “sticky” keyswitch - after releasing the keyswitch note, it continues to
-affect notes until another keyswitch is pressed. <code class="language-plaintext highlighter-rouge">sw_down</code>, on the other hand, is
+affect notes until another keyswitch is pressed. <code>sw_down</code>, on the other hand, is
 “non-sticky” and only affects notes played while the switch is held down. It could
 also possibly be used for true legato instead of <a href="/opcodes/sw_previous">sw_previous</a>.</p>
 
-<p>If there is a default articulation which should sound when no <code class="language-plaintext highlighter-rouge">sw_down</code> keys are
-pressed, <code class="language-plaintext highlighter-rouge">sw_up</code> should be defined for those regions. For example,
+<p>If there is a default articulation which should sound when no <code>sw_down</code> keys are
+pressed, <code>sw_up</code> should be defined for those regions. For example,
 if there is a flute with a default sustain articulation which should not sound
-when an ornamentation is selected using <code class="language-plaintext highlighter-rouge">sw_down</code>, the default sustain articulation
-can use <code class="language-plaintext highlighter-rouge">sw_up</code> so it only sounds when no ornamentation keyswitch is held down.</p>
+when an ornamentation is selected using <code>sw_down</code>, the default sustain articulation
+can use <code>sw_up</code> so it only sounds when no ornamentation keyswitch is held down.</p>
 
-<p>In ARIA, either <code class="language-plaintext highlighter-rouge">sw_down</code> or <code class="language-plaintext highlighter-rouge">sw_up</code> can be a note in the playable range, regardless
+<p>In ARIA, either <code>sw_down</code> or <code>sw_up</code> can be a note in the playable range, regardless
 of whether <a href="/opcodes/sw_lokey">sw_lokey/hikey</a> is defined or not. In rgc sfz, they
-can be in the playable range if <code class="language-plaintext highlighter-rouge">sw_lokey/hikey</code> are not defined, but if they
-are defined, then <code class="language-plaintext highlighter-rouge">sw_down</code> and <code class="language-plaintext highlighter-rouge">sw_up</code> notes must fall in the <code class="language-plaintext highlighter-rouge">sw_lokey/hikey</code> range.</p>
+can be in the playable range if <code>sw_lokey/hikey</code> are not defined, but if they
+are defined, then <code>sw_down</code> and <code>sw_up</code> notes must fall in the <code>sw_lokey/hikey</code> range.</p>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
@@ -444,14 +453,9 @@ are defined, then <code class="language-plaintext highlighter-rouge">sw_down</co
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

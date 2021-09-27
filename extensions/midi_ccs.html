@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -324,14 +333,50 @@ all DAWs.</p>
   <li>number of currently active voices: 154</li>
   <li>last playahead (offset) of any sample in the instrument: 155</li>
 </ul>
+      <h2 id="practical-considerations">
+        
+        
+          Practical Considerations <a href="#practical-considerations" class="toc-anchor">#</a>
+        
+        
+      </h2>
 
-<p>Some of these are shared across all instances of the ARIA engine currently running.
-Others can have concurrently have a different value for different instances or different
-instruments concurrently.</p>
+<p>While all the “regular” CCs have the same range of 0 to 127, and some of these extended CCs
+behave the same way (for example CC 131 or note on velocity), others do not. CC136 or bipolar
+random can have a negative value, for example. Many will often have non-integer values. These 
+CCs will not always behave the same as others and have not been thoroughly documented.</p>
+
+<p>Some of the additional CCs are shared across all instances of the ARIA engine currently running,
+for example the host tempo. Others can have concurrently have a different value for different
+instances or different instruments concurrently, for example keydelta.</p>
+
+<p>CC 140 and 141 are measured in half-steps. So, the below will result in an envelope with a depth
+of 100 cents per half-step. This is typically what would be used for portamento glides.</p>
+
+<pre><code>eg07_pitch_oncc140=100
+</code></pre>
+
+<p>Using locc and hicc with CC 140 and 141 does not work the same as for other CCs. However, they
+can be used with lohdcc and hihdcc. For example, the below will restrict a region to play only
+when the interval between the current note and the previous one is an octave, ascending. Whether
+the decimal is necessary needs to be tested, but the below is confirmed to work.</p>
+
+<pre><code>lohdc140=12
+hihdcc140=12.1
+</code></pre>
+
+<p>Using lohdcc alone does not work and will result in the region not triggering, but adding hihdcc
+with a high value will. The below example was tested in an instrument with a range of less than
+two octaves, and there works as a way to trigger some regions only when the interval is more than
+one octave in either direction.</p>
+
+<pre><code>lohdcc141=12.1
+hihdcc141=24
+</code></pre>
 
 <p>CC 151 is reset as soon as a new note is hit, so it cannot be used to measure
 the time between the previous note and the current one, for adaptive legato
-speed purposes. CC 141 has been used successfully for portamento glides, though.</p>
+speed purposes.</p>
 
 <p>In Cakewalk Dimension Pro, 140 is bitred and 141 is decim.</p>
 					</article>
@@ -460,14 +505,9 @@ speed purposes. CC 141 has been used successfully for portamento glides, though.
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

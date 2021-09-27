@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -275,7 +284,7 @@
 <p>In the PC version of ARIA, the MDA effects are bundled. That means
 that under the <a href="/headers/effect">‹effect›</a> header, any of these effect types can be set.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>com.mda.Limiter
+<pre><code>com.mda.Limiter
 com.mda.Overdrive
 com.mda.Leslie
 com.mda.RingMod
@@ -289,7 +298,7 @@ com.mda.Combo
 com.mda.Degrade
 com.mda.SubSynth
 com.mda.RezFilter
-</code></pre></div></div>
+</code></pre>
 
 <p>Also see <a href="/opcodes/param_offset">param_offset</a> for how to
 configure the parameters for these effects in ARIA.
@@ -298,14 +307,14 @@ These effects are not part of the SFZ engine, so it is not possible to, for
 example, have one MIDI CC parameter control two parameters in the same effect,
 or use <a href="/headers/curve">custom curves</a>. Example usage below:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;control&gt;
+<pre><code>&lt;control&gt;
 set_cc300=64
 set_cc301=127
 
 &lt;effect&gt;
 param_offset=300
 type=com.mda.Overdrive
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="cakewalk-implementation">
         
@@ -570,12 +579,12 @@ controlling its parameters. Here is a list of what is currently known.</p>
   <li><a href="tdfir_wet">tdfir_wet</a></li>
 </ul>
 
-<p>Note that the Cakewalk book has some typos in opcode names, such as <code class="language-plaintext highlighter-rouge">EffectN</code>
-(capital letter) or <code class="language-plaintext highlighter-rouge">‹effects›</code>.
+<p>Note that the Cakewalk book has some typos in opcode names, such as <code>EffectN</code>
+(capital letter) or <code>‹effects›</code>.
 On this site, non-working effect types mentioned in the book were replaced with tested
-ones. For example, <code class="language-plaintext highlighter-rouge">autopan</code> does not appear to work in any Cakewalk product, while
-<code class="language-plaintext highlighter-rouge">apan</code> works. Same for <code class="language-plaintext highlighter-rouge">lofi</code> instead <code class="language-plaintext highlighter-rouge">bitred</code> and <code class="language-plaintext highlighter-rouge">decim</code>, and <code class="language-plaintext highlighter-rouge">disto</code> instead of
-<code class="language-plaintext highlighter-rouge">distortion</code>.</p>
+ones. For example, <code>autopan</code> does not appear to work in any Cakewalk product, while
+<code>apan</code> works. Same for <code>lofi</code> instead <code>bitred</code> and <code>decim</code>, and <code>disto</code> instead of
+<code>distortion</code>.</p>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
@@ -729,14 +738,9 @@ ones. For example, <code class="language-plaintext highlighter-rouge">autopan</c
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -267,12 +276,18 @@
 
 <p>Basically, this tells the SFZ player where the keyswitches are.
 As such, it’s normally going to be the same for the entire instrument,
-so <code class="language-plaintext highlighter-rouge">sw_lokey</code> and <code class="language-plaintext highlighter-rouge">sw_hikey</code> will be set under the <a href="/headers/global">global</a>
-header. This affects <a href="/opcodes/sw_last">sw_last</a> keyswitches only, and
-<a href="/opcodes/sw_down">sw_down</a> keyswitches can be outside of this range - and
-indeed often must be, as sw_down is often used for legato instruments.</p>
+so <code>sw_lokey</code> and <code>sw_hikey</code> will be set under the <a href="/headers/global">global</a>
+header.  This affects <a href="/opcodes/sw_last">sw_last</a> keyswitches. On the other hand,
+<a href="/opcodes/sw_previous">sw_previous</a> keyswitches can be outside of this range - and
+indeed often must be, as <code>sw_previous</code> is often used for legato instruments.</p>
 
-<p><code class="language-plaintext highlighter-rouge">sw_lokey</code> and <code class="language-plaintext highlighter-rouge">sw_hikey</code> can be entered in either MIDI note numbers (0 to 127)
+<p>With <a href="/opcodes/sw_down">sw_down/sw_up</a> this behavior is implementation-dependent.
+In ARIA, either <code>sw_down</code> or <code>sw_up</code> can be a note in the playable range, regardless
+of whether <a href="/opcodes/sw_lokey">sw_lokey/hikey</a> is defined or not. In rgc sfz, they
+can be in the playable range if <code>sw_lokey/hikey</code> are not defined, but if they
+are defined, then <code>sw_down</code> and <code>sw_up</code> notes must fall in the <code>sw_lokey/hikey</code> range.</p>
+
+<p><code>sw_lokey</code> and <code>sw_hikey</code> can be entered in either MIDI note numbers (0 to 127)
 or in MIDI note names (C-1 to G9)</p>
       <h2 id="example">
         
@@ -282,8 +297,8 @@ or in MIDI note names (C-1 to G9)</p>
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sw_lokey=48 sw_hikey=53
-</code></pre></div></div>
+<pre><code>sw_lokey=48 sw_hikey=53
+</code></pre>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
@@ -432,14 +447,9 @@ or in MIDI note names (C-1 to G9)</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -275,23 +284,23 @@ in the range 0 to 1.</p>
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lorand=0.2 hirand=0.4
+<pre><code>lorand=0.2 hirand=0.4
 
 lorand=0.4 hirand=1
-</code></pre></div></div>
+</code></pre>
 
 <p>The most common application for this is randomized round robins. Note that
-<code class="language-plaintext highlighter-rouge">hirand</code> for a region should equal <code class="language-plaintext highlighter-rouge">lorand</code> for the next region - if we had, for
-example, <code class="language-plaintext highlighter-rouge">hirand</code>=0.249 for the first region and <code class="language-plaintext highlighter-rouge">lorand</code>=0.25 for the next,
+<code>hirand</code> for a region should equal <code>lorand</code> for the next region - if we had, for
+example, <code>hirand</code>=0.249 for the first region and <code>lorand</code>=0.25 for the next,
 that would result in no sound playing if the random number generated was, for
 example, 0.2496343491. So, an 0.001 chance of no sound at all - a difficult
 problem to spot when testing.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt; hirand=0.25 sample=kick_vl1_rr1.wav
+<pre><code>&lt;region&gt; hirand=0.25 sample=kick_vl1_rr1.wav
 &lt;region&gt; lorand=0.25 hirand=0.5 sample=kick_vl1_rr2.wav
 &lt;region&gt; lorand=0.5 hirand=0.75 sample=kick_vl1_rr3.wav
 &lt;region&gt; lorand=0.75 sample=kick_vl1_rr4.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>It is also possible to combine this with the <a href="seq_length">seq_length</a> and <a href="seq_position">seq_position</a>
 opcodes to split round robins into two subsets, and randomize within each subset.
@@ -301,7 +310,7 @@ same range as the previously generated number. This can be good when there are
 a lot (6 or more) round robin samples available. The code for 8 samples split
 into two sequential subsets might look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt; seq_length=2 seq_position=1 hirand=0.25 sample=kick_vl1_rr1.wav
+<pre><code>&lt;region&gt; seq_length=2 seq_position=1 hirand=0.25 sample=kick_vl1_rr1.wav
 &lt;region&gt; seq_length=2 seq_position=1 lorand=0.25 hirand=0.5 sample=kick_vl1_rr2.wav
 &lt;region&gt; seq_length=2 seq_position=1 lorand=0.5 hirand=0.75 sample=kick_vl1_rr3.wav
 &lt;region&gt; seq_length=2 seq_position=1 lorand=0.75 sample=kick_vl1_rr4.wav
@@ -309,7 +318,7 @@ into two sequential subsets might look like this:</p>
 &lt;region&gt; seq_length=2 seq_position=2 lorand=0.25 hirand=0.5 sample=kick_vl1_rr6.wav
 &lt;region&gt; seq_length=2 seq_position=2 lorand=0.5 hirand=0.75 sample=kick_vl1_rr7.wav
 &lt;region&gt; seq_length=2 seq_position=2 lorand=0.75 sample=kick_vl1_rr8.wav
-</code></pre></div></div>
+</code></pre>
     
       <h2 id="practical-considerations">
         
@@ -479,14 +488,9 @@ example having key fingering noises on a clarinet trigger sometimes
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

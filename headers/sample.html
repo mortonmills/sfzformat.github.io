@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -271,9 +280,9 @@
         
         
       </h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt; sample=mysample.wav
+<pre><code>&lt;region&gt; sample=mysample.wav
 &lt;sample&gt; name=mysample.wav data=[encoded-content-of-mysample.wav]
-</code></pre></div></div>
+</code></pre>
 
 <p>The content encoding is an alphabet mapping of 256 entries that map to each byte.
 (in the encoding, a WAV file is immediately recognizable by having its four byte
@@ -292,16 +301,16 @@
 <p>The decoding algorithm is as follows:</p>
 
 <ul>
-  <li>Loop while there is an input byte <code class="language-plaintext highlighter-rouge">b1</code>
+  <li>Loop while there is an input byte <code>b1</code>
     <ul>
-      <li>if <code class="language-plaintext highlighter-rouge">b1</code> is the end marker $24, stop reading</li>
-      <li>if <code class="language-plaintext highlighter-rouge">b1</code> is ‘\r’ ($0D) or ‘\n’ ($0A), discard it</li>
-      <li>if <code class="language-plaintext highlighter-rouge">b1</code> is the escape character ‘=’ ($3D),
+      <li>if <code>b1</code> is the end marker $24, stop reading</li>
+      <li>if <code>b1</code> is ‘\r’ ($0D) or ‘\n’ ($0A), discard it</li>
+      <li>if <code>b1</code> is the escape character ‘=’ ($3D),
         <ul>
-          <li>extract the next byte <code class="language-plaintext highlighter-rouge">b2</code>, and compute the next output byte as <code class="language-plaintext highlighter-rouge">(b2+$C0)%256</code></li>
+          <li>extract the next byte <code>b2</code>, and compute the next output byte as <code>(b2+$C0)%256</code></li>
         </ul>
       </li>
-      <li>otherwise, compute the next output byte as <code class="language-plaintext highlighter-rouge">(b2+$D6)%256</code></li>
+      <li>otherwise, compute the next output byte as <code>(b2+$D6)%256</code></li>
     </ul>
   </li>
 </ul>
@@ -315,14 +324,14 @@
       </h2>
 
 <ul>
-  <li>Loop while there is an input byte <code class="language-plaintext highlighter-rouge">b1</code>
+  <li>Loop while there is an input byte <code>b1</code>
     <ul>
-      <li>if <code class="language-plaintext highlighter-rouge">(b1+$2A)%256</code> is one of the “forbidden characters” ($3D, $00, $09, $0A, $0D, $24)
+      <li>if <code>(b1+$2A)%256</code> is one of the “forbidden characters” ($3D, $00, $09, $0A, $0D, $24)
         <ul>
-          <li>output the escape character $3D, and then output the byte <code class="language-plaintext highlighter-rouge">(b1+$40)%256</code></li>
+          <li>output the escape character $3D, and then output the byte <code>(b1+$40)%256</code></li>
         </ul>
       </li>
-      <li>otherwise, output <code class="language-plaintext highlighter-rouge">(b1+$2A)%256</code></li>
+      <li>otherwise, output <code>(b1+$2A)%256</code></li>
     </ul>
   </li>
   <li>Output the end marker $24</li>
@@ -793,14 +802,9 @@
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

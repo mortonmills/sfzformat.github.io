@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -265,7 +274,7 @@
 				<div class="col-md-9">
 					<article><h1>sw_last</h1><p>Enables the region to play if the last key pressed in the range specified by <a href='/opcodes/sw_lokey'>sw_lokey and sw_hikey</a> is equal to the <code>sw_last</code> value.</p>
 
-<p><code class="language-plaintext highlighter-rouge">sw_last</code> can be entered in either MIDI note numbers (0 to 127) or in MIDI note
+<p><code>sw_last</code> can be entered in either MIDI note numbers (0 to 127) or in MIDI note
 names (C-1 to G9)</p>
       <h2 id="example">
         
@@ -275,12 +284,12 @@ names (C-1 to G9)</p>
         
       </h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sw_last=49
-</code></pre></div></div>
+<pre><code>sw_last=49
+</code></pre>
 
 <p>This is commonly used to select articulations, for example to switch between
 sustain, staccato, spiccato and pizzicato in a violin. With the SFZ 1 or SFZ 2
-spec, an instrument which uses <code class="language-plaintext highlighter-rouge">sw_last</code> to select articulations will not have a
+spec, an instrument which uses <code>sw_last</code> to select articulations will not have a
 default articulation preselected, meaning when loaded, it will play no sound
 until one of the keyswitches is pressed - only after that will the instrument
 respond to notes. The ARIA extensions include <a href="sw_default">sw_default</a>
@@ -290,13 +299,13 @@ as a solution to this.</p>
 is a “sticky” keyswitch - after releasing the keyswitch note, it continues to
 affect notes until another keyswitch is pressed. <a href="sw_down">sw_down</a>,
 on the other hand, is “non-sticky” and only affects notes played while
-the switch is held down. This makes <code class="language-plaintext highlighter-rouge">sw_last</code> a good choice for keyswitching
+the switch is held down. This makes <code>sw_last</code> a good choice for keyswitching
 articulations which are often used for many notes in a row,
 such as sustain or staccato.
-An example of using <code class="language-plaintext highlighter-rouge">sw_last</code> to select oscillator waves, with <a href="sw_default">sw_default</a>
+An example of using <code>sw_last</code> to select oscillator waves, with <a href="sw_default">sw_default</a>
 used to set the sine to default as well.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// **********************************************************************
+<pre><code>// **********************************************************************
 // A Keyswitching Example
 //
 // Notes 36,38 and 40 serve as switches to trigger sine, triangle or saw oscillators.
@@ -308,7 +317,7 @@ used to set the sine to default as well.</p>
 &lt;region&gt; sw_last=36 sw_label=Sine lokey=41 sample=*sine
 &lt;region&gt; sw_last=38 sw_label=Triangle lokey=41 sample=*triangle
 &lt;region&gt; sw_last=40 sw_label=Saw lokey=41 sample=*saw
-</code></pre></div></div>
+</code></pre>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
@@ -457,14 +466,9 @@ used to set the sine to default as well.</p>
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

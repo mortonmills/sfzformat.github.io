@@ -25,7 +25,6 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
 
 		<!-- Font Awesome Icons -->
@@ -186,7 +185,12 @@
 		
 			
 								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range extension</a>
+									href="/tutorials/range_extension">Range Extension</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/modular_instruments">Modular Instruments</a>
 			
 		
 			
@@ -206,6 +210,11 @@
 			
 								<a class="dropdown-item"
 									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/epic_drums">Epic Drums</a>
 			
 		
 			
@@ -277,14 +286,14 @@ lines within a region.</p>
 <p>Opcodes and assigned opcode values are separated by the equal to sign (=),
 without spaces between the opcode and the sign. For instance:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sample=trombone_a4_ff.wav
+<pre><code>sample=trombone_a4_ff.wav
 sample=cello_a5_pp_first_take.wav
-</code></pre></div></div>
+</code></pre>
 
 <p>are valid examples, while:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sample = cello_a4_pp.wav
-</code></pre></div></div>
+<pre><code>sample = cello_a4_pp.wav
+</code></pre>
 
 <p>Is not (note the spaces at the sides of the = sign). Input Controls and
 Performance Parameters opcodes are optional, so they might not be present in the
@@ -293,14 +302,14 @@ and will be used if there’s no definition.</p>
 
 <p>Example region definitions:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt; sample=440.wav
-</code></pre></div></div>
+<pre><code>&lt;region&gt; sample=440.wav
+</code></pre>
 
 <p>This region definition instructs the player to play the sample file ‘440.wav’
 for the whole keyboard range.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt; lokey=64 hikey=67 sample=440.wav
-</code></pre></div></div>
+<pre><code>&lt;region&gt; lokey=64 hikey=67 sample=440.wav
+</code></pre>
 
 <p>This region features a very basic set of input parameters (lokey and hikey, which
 represent the low and high MIDI notes in the keyboard), and the sample definition.
@@ -311,8 +320,8 @@ if a key in the 64-67 range is played.</p>
 using the AND boolean operator. Consequently, all conditions must be matched for
 the region to play. For instance:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;region&gt; lokey=64 hikey=67 lovel=0 hivel=34 locc1=0 hicc1=40 sample=440.wav
-</code></pre></div></div>
+<pre><code>&lt;region&gt; lokey=64 hikey=67 lovel=0 hivel=34 locc1=0 hicc1=40 sample=440.wav
+</code></pre>
 
 <p>This region definition instructs the player to play the sample ‘440.wav’ if
 there is an incoming note event in the 64-67 range AND the note has a velocity
@@ -443,14 +452,9 @@ in the 0~34 range AND last modulation wheel (cc1) message was in the 0-40 range.
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
-		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
-		<script>
-			$(document).ready(function(){
-			$('pre').addClass('prettyprint lang-sfz');
-			prettyPrint();
-			});
-		</script>
+		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/sfzformat/sfzformat.github.io@source/assets/js/highlight/highlight.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/redtide/highlightjs-sfz@master/dist/sfz.min.js"></script>
+		<script>hljs.highlightAll();</script>
 		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {

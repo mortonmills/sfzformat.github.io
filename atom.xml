@@ -4,7 +4,7 @@
 	<link href="https://sfzformat.github.io/atom.xml" rel="self"/>
 	<icon>https://sfzformat.github.io/assets/ico/favicon.ico</icon>
 	<link href="https://sfzformat.github.io/"/>
-	<updated>2021-07-20T13:02:04+00:00</updated>
+	<updated>2021-09-27T12:52:18+00:00</updated>
 	<id>https://sfzformat.github.io/</id>
 
 	<entry>
@@ -68,7 +68,7 @@ involved in the future to help make it grow.&lt;/p&gt;
 		<content type="html">&lt;p&gt;Here we are with the latest relevant updates, the last ones for this year:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Added &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*_mod&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*_dynamic&lt;/code&gt; opcodes&lt;/li&gt;
+  &lt;li&gt;Added &lt;code&gt;*_mod&lt;/code&gt; and &lt;code&gt;*_dynamic&lt;/code&gt; opcodes&lt;/li&gt;
   &lt;li&gt;Added &lt;a href=&quot;/opcodes/?v=cakewalk&quot;&gt;Cakewalk SFZv2 opcodes&lt;/a&gt; (work in progress) page&lt;/li&gt;
   &lt;li&gt;Added the SFZ test suite for sample instruments developers in homepage&lt;/li&gt;
   &lt;li&gt;Improved &lt;a href=&quot;/assets/js/prettify/lang-sfz.js&quot;&gt;SFZ syntax highlighting&lt;/a&gt; in &lt;a href=&quot;https://github.com/google/code-prettify&quot;&gt;Google Prettify&lt;/a&gt; for all pages&lt;/li&gt;
@@ -114,7 +114,7 @@ Sonoj organization for the video tutorial contribuition.&lt;/p&gt;
 &lt;p&gt;Last but not least, for those like me who prefer &lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Relay_Chat&quot;&gt;IRC&lt;/a&gt; we have now also an
 &lt;a href=&quot;https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat&quot;&gt;IRC channel&lt;/a&gt; on &lt;a href=&quot;https://freenode.net/&quot;&gt;freenode&lt;/a&gt; server.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/join&lt;/code&gt; us!&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/join&lt;/code&gt; us!&lt;/p&gt;
 
 </content>
 	</entry>
