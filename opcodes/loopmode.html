@@ -298,7 +298,15 @@ play unlooped.</p>
 <p>Whether no_loop, loop_continuous or loop_sustain is set, the duration of the release phase is set using
 <a href="/opcodes/ampeg_release">ampeg_release</a>. However, in loop_sustain or no_loop mode, the sound can be cut off
 before the release phase ends, if the end of sample is reached. In loop_continuous mode, the loop will
-repeat if the loop end is reached during the release phase.</p>
+repeat if the loop end is reached during the release phase, including repeating multiple times if the release
+time is longer than the loop length.</p>
+      <h2 id="practical-considerations">
+        
+        
+          Practical Considerations <a href="#practical-considerations" class="toc-anchor">#</a>
+        
+        
+      </h2>
 
 <p>For samples with <a href="/opcodes/trigger">trigger</a>=release set, no_loop and one_shot will both behave as one_shot
 and the entire release sample will play. If loop_continuous is set, looping will be
@@ -308,6 +316,10 @@ that means the sound can potentially continue indefinitely.</p>
 <p>If an instrument is using the default loop_mode=no_loop, there is no need to set loop_mode=one_shot for the
 release samples; however, if an instrument has loop_mode=loop_continuous set under a header which also
 includes release samples, the release regions will normally need to be set to loop_mode=one_shot to override that.</p>
+
+<p>In ARIA, if loop_mode=loop_continuous or loop_sustain, <code>loop_end</code> is not specified, and the sample does not have
+a loop defined, the player will loop through the entire sample file.</p>
+    
       <h2 id="examples">
         
         
