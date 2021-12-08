@@ -286,16 +286,6 @@ contents as there’s nothing to play. Long names and names with blank spaces an
 other special characters (excepting the = character) are allowed in the sample
 definition.</p>
 
-<p>At the SFZ1 specification level, there is no information about what sample
-formats are supported. For SFZ2, however, the Cakewalk book specifies the following
-sample types are supported:</p>
-<ul>
-  <li>WAV and AIFF formats of any sample rate (even 384k)</li>
-  <li>Ogg Vorbis compressed samples</li>
-  <li>FLAC support is not specified as mandatory, though FLAC was supported by Cakewalk
-Session Drummer, and is supported by ARIA</li>
-</ul>
-
 <p>Getting the sample to play back at the correct pitch is not automatic, and
 generally can’t be done with the sample opcode alone, even if the file name
 includes pitch information. Assuming that the tune or transpose opcodes are not
@@ -308,6 +298,24 @@ regardless of how <a href="pitch_keycenter">pitch_keycenter</a> is set.
 If the key opcode is used to define the range of the sample (instead of <a href="lokey">lokey</a>,
 <a href="lokey">hikey</a> and <a href="pitch_keycenter">pitch_keycenter</a>) the sample will also
 be unchanged in pitch.</p>
+      <h2 id="formats">
+        
+        
+          Formats <a href="#formats" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>At the SFZ1 specification level, there is no information about what sample
+formats are supported. For SFZ2, however, the Cakewalk book specifies the following
+sample types are supported:</p>
+<ul>
+  <li>WAV and AIFF formats of any sample rate (even 384k)</li>
+  <li>Ogg Vorbis compressed samples</li>
+  <li><a href="https://en.wikipedia.org/wiki/FLAC">FLAC</a> support is not specified as mandatory, though FLAC was supported by Cakewalk
+Session Drummer, and is supported by ARIA</li>
+</ul>
+    
       <h2 id="examples">
         
         
@@ -338,6 +346,7 @@ exist and be played (for example, to mute other sounds when using
 value can be very convenient.</p>
 
 <p>Note that in this case the <code>*</code> is a real character and not a wildcard.</p>
+
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
