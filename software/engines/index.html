@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>sample - SFZ Format</title>
+		<title>Engines sample formats support - SFZ Format</title>
 
 		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
 		<meta name="web-author" content="RedTide and SFZ Format Team">
@@ -272,111 +272,15 @@
 
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
-					<article><h1>sample</h1><p>Defines which sample file the region will play.</p>
-
-<p>Possibly the most important opcode, this is the one that tells the sampler which
-sample file to actually play. This should include a relative file path from the
-folder where the SFZ file is.</p>
-
-<p>In most cases, there will be a sample opcode in every region of an SFZ file,
-though not always.</p>
-
-<p>If the sample file is not found, the player will ignore the whole region
-contents as there’s nothing to play. Long names and names with blank spaces and
-other special characters (excepting the = character) are allowed in the sample
-definition.</p>
-
-<p>Getting the sample to play back at the correct pitch is not automatic, and
-generally can’t be done with the sample opcode alone, even if the file name
-includes pitch information. Assuming that the tune or transpose opcodes are not
-used to change the pitch, the sample will play unchanged in pitch when a note
-equal to the <a href="pitch_keycenter">pitch_keycenter</a> opcode value is played.
-If <a href="pitch_keycenter">pitch_keycenter</a> is not defined for the region, sample will
-play unchanged on note 60 (middle C). If <a href="pitch_keytrack">pitch_keytrack</a>
-is set to 0, the sample will also play unchanged in pitch,
-regardless of how <a href="pitch_keycenter">pitch_keycenter</a> is set.
-If the key opcode is used to define the range of the sample (instead of <a href="lokey">lokey</a>,
-<a href="lokey">hikey</a> and <a href="pitch_keycenter">pitch_keycenter</a>) the sample will also
-be unchanged in pitch.</p>
-      <h2 id="formats">
-        
-        
-          Formats <a href="#formats" class="toc-anchor">#</a>
-        
-        
-      </h2>
-
-<p>At the SFZ1 specification level, there is no information about what sample
-formats are supported. For SFZ2, however, the Cakewalk book specifies the following
-sample types are supported:</p>
-<ul>
-  <li>WAV and AIFF formats of any sample rate (even 384k)</li>
-  <li>Ogg Vorbis compressed samples</li>
-  <li><a href="https://en.wikipedia.org/wiki/FLAC">FLAC</a> support is not specified as mandatory, though FLAC was supported by Cakewalk
-Session Drummer, and is supported by ARIA</li>
-</ul>
-
-<p>WAV is usually the first choice, or perhaps AIFF when using macOS.
-FLAC is the second choice, as it is <a href="https://en.wikipedia.org/wiki/Lossless_compression">lossless</a> compression audio is always preferable,
-though it needs to be decoded which can cause slower performance compared to WAV.
-Other compressed formats can be used for test cases or situations where keeping
-the file size small is more important than audio quality.</p>
-
-<p>See also the table of supported sample <a href="/software/engines/">formats</a> by some engines for more details.</p>
-    
-      <h2 id="examples">
-        
-        
-          Examples <a href="#examples" class="toc-anchor">#</a>
-        
-        
-      </h2>
-
-<pre><code>sample=A3.wav
-sample=..\Samples\close\c4_pp_rr3.wav
-</code></pre>
-
-<p>Each engine can also support custom oscillators. For example, ARIA supports
-using this opcode for some basic synthesized sound waves such as:</p>
-
-<pre><code>sample=*sine
-sample=*saw
-sample=*square
-sample=*triangle
-sample=*tri
-sample=*noise
-sample=*silence
-</code></pre>
-
-<p>Tri is an alias for triangle. For cases where we don’t want to actually play a sample but want a region to
-exist and be played (for example, to mute other sounds when using
-<a href="/opcodes/group">group</a> and <a href="/opcodes/off_by">off_by</a>, the silence
-value can be very convenient.</p>
-
-<p>Note that in this case the <code>*</code> is a real character and not a wildcard.</p>
-
-
-
-<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+					<article><h1>Engines sample formats support</h1><table class="table table-sm table-hover table-striped table-responsive">
 	<thead class="thead-dark">
 		<tr>
-			<th scope="col">Name</th>
-			<th scope="col">Version</th>
-			<th scope="col">Type</th>
-			<th scope="col">Default</th>
-			<th scope="col">Range</th>
-			<th scope="col">Unit</th>
-		</tr>
+			<th scope="col">Name</th><th scope="col" style="text-align:center">AIFF</th><th scope="col" style="text-align:center">FLAC</th><th scope="col" style="text-align:center">MP3</th><th scope="col" style="text-align:center">Ogg</th><th scope="col" style="text-align:center">WAV</th></tr>
 	</thead>
 	<tbody><tr>
-			<td>sample</td>
-			<td>SFZ v1</td>
-			<td>string</td>
-			<td>N/A</td>
-			<td>N/A</td>
-			<td></td>
-		</tr></tbody>
-</table><p>Category: <a href='/misc/categories#sound-source'>Sound Source</a>, Sample Playback</p>
+			<td>ARIA</td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center"></td><td style="text-align:center">•</td><td style="text-align:center">•</td></tr><tr>
+			<td>sfizz</td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center">•</td></tr></tbody>
+</table>
 					</article>
 				</div>
 				<div class="col-md-3">
@@ -497,7 +401,7 @@ value can be very convenient.</p>
 			<footer>
 				<p>
 					This site is open source.
-					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/opcodes/sample.md">
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/software/engines/index.md">
 					Improve this page</a>
 				</p>
 			</footer>
