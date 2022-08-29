@@ -290,9 +290,21 @@ This does not involve playing any MIDI notes.</p>
 <p>Region will play when a MIDI CC64 (sustain pedal) message with 127 value is
 received. So, basically, when the sustain pedal is pressed down, this region will play.
 This is useful with piano pedals - in the above example, <code>on_loccN</code> and <code>on_hiccN</code>
-could be used to trigger a mechanical noise sample. It would not typically be
-used with hi-hat pedals, as most electronic drum kits will send a MIDI note when
-the pedal hits bottom.</p>
+could be used to trigger a mechanical noise sample, whether any keys are being played
+or not. It would not typically be used with hi-hat pedals, as most electronic drum kits
+will send a MIDI note when the pedal hits bottom.</p>
+    
+      <h2 id="practical-considerations">
+        
+        
+          Practical Considerations <a href="#practical-considerations" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>on_locc/on_hicc effectively replaces trigger=attack. The behavior of a region which has
+on_locc/on_hicc and trigger=attack specified is not defined by the SFZ specification,
+and that combination should be used.</p>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
