@@ -302,9 +302,13 @@ will send a MIDI note when the pedal hits bottom.</p>
         
       </h2>
 
-<p>on_locc/on_hicc effectively replaces <a href="/opcodes/trigger">trigger</a>=attack. The behavior of a region which has
-on_locc/on_hicc and trigger=attack specified is not defined by the SFZ specification,
-and that combination should be used.</p>
+<p>on_locc/on_hicc effectively replaces the default <a href="/opcodes/trigger">trigger</a>=attack.
+The behavior of a region which has on_locc/on_hicc and trigger=attack both explicitly
+specified is not defined by the SFZ specification, and that combination should be used.</p>
+
+<p>In ARIA if on_locc/on_hicc and trigger=release or trigger=release_key is used, the
+on_locc/on_hicc opcode will be effectively disregarded, and the region will behave
+like a normal release or release_key region.</p>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
