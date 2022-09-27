@@ -274,7 +274,7 @@
 				<div class="col-md-9">
 					<article><h1>egN_loop</h1><p></p>
 
-<p>This is either not implemented in ARIA or sfizz, or our testing was not able to discover how it works. The relevant opcodes are <code>egN_loop</code>, <code>egN_loop_count</code> and possibly <code>egN_loop_shape</code>.</p>
+<p>Specifies which envelope node is the loop node.</p>
       <h2 id="example">
         
         
@@ -287,6 +287,16 @@
 eg01_loop_shape=1
 eg01_loop_count=8
 </code></pre>
+    
+      <h2 id="practical-considerations">
+        
+        
+          Practical Considerations <a href="#practical-considerations" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>This is either not implemented in ARIA or sfizz, or our testing was not able to discover how it works. The relevant opcodes are <code>egN_loop</code>, <code>egN_loop_count</code> and possibly <code>egN_loop_shape</code>. In the existing test examples, <code>egN_loop_shape</code> is always set to 1.</p>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
