@@ -274,7 +274,7 @@
 
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
-					<article><h1>octave_offset</h1><p>Shifts all incoming MIDI data by the specified octave.</p>
+					<article><h1>octave_offset</h1><p>MIDI octave transpose; tells the SFZ player to offset all incoming MIDI notes by the specified number of octaves.</p>
 
 <p>This opcode tells SFZ to shift all incoming MIDI data by the specified octave -
 this allows changing IPN notation into MMA, so C4 will be MIDI note 48 instead
@@ -306,9 +306,9 @@ of MIDI note 60. It should be used under the ‹<a href="/headers/control">contr
 			<td>octave_offset</td>
 			<td>SFZ v2</td>
 			<td>integer</td>
-			<td>N/A</td>
-			<td>N/A</td>
-			<td></td>
+			<td>0</td>
+			<td>-10 to 10</td>
+			<td>octaves</td>
 		</tr></tbody>
 </table><p>Category: <a href='/misc/categories#instrument-settings'>Instrument Settings</a></p>
 					</article>

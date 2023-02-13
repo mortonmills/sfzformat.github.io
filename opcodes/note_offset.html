@@ -274,7 +274,7 @@
 
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
-					<article><h1>note_offset</h1><p>Tells SFZ to shift all incoming MIDI data by the specified number of notes.</p>
+					<article><h1>note_offset</h1><p>MIDI note transpose; tells the SFZ player to offset all incoming MIDI notes by the specified number of semitones.</p>
 
 <p>This opcode tells SFZ to shift all incoming MIDI data by the specified number of
 notes - basically like octave_offset but measured in half-steps instead of octaves.
@@ -307,9 +307,9 @@ It should be used under the ‹<a href="/headers/control">control</a>› header.
 			<td>note_offset</td>
 			<td>SFZ v2</td>
 			<td>integer</td>
-			<td>N/A</td>
-			<td>N/A</td>
-			<td></td>
+			<td>0</td>
+			<td>-127 to 127</td>
+			<td>semitones</td>
 		</tr></tbody>
 </table><p>Category: <a href='/misc/categories#instrument-settings'>Instrument Settings</a></p>
 					</article>
