@@ -284,23 +284,7 @@
 <div class="jumbotron p-4 mb-3">
 
   <p>This is the main reference point for anyone who wants to create virtual musical
-instruments using the SFZ format. Currently the SFZ 2 opcodes and ARIA extensions
-are documented though some require more detail, and SFZ 2 opcodes not supported by
-ARIA still need to be added. There’s enough information to make complex SFZ
-instruments already, but we’ll continue to add more.</p>
-
-  <p>To make use of the SFZ format requires three things:</p>
-
-  <ul>
-    <li><a href="/opcodes/sample">Samples</a></li>
-    <li><a href="/software/players">SFZ player</a></li>
-    <li><a href="/tutorials/basic_sfz_file">SFZ file</a></li>
-  </ul>
-
-  <p>which tells the player how to use the samples. The SFZ file itself can be created
-using any text editor, though for more complex cases with hundreds or thousands
-of samples, additional tools can make this easier - some people use spreadsheets,
-and there are also dedicated <a href="/software/tools">SFZ creation tools</a>.</p>
+instruments using the SFZ format.</p>
 
   <p>The SFZ format is a file format to define how a collection of samples are
 arranged for performance. The goal behind the SFZ format is to provide a free,
@@ -309,13 +293,6 @@ samples with the highest possible quality and the highest possible performance
 flexibility. Soundware, software and hardware developers can create, use and
 distribute the SFZ format files for free, for either free or commercial applications.</p>
 
-  <ul>
-    <li>Here’s a <a href="/tutorials/basic_sfz_file">basic SFZ file</a> you can copy to start your own</li>
-    <li>Here is the <a href="/headers">list of SFZ headers</a></li>
-    <li>The <a href="/opcodes/?v=1">list of SFZ 1 opcodes</a> can be found here.</li>
-    <li>You can browse the many SFZ 2 opcodes <a href="/opcodes/?v=2">starting here</a>.</li>
-    <li>A few opcodes have been added to <a href="/opcodes/?v=aria">ARIA / Sforzando</a> for more flexibility</li>
-  </ul>
 </div>
     
       <h3 id="what-sfz-is-not">
@@ -333,6 +310,56 @@ same binary file, while SFZ is a file format which only defines the behavior of 
 instruments and does not include the sample content. SF2 may look a bit like SFZ visually,
 but that’s a coincidence.</p>
     
+      <h3 id="features">
+        
+        
+          Features <a href="#features" class="toc-anchor">#</a>
+        
+        
+      </h3>
+
+<ul>
+  <li>A .sfz definition file is just a text file. Consequently,
+it can be created by using any text editor.</li>
+  <li>Samples of any bit depth (8/16/24/32-bit)
+and sample rate (44.1 kHz, 48 kHz, 384 kHz etc.), mono or stereo.</li>
+  <li>Compressed and uncompressed sample formats can both be used within the same instrument.</li>
+  <li>Loops embedded in sample files or configured in the SFZ.</li>
+  <li>Velocity layers, round robins, keyboard splits and layers.</li>
+  <li>Sample playback based on MIDI controllers (note on, note off,
+continuous controllers, pitch bend, channel - and polyphonic aftertouch,
+keyboard switches) and internal generators (random, sequence counters).</li>
+  <li>Unidirectional and bidirectional exclusive regions (mute groups).</li>
+  <li>Release trigger regions with release trigger attenuation control.</li>
+  <li>Crossfade layer controls.</li>
+  <li>Ability to distinguish legato notes from first notes.</li>
+  <li>Envelope and LFO modulation sources with possible targets including volume,
+pitch, filter cutoff and more.</li>
+</ul>
+    
+      <h3 id="requirements">
+        
+        
+          Requirements <a href="#requirements" class="toc-anchor">#</a>
+        
+        
+      </h3>
+
+<p>To make use of the SFZ format requires three things:</p>
+
+<ul>
+  <li><a href="/opcodes/sample">Samples</a></li>
+  <li><a href="/software/players">SFZ player</a></li>
+  <li><a href="/tutorials/basic_sfz_file">SFZ file</a></li>
+</ul>
+
+<p>which tells the player how to use the samples. The SFZ file itself can be created
+using any text editor, though for more complex cases with hundreds or thousands
+of samples, additional tools can make this easier - some people use spreadsheets,
+and there are also dedicated <a href="/software/tools">SFZ creation tools</a>.</p>
+
+<p>Here’s a <a href="/tutorials/basic_sfz_file">basic SFZ file</a> you can copy to start your own.</p>
+    
       <h3 id="making-instruments">
         
         
@@ -341,46 +368,43 @@ but that’s a coincidence.</p>
         
       </h3>
 
-<div class="jumbotron p-4 mb-3">
+<p>Text guides on how to make a simple instrument, covering the essential opcodes</p>
 
-  <p>Text guides on how to make a simple instrument, covering the essential opcodes</p>
-
-  <ul>
-    <li>
-      <p><a href="/tutorials/drum_basics">Drum basics</a> - covers <code>global</code>, <code>group</code> and
+<ul>
+  <li>
+    <p><a href="/tutorials/drum_basics">Drum basics</a> - covers <code>global</code>, <code>group</code> and
 <code>region</code> headers, <code>sample</code>, <code>key</code>, <code>lovel</code> / <code>hivel</code>, <code>amp_velcurve_N</code>,
 <code>seq_length</code>, <code>seq_position</code> and <code>lorand</code> / <code>hirand</code>.</p>
-    </li>
-    <li>
-      <p><a href="/tutorials/sustained_note_basics">Sustained note basics</a> - using a flute
+  </li>
+  <li>
+    <p><a href="/tutorials/sustained_note_basics">Sustained note basics</a> - using a flute
 as an example.
 Adds <code>lokey</code> / <code>hikey</code>, <code>pitch_keycenter</code>, <code>xfin</code> / <code>xfout</code>, <code>locc</code> / <code>hicc</code>,
 <code>keyswitching</code>, <code>group</code>, <code>off_by</code> and <code>off_mode</code>.</p>
-    </li>
-  </ul>
+  </li>
+</ul>
 
-  <p>Some more advanced topics</p>
+<p>Some more advanced topics</p>
 
-  <ul>
-    <li>
-      <p><a href="/tutorials/vibrato">Vibrato</a> - typical string vibrato, humanized vibrato,
+<ul>
+  <li>
+    <p><a href="/tutorials/vibrato">Vibrato</a> - typical string vibrato, humanized vibrato,
 asymmetrical vibrato, and even filter wobble.</p>
-    </li>
-    <li>
-      <p><a href="/tutorials/legato">Legato</a> - simulated legato and portamento as well as
+  </li>
+  <li>
+    <p><a href="/tutorials/legato">Legato</a> - simulated legato and portamento as well as
 true sampled legato.</p>
-    </li>
-    <li>
-      <p><a href="/tutorials/cymbal_muting">Cymbal muting</a> - using <code>group</code>, <code>off_by</code>, <code>off_mode</code>
+  </li>
+  <li>
+    <p><a href="/tutorials/cymbal_muting">Cymbal muting</a> - using <code>group</code>, <code>off_by</code>, <code>off_mode</code>
 and <code>polyphony</code> to make hi-hat and cymbal notes mute previous notes
 in a musically useful way.</p>
-    </li>
-    <li>
-      <p><a href="/tutorials/brush_stirs">Brush stirs</a> - two different approaches to brushed
+  </li>
+  <li>
+    <p><a href="/tutorials/brush_stirs">Brush stirs</a> - two different approaches to brushed
   drum techniques which produce a continuous sound rather than a hit.</p>
-    </li>
-  </ul>
-</div>
+  </li>
+</ul>
 					</article>
 				</div>
 				<div class="col-md-3">
