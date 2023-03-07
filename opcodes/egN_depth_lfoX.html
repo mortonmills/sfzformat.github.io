@@ -275,8 +275,29 @@
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
 					<article><h1>egN_depth_lfoX</h1><p>Allows egN to scale lfoX's effect on its targets</p>
+      <h2 id="examples">
+        
+        
+          Examples <a href="#examples" class="toc-anchor">#</a>
+        
+        
+      </h2>
 
+<p>Modulate the scale of lfo1’s effect on cutoff and pan, from 0% to 200%, over the course of 4 seconds:</p>
+<pre><code>&lt;region&gt;
+sample=*saw
+cutoff=800
 
+lfo1_freq=2
+lfo1_cutoff=1200    // will be modulated from 0 to 2400 (200%)
+lfo1_pan=50         // will be modulated from 0 to 100  (200%)
+
+eg1_level0=0
+eg1_time1=4 eg1_level1=1
+eg1_sustain=1
+eg1_depth_lfo1=200  //..as eg1's move from 0 to 1 scales lfo1's effect from 0 to 200%
+</code></pre>
+<p><em>NB. Tested with Aria/Sforzando</em></p>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
