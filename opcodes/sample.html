@@ -308,15 +308,21 @@ be unchanged in pitch.</p>
         
       </h2>
 
-<p>At the SFZ1 specification level, there is no information about what sample
-formats are supported. For SFZ2, however, the Cakewalk book specifies the following
-sample types are supported:</p>
+<p>At the SFZ1 specification level, the supported sample formats are:</p>
 <ul>
-  <li>WAV and AIFF formats of any sample rate (even 384k)</li>
+  <li>WAV of any sample rate</li>
   <li>Ogg Vorbis compressed samples</li>
-  <li><a href="https://en.wikipedia.org/wiki/FLAC">FLAC</a> support is not specified as mandatory, though FLAC was supported by Cakewalk
-Session Drummer, and is supported by ARIA</li>
 </ul>
+
+<p>For SFZ2, the Cakewalk book specifies the following sample types in addiction of
+the above:</p>
+<ul>
+  <li>AIFF of any sample rate</li>
+  <li><a href="https://en.wikipedia.org/wiki/FLAC">FLAC</a> support is not specified as mandatory, though FLAC was supported by
+Cakewalk Session Drummer, and is supported by ARIA</li>
+</ul>
+
+<p>See also <a href="/#features">Features</a> section in the home page.</p>
 
 <p>WAV is usually the first choice, or perhaps AIFF when using macOS.
 FLAC is the second choice, as it is <a href="https://en.wikipedia.org/wiki/Lossless_compression">lossless</a> compression audio is always preferable,
@@ -350,10 +356,10 @@ sample=*noise
 sample=*silence
 </code></pre>
 
-<p>Tri is an alias for triangle. For cases where we don’t want to actually play a sample but want a region to
-exist and be played (for example, to mute other sounds when using
-<a href="/opcodes/group">group</a> and <a href="/opcodes/off_by">off_by</a>, the silence
-value can be very convenient.</p>
+<p>Tri is an alias for triangle. For cases where we don’t want to actually play
+a sample but want a region to exist and be played
+(for example, to mute other sounds when using <a href="/opcodes/group">group</a> and
+<a href="/opcodes/off_by">off_by</a>, the silence value can be very convenient).</p>
 
 <p>Note that in this case the <code>*</code> is a real character and not a wildcard.</p>
 
