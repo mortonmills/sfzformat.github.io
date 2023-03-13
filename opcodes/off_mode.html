@@ -277,23 +277,22 @@
 					<article><h1>off_mode</h1><p>Region off mode.</p>
 
 <p>Region off mode. This opcode will determinate how a region is turned off by an
-<a href="/opcodes/off_by">off_by</a> opcode. There are two choices:</p>
+<a href="off_by">off_by</a> opcode. There are two choices:</p>
 
 <ul>
-  <li><strong><em>fast</em></strong> (default): The voice will be turned off immediately.
-                      Release settings will not have any effect.</li>
-  <li><strong><em>normal</em></strong>: The region will be set into release stage. All envelope
-              generators will enter in release stage, and region will expire
-              when the amplifier envelope generator expired.</li>
+  <li><strong>fast</strong> (default): The voice will be turned off immediately.
+                    Release settings will not have any effect.</li>
+  <li><strong>normal</strong>: The region will be set into release stage. All envelope
+            generators will enter in release stage, and region will expire
+            when the amplifier envelope generator expired.</li>
 </ul>
 
 <p>ARIA also adds <code>off_mode</code>=time which can be used to specify a time independent
-of the sample release time using <a href="/opcodes/off_time">off_time</a>,
-and also <a href="/opcodes/off_shape">off_shape</a> and <a href="/opcodes/off_curve">off_curve</a>
-to control the curve of the fadeout. In ARIA, time is actually the default value
-with a default off_time of 6 ms. 6 ms is also the fadeout time for off_mode=fast
-so these are equivalent in end result, but time is the true default value
-“under the hood”.</p>
+of the sample release time using <a href="off_time">off_time</a>,
+and also <a href="off_shape">off_shape</a> and <a href="off_curve">off_curve</a> to control the curve of the fadeout.
+In ARIA, time is actually the default value with a default off_time of 6 ms.
+6 ms is also the fadeout time for off_mode=fast so these are equivalent
+in end result, but time is the true default value “under the hood”.</p>
       <h2 id="examples">
         
         
@@ -315,6 +314,7 @@ muting behavior sound a little more natural. With longer release times,
 <code>off_mode</code>=normal is also a way to manage buildup in instruments which have a very
 long sustain and can have the sound of several notes build up - for example,
 hammered dulcimers or ride cymbals.</p>
+
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">

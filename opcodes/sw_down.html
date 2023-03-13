@@ -291,11 +291,11 @@ sw_down=24
 sw_up=25
 </code></pre>
 
-<p>The difference between <code>sw_down</code> and <a href="/opcodes/sw_last">sw_last</a> is that  <code>sw_last</code>
+<p>The difference between <code>sw_down</code> and <a href="sw_last">sw_last</a> is that  <code>sw_last</code>
 is a “sticky” keyswitch - after releasing the keyswitch note, it continues to
 affect notes until another keyswitch is pressed. <code>sw_down</code>, on the other hand, is
 “non-sticky” and only affects notes played while the switch is held down. It could
-also possibly be used for true legato instead of <a href="/opcodes/sw_previous">sw_previous</a>.</p>
+also possibly be used for true legato instead of <a href="sw_previous">sw_previous</a>.</p>
 
 <p>If there is a default articulation which should sound when no <code>sw_down</code> keys are
 pressed, <code>sw_up</code> should be defined for those regions. For example,
@@ -304,9 +304,10 @@ when an ornamentation is selected using <code>sw_down</code>, the default sustai
 can use <code>sw_up</code> so it only sounds when no ornamentation keyswitch is held down.</p>
 
 <p>In ARIA, either <code>sw_down</code> or <code>sw_up</code> can be a note in the playable range, regardless
-of whether <a href="/opcodes/sw_lokey">sw_lokey/hikey</a> is defined or not. In rgc sfz, they
+of whether <a href="sw_lokey">sw_lokey / hikey</a> is defined or not. In rgc sfz, they
 can be in the playable range if <code>sw_lokey/hikey</code> are not defined, but if they
 are defined, then <code>sw_down</code> and <code>sw_up</code> notes must fall in the <code>sw_lokey/hikey</code> range.</p>
+
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">

@@ -276,18 +276,18 @@
 				<div class="col-md-9">
 					<article><h1>end</h1><p>The endpoint of the sample. If unspecified, the entire sample will play.</p>
 
-<p>End is inclusive, so if set to 133000, the sample will play all samples up to and
+<p><code>end</code> is inclusive, so if set to 133000, the sample will play all samples up to and
 including 133000. The player will reproduce the whole sample if <code>end</code> is not specified.
 In other words, in most cases, this does not need to be set.</p>
 
-<p>If end value is -1, the sample will not play. Marking a region end with -1 can
+<p>If <code>end</code> value is -1, the sample will not play. Marking a region end with -1 can
 be used to use a silent region to turn off other regions by using the <a href="group">group</a>
 and <a href="off_by">off_by</a> opcodes. In certain cases, possibly due to ill-formed WAV files,
-setting end to -1 can cause errors, but setting <a href="loop_mode">loop_mode</a> to no_loop or
-one_shot seems to be a workaround.</p>
+setting end to -1 can cause errors, but setting <a href="loop_mode">loop_mode</a> to <strong>no_loop</strong> or
+<strong>one_shot</strong> seems to be a workaround.</p>
 
 <p>A region which does not play is still triggered, however, which means it can mute
-other regions. When using <a href="sample">sample</a>=*silence it is very useful to set end=-1
+other regions. When using <a href="sample">sample</a>=*silence it is very useful to set <code>end</code>=-1
 (or a zero-duration volume envelope with zero sutain) so the silence region does not
 continue to play and does not use up a polyphony voice. Another way to accomplish
 the same thing is to use an ampeg envelope wiht zero <a href="ampeg_attack">ampeg_attack</a>,
@@ -304,6 +304,7 @@ the same thing is to use an ampeg envelope wiht zero <a href="ampeg_attack">ampe
 end=4432425
 end=-1
 </code></pre>
+
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">

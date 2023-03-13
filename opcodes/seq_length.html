@@ -304,12 +304,12 @@ round robins, would look like this:</p>
 &lt;region&gt;seq_position=3 sample=snare_rr3.wav
 </code></pre>
 
-<p>An alternative to this is using <a href="/opcodes/lorand">lorand / hirand</a> for
+<p>An alternative to this is using <a href="lorand">lorand / hirand</a> for
 random, instead of sequential, round robins. If there are enough samples
 available, both methods can also be combined - the combination is described
-on the <a href="/opcodes/lorand">lorand / hirand</a> page. However, lorand/hirand might
+on the <a href="lorand">lorand / hirand</a> page. However, lorand/hirand might
 not be a good idea to use with samples which have multiple microphone
-positions, and sticking to seq_position and seq_length might be necessary.</p>
+positions, and sticking to <a href="seq_position">seq_position</a> and <code>seq_length</code> might be necessary.</p>
     
       <h2 id="practical-considerations">
         
@@ -323,10 +323,11 @@ positions, and sticking to seq_position and seq_length might be necessary.</p>
 for all regions, which means sequential round robins is not a practical way
 to implement alternating left/right hand or up/down bowing samples.</p>
 
-<p>Setting seq_length to 0 behaves the same as setting it to 1 in Cakewalk
+<p>Setting <code>seq_length</code> to 0 behaves the same as setting it to 1 in Cakewalk
 players, sfizz and BassMIDI, but a setting of 0 in ARIA will cause each
 round robin in the sequence to be played once, and playing more notes once
-the counter exceeds the highest seq_position will result in no sound.</p>
+the counter exceeds the highest <a href="seq_position">seq_position</a> will result in no sound.</p>
+
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">

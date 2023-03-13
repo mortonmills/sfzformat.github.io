@@ -276,8 +276,8 @@
 				<div class="col-md-9">
 					<article><h1>seq_position</h1><p>Sequence position. The region will play if the internal sequence counter is equal to <code>seq_position</code>.</p>
 
-<p>This is used together with <a href="/opcodes/seq_length">seq_length</a> to use samples
-as round robins. The player will keep an internal counter creating a consecutive
+<p>This is used together with <a href="seq_length">seq_length</a> to use samples as round robins.
+The player will keep an internal counter creating a consecutive
 note-on sequence for each region, starting at 1 and resetting at seq_length.
 Maximum allowed value is 100.</p>
       <h2 id="example">
@@ -308,12 +308,12 @@ round robins, would look like this:</p>
 &lt;region&gt;seq_position=3 sample=snare_rr3.wav
 </code></pre>
 
-<p>An alternative to this is using <a href="/opcodes/lorand">lorand / hirand</a> for
+<p>An alternative to this is using <a href="lorand">lorand / hirand</a> for
 random, instead of sequential, round robins. If there are enough samples
 available, both methods can also be combined - the combination is described on
-the <a href="/opcodes/lorand">lorand / hirand</a> page. However, lorand/hirand might not
+the <a href="lorand">lorand / hirand</a> page. However, lorand/hirand might not
 be a good idea to use with samples which have multiple microphone positions,
-and sticking to seq_position and seq_length might be necessary.</p>
+and sticking to <code>seq_position</code> and <a href="seq_length">seq_length</a> might be necessary.</p>
     
       <h2 id="practical-considerations">
         
@@ -324,7 +324,7 @@ and sticking to seq_position and seq_length might be necessary.</p>
       </h2>
 
 <p>In at least some SFZ players, sequence position is not tracked together for
-all regions, which means seq_position is not a practical way to implement
+all regions, which means <code>seq_position</code> is not a practical way to implement
 alternating left/right hand or up/down bowing samples.</p>
 
 <p>Some players also match velocity ranges for each step in the sequence, which
@@ -367,8 +367,9 @@ key=48
 &lt;region&gt; lovel=96 hivel=127 sample=*saw
 </code></pre>
 
-<p>Setting seq_position to 0 will cause the region to not play in most sfz player,
-except for sfizz where it will behave the same as setting seq_position to 1.</p>
+<p>Setting <code>seq_position</code> to 0 will cause the region to not play in most sfz player,
+except for sfizz where it will behave the same as setting <code>seq_position</code> to 1.</p>
+
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">

@@ -277,25 +277,27 @@
 					<article><h1>note_selfmask</h1><p>Controls note-stealing behavior for a single pitch, when using <a href='/opcodes/note_polyphony'>note_polyphony</a>.</p>
 
 <p>This affects only muting of notes where the polyphony is limited by
-<a href="/opcodes/note_polyphony">note_polyphony</a> and not cases where
-<a href="/opcodes/polyphony">polyphony</a> is used.</p>
+<a href="note_polyphony">note_polyphony</a> and not cases where <a href="polyphony">polyphony</a> is used.</p>
 
 <p>Default self-masking behavior is that higher-or-equal-velocity notes turn off
 lower-velocity notes, but lower-velocity notes do not turn off
-higher-velocity notes. A new note will always play.
-To be more precise, assuming a <code>note_polyphony=1</code>, the self-masking behavior by default is:</p>
+higher-velocity notes. A new note will always play.</p>
+
+<p>To be more precise, assuming a <a href="note_polyphony">note_polyphony</a>=1, the self-masking behavior by default is:</p>
 <ul>
-  <li>If a low-velocity note is playing, a higher-or-equal velocity note kills the low-
-velocity note.</li>
-  <li>If a high-velocity note is playing, a strictly-lower-velocity note will play without
-killing the high-velocity note.
-The <code>note_polyphony</code> opcode is thus not a strict polyphony limit but more of a hint for
-the instrument behavior. This behavior is indeed generally desirable when playing repeated
-piano notes, ride cymbals, hammered dulcimers etc. With note_selfmask set to off,
-notes turn off notes with the same pitch regardless of velocity, which generally
-sounds less “musical” but does ensure that note polyphony is always preserved
-within the set limit, and can sound right for certain instruments.</li>
+  <li>If a low-velocity note is playing, a higher-or-equal velocity note kills
+the low-velocity note.</li>
+  <li>If a high-velocity note is playing, a strictly-lower-velocity note will play
+without killing the high-velocity note.</li>
 </ul>
+
+<p>The <a href="note_polyphony">note_polyphony</a> opcode is thus not a strict polyphony limit but more of a hint
+for the instrument behavior. This behavior is indeed generally desirable
+when playing repeated piano notes, ride cymbals, hammered dulcimers etc.
+With <code>note_selfmask</code> set to off, notes turn off notes with the same pitch
+regardless of velocity, which generally sounds less “musical” but does ensure that
+note polyphony is always preserved within the set limit, and can sound right
+for certain instruments.</p>
       <h2 id="example">
         
         
@@ -306,6 +308,7 @@ within the set limit, and can sound right for certain instruments.</li>
 
 <pre><code>note_selfmask=off
 </code></pre>
+
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">

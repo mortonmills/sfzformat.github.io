@@ -277,13 +277,13 @@
 					<article><h1>lokey / hikey</h1><p>Determine the low boundary of a certain <a href='/headers/region'>region</a>.</p>
 
 <p>When a region only covers one note, it is generally more convenient to use
-<a href="/opcodes/key">key</a> instead of <code>hikey</code> and <code>lokey</code>. When <code>hikey</code> and <code>lokey</code> are used,
-they will usually need to be used together with <a href="/opcodes/pitch_keycenter">pitch_keycenter</a>.</p>
+<a href="key">key</a> instead of <code>hikey</code> and <code>lokey</code>. When <code>hikey</code> and <code>lokey</code> are used,
+they will usually need to be used together with [pitch_keycenter].</p>
 
 <p>In the SFZ 1 specification, the allowed range is 0 to 127. However, SFZ 2 additionally
 includes the possibility to set lokey and hikey to -1, to prevent a region from
 being triggered by any keys. This is a way (though, admittedly, not a very
-elegant one) to use the <a href="/opcodes/on_loccN">on_loccN/onhiccN</a> opcodes to trigger,
+elegant one) to use the <a href="on_loccN">on_loccN / onhiccN</a> opcodes to trigger,
 for example, pedal noises which are triggered whether any keys are pressed or not.</p>
       <h2 id="examples">
         
@@ -307,6 +307,8 @@ for example, pedal noises which are triggered whether any keys are pressed or no
 &lt;region&gt; sample=c5.wav  lokey=71 hikey=73 pitch_keycenter=72
 &lt;region&gt; sample=eb5.wav lokey=74 hikey=76 pitch_keycenter=75
 </code></pre>
+
+<p>[pitch_keycenter]]:   pitch_keycenter</p>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">

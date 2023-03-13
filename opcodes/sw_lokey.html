@@ -278,14 +278,14 @@
 
 <p>Basically, this tells the SFZ player where the keyswitches are.
 As such, it’s normally going to be the same for the entire instrument,
-so <code>sw_lokey</code> and <code>sw_hikey</code> will be set under the <a href="/headers/global">global</a>
-header.  This affects <a href="/opcodes/sw_last">sw_last</a> keyswitches. On the other hand,
-<a href="/opcodes/sw_previous">sw_previous</a> keyswitches can be outside of this range - and
-indeed often must be, as <code>sw_previous</code> is often used for legato instruments.</p>
+so <code>sw_lokey</code> and <code>sw_hikey</code> will be set under the <a href="/headers/global">‹global›</a> header.
+This affects <a href="sw_last">sw_last</a> keyswitches. On the other hand, <a href="sw_previous">sw_previous</a> keyswitches
+can be outside of this range - and indeed often must be, as <code>sw_previous</code>
+is often used for legato instruments.</p>
 
-<p>With <a href="/opcodes/sw_down">sw_down/sw_up</a> this behavior is implementation-dependent.
+<p>With <a href="sw_down">sw_down / sw_up</a> this behavior is implementation-dependent.
 In ARIA, either <code>sw_down</code> or <code>sw_up</code> can be a note in the playable range, regardless
-of whether <a href="/opcodes/sw_lokey">sw_lokey/hikey</a> is defined or not. In rgc sfz, they
+of whether <a href="sw_lokey">sw_lokey / hikey</a> is defined or not. In rgc sfz, they
 can be in the playable range if <code>sw_lokey/hikey</code> are not defined, but if they
 are defined, then <code>sw_down</code> and <code>sw_up</code> notes must fall in the <code>sw_lokey/hikey</code> range.</p>
 
@@ -301,6 +301,7 @@ or in MIDI note names (C-1 to G9)</p>
 
 <pre><code>sw_lokey=48 sw_hikey=53
 </code></pre>
+
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">

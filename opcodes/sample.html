@@ -298,8 +298,7 @@ play unchanged on note 60 (middle C). If <a href="pitch_keytrack">pitch_keytrack
 is set to 0, the sample will also play unchanged in pitch,
 regardless of how <a href="pitch_keycenter">pitch_keycenter</a> is set.
 If the key opcode is used to define the range of the sample (instead of <a href="lokey">lokey</a>,
-<a href="lokey">hikey</a> and <a href="pitch_keycenter">pitch_keycenter</a>) the sample will also
-be unchanged in pitch.</p>
+<a href="hikey">hikey</a> and <a href="pitch_keycenter">pitch_keycenter</a>) the sample will also be unchanged in pitch.</p>
       <h2 id="formats">
         
         
@@ -358,8 +357,8 @@ sample=*silence
 
 <p>Tri is an alias for triangle. For cases where we don’t want to actually play
 a sample but want a region to exist and be played
-(for example, to mute other sounds when using <a href="/opcodes/group">group</a> and
-<a href="/opcodes/off_by">off_by</a>, the silence value can be very convenient).</p>
+(for example, to mute other sounds when using <a href="group">group</a> and
+<a href="off_by">off_by</a>, the silence value can be very convenient).</p>
 
 <p>Note that in this case the <code>*</code> is a real character and not a wildcard.</p>
 

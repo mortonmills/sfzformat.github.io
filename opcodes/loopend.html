@@ -289,7 +289,7 @@ the sample. For files which have multiple loops defined, this is the only way to
 get anything other than the first defined loop to play.</p>
 
 <p>This opcode will not have any effect if <a href="loop_mode">loop_mode</a> is set
-to <strong><em>no_loop</em></strong>.</p>
+to <strong>no_loop</strong>.</p>
       <h2 id="practical-considerations">
         
         
@@ -299,12 +299,12 @@ to <strong><em>no_loop</em></strong>.</p>
       </h2>
 
 <p>Loop endpoints can be modulated using <code>loop_lengthccN</code> in rgc sfz, and
-<code>loop_length_onccN</code> in Cakewalk products - though the term “length” is used, it’s
-specifically the location of the end point which is modulated.</p>
+<code>loop_length_onccN</code> in Cakewalk products - though the term “length” is used,
+it’s specifically the location of the end point which is modulated.</p>
 
 <p>In ARIA, if <code>loop_end</code> is not specified, the sample does not have a loop defined
-and <code>loop_mode</code> is set to loop_continuous or loop_sustain, the player will loop
-through the entire file.</p>
+and <a href="loop_mode">loop_mode</a> is set to <strong>loop_continuous</strong> or <strong>loop_sustain</strong>, the player
+will loop through the entire file.</p>
 
 <p>Not directly related to SFZ players, but causing a common error, some audio editors
 number samples starting with 1, while according to the WAV file specification the
@@ -312,7 +312,7 @@ first sample should be number 0. If one of these editors is used to create sampl
 files which have loop point information, and the loop endpoint is set to the last
 sample of the file, the SFZ player will think the loop endpoint is after the end
 of the file, and will return an error. The solution to this is either to reduce the loop
-start and endpoints in the WAV file by 1 each, or to set <code>loop_start</code> and <code>loop_end</code>
+start and endpoints in the WAV file by 1 each, or to set <a href="loop_start">loop_start</a> and <code>loop_end</code>
 in the SFZ.</p>
     
       <h2 id="examples">
@@ -327,6 +327,7 @@ in the SFZ.</p>
 
 loop_end=12445
 </code></pre>
+
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">

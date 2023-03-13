@@ -279,14 +279,14 @@
 <p>The file to which #include points is, in effect,
 pasted into the SFZ file at the point of the #include. This means that
 the file structure needs to be respected - after all #includes are processed,
-‹<a href="/headers/control">control</a>› header needs to be before the regions in the file,
-‹<a href="/headers/curve">curve</a>› opcodes need to be at the bottom etc. This can be
+<a href="/headers/control">‹control›</a> header needs to be before the regions in the file,
+<a href="/headers/curve">‹curve›</a> opcodes need to be at the bottom etc. This can be
 nested - #included files can contain more #includes of their own,
 though of course recursion must be avoided!</p>
 
 <p>The included path must be surrounded by double quotes, similar to how include
 works in C/C++ files. Note that this is different from how the paths in the
-&lt;<a href="/opcodes/sample">sample</a>&gt; opcode works, which do not need quotes.</p>
+<a href="sample">sample</a> opcode works, which do not need quotes.</p>
 
 <p>Either a filename or a path can be used. If the #included files are in another
 folder, the SFZ is interpreted as if it was in the main SFZ file’s path, not the
@@ -296,7 +296,7 @@ for clarity when #including a header.</p>
 
 <p>This is useful for creating large complex files, and also for simplifying the
 management of files which repeat similar regions with different opcodes. This is
-especially convenient in conjunction with the ‹<a href="/headers/master">master</a>› header.</p>
+especially convenient in conjunction with the <a href="/headers/master">‹master›</a> header.</p>
       <h2 id="examples">
         
         
@@ -343,12 +343,13 @@ tune_cc55=-250
 #include "mappings/bobobo_tenor_l_2.sfz"
 </code></pre>
 
-<p>Using #include with <a href="/opcodes/define">#define</a> in the same instrument requires care,
+<p>Using #include with <a href="define">#define</a> in the same instrument requires care,
 especially if the same value has to be #defined to have different settings at
 different points in an instrument. Using #define to set the same variable to different
 values at one point in the same SFZ file does not work well at least in ARIA/Sforzando
 when loading an instrument. However, a workaround there is to use #include to put each
 #define statement in a separate file. In simple tests, that has been successful.</p>
+
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
