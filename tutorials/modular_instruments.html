@@ -336,7 +336,8 @@ off_by=1
 &lt;region&gt;key=60 sample=c5.wav
 </code></pre>
 
-<p>Then the sample map becomes a reusable module which can be “called” using an <a href="/opcodes/include">#include</a> statement.
+<p>Then the sample map becomes a reusable module which can be “called” using
+an <a href="/opcodes/include">#include</a> statement.
 The instrument can be decluttered to this:</p>
 
 <pre><code>&lt;group&gt;
@@ -452,8 +453,9 @@ sw_label=Percussive noises
 be used in both a spiccato-only instrument and in a keyswitch instrument which contains other articulations as
 well.</p>
 
-<p>Putting each set of round robins inside its own file without defining <a href="/opcodes/seq_position">seq_position</a> inside that
-file can also be useful for emulating double-tracking. If the basic non-doubletracked instrument is set up like this:</p>
+<p>Putting each set of round robins inside its own file without defining <a href="/opcodes/seq_position">seq_position</a>
+inside that file can also be useful for emulating double-tracking.
+If the basic non-doubletracked instrument is set up like this:</p>
 
 <pre><code>&lt;global&gt;
 seq_length=4
@@ -520,9 +522,10 @@ seq_position=4
         
       </h2>
 
-<p>When including files, it’s common to put lower levels of <a href="/headers">header</a> organization, such as region and group in the
-included file,  and put higher levels in the main file. However, this is not necessary, and any levels of headers can be
-included. It is important to keep in mind that included files are essentially just concatenated to make the SFZ file which
+<p>When including files, it’s common to put lower levels of <a href="/headers/">header</a> organization,
+such as region and group in the included file, and put higher levels in the main file.
+However, this is not necessary, and any levels of headers can be included.
+It is important to keep in mind that included files are essentially just concatenated to make the SFZ file which
 the SFZ instrument actually parses. Although an included file is a little like a procedure in a programming language, it
 isn’t really one, and the end of the included file is not meaningful when</p>
 
@@ -586,7 +589,8 @@ the headers are not immediately visible because they’re in an included file, i
         
       </h2>
 
-<p>In addition to include, <a href="/opcodes/define">#define</a> is the other statement which is very useful in making instruments more modular.</p>
+<p>In addition to include, <a href="/opcodes/define">#define</a> is the other statement which is very useful
+in making instruments more modular.</p>
 
 <p>Define and include can be used together. For example, user-editable parameters, such as MIDI note assignments for drum kits
 and CC ranges, can also be placed in a separate file such as the below.</p>
@@ -625,9 +629,9 @@ label_cc$MIC_MIX_CC=$MIC_NAME
 
 <p>This will fail in at least some SFZ players, because the complete name of one variable is also the start of another variable’s name:</p>
 
-<p>```
-#define $SNARE 38
-#define $SNARE_RIMSHOT 40</p>
+<pre><code>#define $SNARE 38
+#define $SNARE_RIMSHOT 40
+</code></pre>
 					</article>
 				</div>
 				<div class="col-md-3">

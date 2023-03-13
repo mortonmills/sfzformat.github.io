@@ -274,10 +274,10 @@
 
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
-					<article><h1>Brush stirs</h1><p>Not all drum sounds are hits which can be used in the usual way described in our <a href="/tutorials/drum_basics">drum basics</a>
-article. One major exception are brush techniques which involve scraping the
-brush across a drum head, often in a circle. If you are not sure what this
-looks or sounds like, <a href="https://www.youtube.com/watch?v=R982CdhRF9E">this video is a good guide</a>.
+					<article><h1>Brush stirs</h1><p>Not all drum sounds are hits which can be used in the usual way described in our
+<a href="drum_basics">drum basics</a> article. One major exception are brush techniques which involve
+scraping the brush across a drum head, often in a circle. If you are not sure what
+this looks or sounds like, <a href="https://www.youtube.com/watch?v=R982CdhRF9E">this video is a good guide</a>.
 These techniques are called swirls or stirs, and for the purpose of this article
 we’ll call them stirs. As the sound changes in intensity, and the duration
 of the scrapes needs to fit the tempo and rhythm of the song, sampling them
@@ -327,8 +327,8 @@ the purposes of this example they can be half the length of speed 1.</p>
 
 <p>We can make a very simple stir using speed 1 by playing the sample with
 <a href="/opcodes/loop_mode">loop_mode</a> set to one_shot, like we normally would set it for a
-drum hit, and using a simple <a href="/modulations/envelope_generators#sfz-1-egs">volume envelope</a>
-to fade this sample in over a time, and then fade it out.</p>
+drum hit, and using a simple <a href="/modulations/envelope_generators#sfz-1-egs">volume envelope</a> to fade this sample
+in over a time, and then fade it out.</p>
 
 <pre><code>&lt;region&gt;key=26 loop_mode=one_shot
 sample=snare_stir_speed_1.wav
@@ -441,8 +441,7 @@ more energetic tracks might sound better with even sharper envelope peaks. It
 would be nice to adjust the envelope curve shapes with MIDI CC, but it is not
 currently possible to do this. It’s possible to work around this by crossfading
 sharp-envelope and flat-envelope regions, or use locc/hicc to select between
-several pre-baked <a href="/opcodes/ampeg_attack_shape">envelope shapes</a>. Here’s an
-example of the latter method.</p>
+several pre-baked <a href="/opcodes/ampeg_attack_shape">envelope shapes</a>. Here’s an example of the latter method.</p>
 
 <pre><code>&lt;group&gt;key=26 loop_mode=one_shot
 
@@ -569,10 +568,11 @@ ampeg_attack_shape=5.2 ampeg_decay_shape=-3.5
 
 <p>As all the above sounds have loop_mode set to one_shot, triggering a note causes
 the sound to play until the volume envelope drops to zero. If ending a stir
-earlier than that is required, we can use polyphony groups. The <a href="/opcodes/group">group</a> and <a href="/opcodes/off_by">off_by</a>
-opcodes are the key ones here. We can use them to make stirs self-mute, so that
-triggering a new stir will mute any previously playing stirs, as well as add a key
-which produces no sound, using <a href="/opcodes/sample">silence instead of a sample</a>, but
+earlier than that is required, we can use polyphony groups. The <a href="/opcodes/group">group</a>
+and <a href="/opcodes/off_by">off_by</a> opcodes are the key ones here. We can use them to make stirs
+self-mute, so that triggering a new stir will mute any previously playing stirs,
+as well as add a key which produces no sound, using <a href="/opcodes/sample">silence instead of a sample</a>,
+but
 is in the same mute groups, so triggering this key will mute any stir or accent
 currently playing. This key can be used to stop stirs early.</p>
 
@@ -582,7 +582,7 @@ positions then those would need separate groups as well. In the below example we
 also have stirs mute accents, and vice versa, although the ornaments are left
 out of the mute groups and can be layered on top of other sounds without muting them.
 For a more sophisticated use of mute groups with other pieces of the drum kit,
-please see <a href="/tutorials/cymbal_muting">cymbal muting</a>.</p>
+please see <a href="cymbal_muting">cymbal muting</a>.</p>
 
 <pre><code>&lt;global&gt;loop_mode=one_shot off_mode=normal
 ampeg_release=0.1 ampeg_releasecc1=0.2
@@ -688,8 +688,8 @@ group=2 off_by=2
 &lt;region&gt;group=2 off_by=2
 </code></pre>
 
-<p>It is, of course, possible to apply <a href="/opcodes/seq_position">round robins</a> and <a href="/opcodes/lovel">dynamic layers</a> to this,
-just like any other drum sound. That is left as an exercise to the reader.</p>
+<p>It is, of course, possible to apply <a href="/opcodes/seq_position">round robins</a> and <a href="/opcodes/lovel">dynamic layers</a>
+to this, just like any other drum sound. That is left as an exercise to the reader.</p>
     
       <h2 id="alternative-approach">
         

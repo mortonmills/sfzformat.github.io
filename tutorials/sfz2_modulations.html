@@ -274,10 +274,10 @@
 
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
-					<article><h1>SFZ2 modulations</h1><p>The <a href="/modulations/index">modulations</a> available under SFZ2 are much more flexible than the fixed set
-<a href="/tutorials/sfz1_modulations">specified by SFZ1</a>. All SFZ1 modulations are still
-available under the SFZ2 spec, and will often be easier to use in cases such as
-envelopes where the standard AHDSR shape is all that’s needed.</p>
+					<article><h1>SFZ2 modulations</h1><p>The <a href="/modulations/">modulations</a> available under SFZ2 are much more flexible than the fixed set
+<a href="sfz1_modulations">specified by SFZ1</a>. All SFZ1 modulations are still available under the SFZ2 spec,
+and will often be easier to use in cases such as envelopes where the standard
+AHDSR shape is all that’s needed.</p>
 
 <p>The basic difference is that SFZ1 has three envelopes - one assigned to
 volume, one to pitch, and one to filter cutoff. There are also three LFOs,
@@ -309,20 +309,12 @@ not sure, needs testing.</p>
 <p>For each LFO, an LFO number must be specified - lfo01, lfo02 etc. Each
 LFO has the following parameters:</p>
 
-<ul>
-  <li><a href="/opcodes/lfoN_wave">lfoN_wave</a></li>
-  <li><a href="/opcodes/lfoN_freq">lfoN_freq</a></li>
-  <li><a href="/opcodes/lfoN_freq">lfoN_freq_onccX</a></li>
-  <li><a href="/opcodes/lfoN_freq_smoothccX">lfoN_freq_smoothccX</a></li>
-  <li><a href="/opcodes/lfoN_freq_stepccX">lfoN_freq_stepccX</a></li>
-  <li><a href="/opcodes/lfoN_delay">lfoN_delay</a></li>
-  <li><a href="/opcodes/lfoN_delay">lfoN_delay_onccX</a></li>
-  <li><a href="/opcodes/lfoN_fade">lfoN_fade</a></li>
-  <li><a href="/opcodes/lfoN_fade">lfoN_fade_onccX</a></li>
-  <li><a href="/opcodes/lfoN_phase">lfoN_phase</a></li>
-  <li><a href="/opcodes/lfoN_phase">lfoN_phase_onccX</a></li>
-  <li><a href="/opcodes/lfoN_count">lfoN_count</a></li>
-</ul>
+<p><a href="/opcodes/lfoN_freq">lfoN_wave</a>
+<a href="/opcodes/lfoN_freq_smoothccX">lfoN_freq_onccX</a>
+<a href="/opcodes/lfoN_delay">lfoN_freq_stepccX</a>
+<a href="/opcodes/lfoN_fade">lfoN_delay_onccX</a>
+<a href="/opcodes/lfoN_phase">lfoN_fade_onccX</a>
+<a href="/opcodes/lfoN_count">lfoN_phase_onccX</a></p>
 
 <p>Click on each link for a detailed description. Similarly to SFZ1 LFOs,
 there’s a frequency, a delay and a fade-in time. In addition, the
@@ -696,8 +688,7 @@ discrete number of steps. Setting the number of steps to 1 would make the modula
 all-or-nothing control.</p>
 
 <p>This is what’s possible under the SFZ2 specification. There are some additional modulations
-available as <a href="/opcodes/?v=aria">ARIA extensions</a>, with <a href="/opcodes/amplitude">amplitude_onccN</a>
-being a very useful one.</p>
+available as <a href="/opcodes/?v=aria">ARIA extensions</a>, with <a href="/opcodes/amplitude">amplitude_onccN</a> being a very useful one.</p>
 					</article>
 				</div>
 				<div class="col-md-3">

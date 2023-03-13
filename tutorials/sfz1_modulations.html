@@ -274,7 +274,7 @@
 
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
-					<article><h1>SFZ1 modulations</h1><p>The set of <a href="/modulations/index">modulations</a> available under the SFZ1 specification is fixed, and
+					<article><h1>SFZ1 modulations</h1><p>The set of <a href="/modulations/">modulations</a> available under the SFZ1 specification is fixed, and
 there’s a dedicated opcode for every possible modulation, including fairly
 esoteric ones such as using note velocity to modulate the hold stage of the
 pitch envelope.</p>
@@ -287,8 +287,7 @@ pitch envelope.</p>
       </h2>
 
 <p>A few opcodes can be modulated simply by MIDI CC, with the modulation adding
-to what the opcode would normally do. These are: <a href="/opcodes/offset">offset</a> and
-<a href="/opcodes/delay">delay</a>.</p>
+to what the opcode would normally do. These are: <a href="/opcodes/offset">offset</a> and <a href="/opcodes/delay">delay</a>.</p>
 
 <p>For example, this would have a sample offset of 500 when the modulating CC is
 at 0, and a sample offset of 1000 when the modulating CC is at max:</p>
@@ -313,9 +312,9 @@ EQ band gain are 0, so this would result in the offset being modulated between
         
       </h2>
 
-<p>The three EQ bands’ <a href="/opcodes/eqN_freq">frequency</a>, <a href="/opcodes/eqN_bw">bandwidth</a> and
-<a href="/opcodes/eqN_gain">gain</a> work similarly, but also add velocity tracking. The EQ
-bandwidth and center frequency also have non-zero defaults,
+<p>The three EQ bands’ <a href="/opcodes/eqN_freq">frequency</a>, <a href="/opcodes/eqN_bw">bandwidth</a> and <a href="/opcodes/eqN_gain">gain</a> work similarly,
+but also add velocity tracking. The EQ bandwidth and center frequency also have
+non-zero defaults,
 for example eq2_freq is 500 if not specified. So, this would modulate the center
 frequency of the second EQ band between 500 and 1500 if eq2_freq is left at default:</p>
 
@@ -330,26 +329,25 @@ frequency of the second EQ band between 500 and 1500 if eq2_freq is left at defa
         
       </h2>
 
-<p>EQ <a href="/opcodes/eqN_vel2freq">frequency</a> and <a href="/opcodes/eqN_vel2gain">gain</a> (but not
-bandwidth) can additionally be modulated by velocity. For example, if we want to
-make a sound brighter when the velocity is higher, we might use something like this:</p>
+<p>EQ <a href="/opcodes/eqN_vel2freq">frequency</a> and <a href="/opcodes/eqN_vel2gain">gain</a> (but not bandwidth) can additionally be modulated by velocity.
+For example, if we want to make a sound brighter when the velocity is higher,
+we might use something like this:</p>
 
 <pre><code>eq1_vel2gain=-6
 eq2_vel2gain=12
 eq2_vel2freq=500
 </code></pre>
 
-<p>The <a href="/opcodes/xfin_loccN">xfin</a>/<a href="/opcodes/xfout_loccN">xfout</a> CCs are also a
-way to fade sounds in and out using MIDI CC. An example of one note with two
-dynamic layers being crossfaded:</p>
+<p>The <a href="/opcodes/xfin_loccN">xfin</a>/<a href="/opcodes/xfout_loccN">xfout</a> CCs are also a way to fade sounds in and out using MIDI CC.
+An example of one note with two dynamic layers being crossfaded:</p>
 
 <pre><code>&lt;region&gt;sample=e4_ft_p.wav xfin_locc1=0 xfin_hicc1=63 xfout_locc1=64 xfout_hicc1=127
 &lt;region&gt;sample=e4_ft_f.wav xfin_locc1=64 xfin_hicc1=127
 </code></pre>
 
 <p>In addition to MIDI CC, crossfades can also use MIDI note number and velocity as
-modulation sources, and the <a href="/opcodes/xf_cccurve">xf_cccurve</a>, <a href="/opcodes/xf_keycurve">xf_keycurve</a>
-and <a href="/opcodes/xf_velcurve">xf_velcurve</a> give the choice of two curves for each of these modulations.</p>
+modulation sources, and the <a href="/opcodes/xf_cccurve">xf_cccurve</a>, <a href="/opcodes/xf_keycurve">xf_keycurve</a> and <a href="/opcodes/xf_velcurve">xf_velcurve</a>
+give the choice of two curves for each of these modulations.</p>
 
 <p>More sophisticated modulations are possible with volume,
 pitch and <a href="/opcodes/cutoff">filter cutoff</a>. Volume and cutoff can be modulated by MIDI CC directly
@@ -412,8 +410,7 @@ fileg_vel2depth=4000
 </code></pre>
 
 <p>If something is not described above, then modulating it is not possible under the
-SFZ1 specification, and will require <a href="/tutorials/sfz2_modulations">using SFZ2</a>
-or possibly some extension opcodes.</p>
+SFZ1 specification, and will require <a href="sfz2_modulations">using SFZ2</a> or possibly some extension opcodes.</p>
 					</article>
 				</div>
 				<div class="col-md-3">

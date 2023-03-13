@@ -288,12 +288,10 @@ though it might be turned into another type of page eventually.</p>
         
       </h2>
 
-<p>The relevant opcodes are: <a href="/opcodes/volume">volume</a>, <a href="/opcodes/amplitude">amplitude</a>, 
-<a href="/opcodes/xfin_loccN">xfin/xfout</a>, <a href="/opcodes/amp_veltrack">amp_veltrack</a>,
+<p>The relevant opcodes are: <a href="/opcodes/volume">volume</a>, <a href="/opcodes/amplitude">amplitude</a>, <a href="/opcodes/xfin_loccN">xfin / xfout</a>, <a href="/opcodes/amp_veltrack">amp_veltrack</a>,
 <a href="/opcodes/amp_keytrack">amp_keytrack</a>, <a href="/opcodes/amp_velcurve_N">amp_velcurve_N</a>.
-There are also envelope and LFO modulation sources: <a href="/opcodes/ampeg_attack">ampeg</a>, 
-<a href="/opcodes/amplfo_depth">amplfo</a>, and volume-related targets for
-<a href="/tutorials/sfz2_modulations">egN and lfoN</a>. Some of them will have multiple stages,
+There are also envelope and LFO modulation sources: <a href="/opcodes/ampeg_attack">ampeg</a>, <a href="/opcodes/amplfo_depth">amplfo</a>, and
+volume-related targets for <a href="sfz2_modulations">egN and lfoN</a>. Some of them will have multiple stages,
 points, CCs etc, so the volume of one sample can be affected by many different things
 at once.</p>
     
@@ -357,8 +355,8 @@ have a layer which has more than zero amplitude at the start of the fade-in. Thi
 important for instruments such as bowed strings, which have a certain minimum practical
 playable loudness. These will often have dynamics linked to CC1 or some other CC, and
 need to have some small amount of audible volume even at the lowest CC level. Here,
-amplitude with <a href="/modulations/curveccN">curveccN</a> can be used to fade in the lowest
-layer. It’s still possible to use xfout to fade the layer out at higher CC values as
+amplitude with <a href="/modulations/curveccN">curveccN</a> can be used to fade in the lowest layer.
+It’s still possible to use xfout to fade the layer out at higher CC values as
 the next layer fades in, though it may be simpler to just use amplitude for all layers,
 for example like this:</p>
 
@@ -409,8 +407,8 @@ region differently across time, obviously.</p>
       </h2>
 
 <p><a href="/opcodes/amp_random">amp_random</a> and its alias gain_random work like volume/gain
-and are measured in decibels. In ARIA and Cakewalk, amp_random is unipolar. In the
-rgc sfz player, amp_random is bipolar.</p>
+and are measured in decibels. In ARIA and Cakewalk, amp_random is unipolar.
+In the rgc sfz player, amp_random is bipolar.</p>
 
 <p>In ARIA, CC135 (unipolar random) and 136 (bipolar random) can also be used by
 various opcodes which modulate volume.</p>

@@ -291,8 +291,7 @@ lfo01_freq=2
 lfo01_freq_oncc112=8
 </code></pre>
 <p>In real life, however, players and singers will often start a note without vibrato,
-and add vibrato a fraction of a second later. This is where modulating the <a href="/opcodes/lfoN_delay">LFO delay parameter</a>
-becomes useful, and possibly <a href="/opcodes/lfoN_fade">LFO fade</a> as well. Delay seems like enough for most wind
+and add vibrato a fraction of a second later. This is where modulating the <a href="/opcodes/lfoN_delay">LFO delay parameter</a> becomes useful, and possibly <a href="/opcodes/lfoN_fade">LFO fade</a> as well. Delay seems like enough for most wind
 instruments and vocals, but having both delay and fade seems effective with bowed strings.</p>
 <pre><code>lfo01_pitch_oncc111=35
 lfo01_freq=2
@@ -323,7 +322,7 @@ lfo01_eq1freq_oncc111=500
 </code></pre>
 <p>Vibrato can also be humanized, by varying the rate of the vibrato LFO. This can be done
 by modulating the rate of the vibrato LFO with another LFO. The ARIA sample &amp; hold
-<a href="/opcodes/lfoN_wave.html">waveform</a> can be used here, and the modulation depth controlled by MIDI CC, so when that’s
+<a href="/opcodes/lfoN_wave">waveform</a> can be used here, and the modulation depth controlled by MIDI CC, so when that’s
 at zero, no humanization happens.</p>
 <pre><code>lfo02_freq=1
 lfo02_wave=12 //Sample &amp; hold LFO waveform number
@@ -338,7 +337,7 @@ lfo02_freq_lfo01_oncc117=1
 <p>However, when playing multiple layers, such as sustain samples with crossfaded dynamics
 or multiple mic positions, this can cause each layer’s vibrato to drift out of sync and
 sound like separate instruments. This is generally not desirable, so it is possible to
-pseudo-randomize the starting phase using a non-random <a href="/extensions/midi_ccs.html">CC, such as velocity</a>
+pseudo-randomize the starting phase using a non-random <a href="/extensions/midi_ccs">CC, such as velocity</a>
 (which is often otherwise unused in sustain sounds with crossfaded dynamics). If the SFZ
 player can have a global sample and hold LFO which does not retrigger for each note, this
 would also be a solution, though ARIA does not allow this.</p>
@@ -421,7 +420,7 @@ pitch_oncc111=-20
 </code></pre>
 <p>This will work fine, as long as we don’t try to apply delay or fade to the LFO, which
 would result in the note starting out flat with no vibrato. To solve that problem, we
-can combine the LFO with a pitch <a href="/modulations/envelope_generators.html">envelope</a>. Here is an example with just delay:</p>
+can combine the LFO with a pitch <a href="/modulations/envelope_generators">envelope</a>. Here is an example with just delay:</p>
 <pre><code>lfo01_pitch_oncc111=20
 lfo01_freq=1.5
 lfo01_freq_oncc112=6
@@ -432,7 +431,7 @@ pitcheg_depth_oncc111=-20
 </code></pre>
 <p>To have the choice of idiomatic sax vibrato and violin-style vibrato centered around the pitch
 can be done separate LFOs and separate depth controls. It’s also possible to duplicate all the
-regions and use <a href="/opcodes/loccN.html">loccN/hiccN</a> to select between ones with different styles of vibrato.</p>
+regions and use <a href="/opcodes/loccN">loccN/hiccN</a> to select between ones with different styles of vibrato.</p>
 <pre><code>lfo01_pitch_oncc111=20 //Sax vibrato LFO - goes down from the main pitch
 lfo01_freq=1.5
 lfo01_freq_oncc112=6
@@ -472,7 +471,7 @@ the volume of the note drops down, the breath noise can become more prominent, e
 quiet notes or when using the subtone technique. If the volume of the breath noise can be
 modulated separately, the noise regions should not be affected by pitch vibrato, and be
 affected by the diaphragm vibrato in an opposite direction to the notes. So, if the above
-vibrato settings are set under a <a href="/headers/global.html">global header</a>, the breath noise
+vibrato settings are set under a <a href="/headers/global">‹global›</a> header, the breath noise
 sample regions could have settings similar to this.</p>
 <pre><code>lfo01_pitch_oncc111=0 //LFOs do not affect pitch
 pitcheg_depth_oncc111=0

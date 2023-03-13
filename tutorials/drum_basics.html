@@ -310,7 +310,7 @@ play the entire sample from start to end, ignoring note off.</p>
 </code></pre>
 
 <p>There’s no need to set the one_shot for each region, though. We can simplify
-our life by using the ‹<a href="/headers/global">global</a>› header like this:</p>
+our life by using the <a href="/headers/global">‹global›</a> header like this:</p>
 
 <pre><code>&lt;global&gt;loop_mode=one_shot
 
@@ -365,7 +365,7 @@ sample=kick_vl4.wav
 </code></pre>
 <p>This can, again, be simplified. The defalut value for lovel is 0, and for hivel
 it’s 127, so we don’t need to specify setting them to those numbers. Also, we
-can use a ‹<a href="/headers/group">group</a>› header to make the key opcode the same
+can use a <a href="/headers/group">‹group›</a> header to make the key opcode the same
 across all four regions:</p>
 
 <pre><code>&lt;global&gt;loop_mode=one_shot
@@ -381,8 +381,7 @@ across all four regions:</p>
 standard velocity tracking, each sample would play at full volume if the
 velocity was 127, but we actually need each sample to play at full volume at the
 velocity which is equal to its hivel value. This can be done in various ways,
-and the way we recommend is the <a href="/opcodes/amp_velcurve_N">amp_velcurve_N</a>
-opcode, like this:</p>
+and the way we recommend is the <a href="/opcodes/amp_velcurve_N">amp_velcurve_N</a> opcode, like this:</p>
 
 <pre><code>&lt;global&gt;loop_mode=one_shot
 
@@ -513,7 +512,7 @@ three round robins, plus a few comments, the resulting SFZ would look like this:
 
 <p>This is almost all the information needed to map basic drum kits in SFZ. Almost,
 because well-sampled hi-hats will have many different articulations, and that
-creates some additional considerations, which we will describe on <a href="/tutorials/cymbal_muting">another page</a>.</p>
+creates some additional considerations, which we will describe on <a href="cymbal_muting">another page</a>.</p>
 					</article>
 				</div>
 				<div class="col-md-3">
