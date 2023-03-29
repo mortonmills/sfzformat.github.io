@@ -829,9 +829,15 @@ div.checkbox-filter {
 			<td><a href="/opcodes/gain_random">gain_random</a></td><td><a href="/opcodes/amp_random">amp_random</a> alias.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 24 dB</td><td>Cakewalk</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
-			<td><a href="/opcodes/rt_decay">rt_decay</a></td><td>Applies only to regions that triggered through trigger=release. The volume decrease (in decibels) per seconds after the note has been attacked.</td>
+			<td><a href="/opcodes/rt_decay">rt_decay</a></td><td>Applies only to regions that triggered through trigger=release. The volume decrease (in decibels) per seconds after the corresponding attack region was triggered.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 200 dB</td><td>SFZ v1</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
+			<td><a href="/opcodes/rt_decayN">rt_decayN</a></td><td>Applies only to regions that triggered through trigger=release. The volume decrease (in decibels) per seconds after the corresponding attack region was triggered, for decrease curve segment number N.</td>
+			<td>float</td><td>0</td>
+			<td>0 to 200 dB</td><td>ARIA</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
+			<td><a href="/opcodes/rt_decayN_time">rt_decayN_time</a></td><td>The duration of release sample volue decrease curve segment number N.</td>
+			<td>float</td><td>N/A</td>
+			<td>N/A</td><td>ARIA</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/xf_cccurve">xf_cccurve</a></td><td>MIDI controllers crossfade curve for the region.</td>
 			<td>string</td><td>power</td>
 			<td>gain, power</td><td>SFZ v1</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
