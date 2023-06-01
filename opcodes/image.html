@@ -293,7 +293,10 @@ The visible image is approximately 530x150 pixels. If a larger image is loaded,
 only the top left part will be visible.
 If set multiple times, the last image set in the SFZ file is actually used.</li>
   <li><strong>Dimension Pro</strong> parses but ignores the opcode.</li>
-  <li><strong>sfizz</strong> supports it under the <code>&lt;control&gt;</code> header only, not limited to BMP images.</li>
+  <li><strong>sfizz</strong> supports it under the <code>&lt;control&gt;</code> header only,
+together with a custom <code>image_controls</code> opcode to support an additional image
+in its controls tab.
+The image size is 775x335 pixels with 1:1 aspect ratio, not limited to BMP images.</li>
 </ul>
 
 
