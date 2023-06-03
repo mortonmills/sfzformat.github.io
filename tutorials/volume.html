@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html
+	data-bs-theme="auto"
+>
 	<head>
 		<meta charset="utf-8">
 
@@ -8,6 +10,8 @@
 		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
 		<meta name="web-author" content="RedTide and SFZ Format Team">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<script src="/assets/js/color-modes.js"></script>
 
 		<!-- Atom Feeds -->
 		<link href="/atom.xml" rel="alternate" type="application/atom+xml" />
@@ -25,7 +29,22 @@
 
 		<!-- Stylesheets -->
 		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"
+			rel="stylesheet"
+		>
+	<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/github.min.css"
+			disabled="disabled"
+			id="hljs_light"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/highlight.js@11.8.0/styles/github-dark-dimmed.min.css"
+			disabled="disabled"
+			id="hljs_dark"
+		/>
 
 		<!-- Font Awesome Icons -->
 		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
@@ -37,238 +56,370 @@
 	<body>
 
 		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
-		<a href="#content" class="sr-only">Skip to content</a>
 		<div class="container">
 
-			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
-				<a class="navbar-brand" href="/">
-					<img src="/assets/img/logo.png"
-					width="120" height="30" class="d-inline-block align-top" alt=""></a>
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarContent" aria-controls="navbarContent"
-					aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+			<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+				<symbol id="sun-fill" viewBox="0 0 16 16">
+					<path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+				</symbol>
+				<symbol id="moon-stars-fill" viewBox="0 0 16 16">
+					<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+					<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+				</symbol>
+				<symbol id="circle-half" viewBox="0 0 16 16">
+					<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+				</symbol>
+				<symbol id="check2" viewBox="0 0 16 16">
+					<path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+				</symbol>
+			</svg>
 
-				<div class="collapse navbar-collapse" id="navbarContent">
-					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<nav
+				class="navbar navbar-expand-lg bg-dark" text-bg-dark
+				data-bs-theme="dark"
+			>
+				<div class="container">
 
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarContent"
+						aria-controls="navbarContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
 
-	
-		
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
-								data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Syntax</a>
-							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
-		
-			
-								<a class="dropdown-item"
-									href="/headers/">Headers</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/opcodes/">Opcodes</a>
-			
-		
-			
-								<div class="dropdown-divider"></div>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/modulations/">Modulations</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/modulations/envelope_generators">Envelope Generators</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/modulations/lfo">LFO</a>
-			
-		
-			
-								<div class="dropdown-divider"></div>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/extensions/midi_ccs">Extended MIDI CCs</a>
-			
-		
-			
-								<div class="dropdown-divider"></div>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/misc/categories">Types & Categories</a>
-			
-		
-							</div>
-	
-						</li>
+					<a
+						class="navbar-brand"
+						href="/"
+					>
+						<img
+							src="/assets/img/logo.png"
+							width="120" height="30" class="d-inline-block align-top" alt=""
+						/></a>
 
-	
-		
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
-								data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Software</a>
-							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
-		
-			
-								<a class="dropdown-item"
-									href="/software/players">Players</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/software/tools">Tools</a>
-			
-		
-							</div>
-	
-						</li>
-
-	
-		
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
-								data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
-							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/basics">Basics</a>
-			
-		
-			
-								<div class="dropdown-divider"></div>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/basic_sfz_file">Basic / Template</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/vibrato">Vibrato</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/legato">Legato</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/unison">Unison</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/range_extension">Range Extension</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/modular_instruments">Modular Instruments</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/subtractive_synths">Subtractive Synthesizers</a>
-			
-		
-			
-								<div class="dropdown-divider"></div>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/drum_basics">Drum & Round Robin Basics</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/cymbal_muting">Cymbal Muting</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/epic_drums">Epic Drums</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/brush_stirs">Brush Stirs</a>
-			
-		
-			
-								<div class="dropdown-divider"></div>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/lfo">Pitch LFO Examples</a>
-			
-		
-			
-								<div class="dropdown-divider"></div>
-			
-		
-			
-								<a class="dropdown-item"
-									href="/tutorials/videos">Video Tutorials</a>
-			
-		
-							</div>
-	
-						</li>
-
-	
-						<li class="nav-item">
-							<a class="nav-link"
-								href="https://sfzinstruments.github.io"> Instruments</a>
-	
-						</li>
-
-	
-						<li class="nav-item">
-							<a class="nav-link"
-								href="/news"> News</a>
-	
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link"
-								href="/search/">
-								Search</a>
-						</li>
-					</ul>
+					<div class="collapse navbar-collapse" id="navbarContent">
+						<ul class="navbar-nav me-auto mt-2 mt-lg-0">
+								
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="navbarSyntax"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+									aria-haspopup="true"
+								>Syntax
+								</a>
+								<ul
+									class="dropdown-menu"
+									aria-labelledby="navbarSyntax"
+								>
+									<li>
+										<a class="dropdown-item"
+											href="/headers/"
+										>
+											Headers
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/opcodes/"
+										>
+											Opcodes
+										</a>
+									</li>
+									<div class="dropdown-divider"></div>
+									<li>
+										<a class="dropdown-item"
+											href="/modulations/"
+										>
+											Modulations
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/modulations/envelope_generators"
+										>
+											Envelope Generators
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/modulations/lfo"
+										>
+											LFO
+										</a>
+									</li>
+									<div class="dropdown-divider"></div>
+									<li>
+										<a class="dropdown-item"
+											href="/extensions/midi_ccs"
+										>
+											Extended MIDI CCs
+										</a>
+									</li>
+									<div class="dropdown-divider"></div>
+									<li>
+										<a class="dropdown-item"
+											href="/misc/categories"
+										>
+											Types & Categories
+										</a>
+									</li>
+								</ul>
+							</li>
+								
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="navbarSoftware"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+									aria-haspopup="true"
+								>Software
+								</a>
+								<ul
+									class="dropdown-menu"
+									aria-labelledby="navbarSoftware"
+								>
+									<li>
+										<a class="dropdown-item"
+											href="/software/players"
+										>
+											Players
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/software/tools"
+										>
+											Tools
+										</a>
+									</li>
+								</ul>
+							</li>
+								
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="navbarTutorials"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+									aria-haspopup="true"
+								>Tutorials
+								</a>
+								<ul
+									class="dropdown-menu"
+									aria-labelledby="navbarTutorials"
+								>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/basics"
+										>
+											Basics
+										</a>
+									</li>
+									<div class="dropdown-divider"></div>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/basic_sfz_file"
+										>
+											Basic / Template
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/sustained_note_basics"
+										>
+											Sustained Note Basics
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/vibrato"
+										>
+											Vibrato
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/legato"
+										>
+											Legato
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/unison"
+										>
+											Unison
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/range_extension"
+										>
+											Range Extension
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/modular_instruments"
+										>
+											Modular Instruments
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/subtractive_synths"
+										>
+											Subtractive Synthesizers
+										</a>
+									</li>
+									<div class="dropdown-divider"></div>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/drum_basics"
+										>
+											Drum & Round Robin Basics
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/cymbal_muting"
+										>
+											Cymbal Muting
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/epic_drums"
+										>
+											Epic Drums
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/brush_stirs"
+										>
+											Brush Stirs
+										</a>
+									</li>
+									<div class="dropdown-divider"></div>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/sfz1_modulations"
+										>
+											SFZ 1 Modulations
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/sfz2_modulations"
+										>
+											SFZ 2 Modulations
+										</a>
+									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/lfo"
+										>
+											Pitch LFO Examples
+										</a>
+									</li>
+									<div class="dropdown-divider"></div>
+									<li>
+										<a class="dropdown-item"
+											href="/tutorials/videos"
+										>
+											Video Tutorials
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="https://sfzinstruments.github.io"
+								>
+									Instruments
+								</a>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									href="/news"
+								>
+									News
+								</a>
+							</li>
+						</ul>
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link"
+									href="/search/">
+									Search</a>
+							</li>
+							<li class="nav-item dropdown">
+								<button
+									class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
+									id="bd-theme"
+									type="button"
+									aria-expanded="false"
+									data-bs-toggle="dropdown"
+									data-bs-display="static"
+									aria-label="Toggle theme (auto)">
+									<svg class="bi my-1 theme-icon-active"><use href="#circle-half"></use></svg>
+									<span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+								</button>
+								<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+									<li>
+										<button
+											type="button"
+											class="dropdown-item d-flex align-items-center"
+											data-bs-theme-value="light"
+											aria-pressed="false">
+											<svg class="bi me-2 opacity-50 theme-icon"><use href="#sun-fill"></use></svg>
+											Light
+											<svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+										</button>
+									</li>
+									<li>
+										<button
+											type="button"
+											class="dropdown-item d-flex align-items-center"
+											data-bs-theme-value="dark"
+											aria-pressed="false">
+											<svg class="bi me-2 opacity-50 theme-icon"><use href="#moon-stars-fill"></use></svg>
+											Dark
+											<svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+										</button>
+									</li>
+									<li>
+										<button
+											type="button"
+											class="dropdown-item d-flex align-items-center active"
+											data-bs-theme-value="auto"
+											aria-pressed="true">
+											<svg class="bi me-2 opacity-50 theme-icon"><use href="#circle-half"></use></svg>
+											Auto
+											<svg class="bi ms-auto d-none"><use href="#check2"></use></svg>
+										</button>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</nav>
 
@@ -565,10 +716,17 @@ amplitude_oncc82=100 //Release noise volume
 			</footer>
 
 		</div>
-		<script src="/assets/js/scripts.min.js"></script>		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/gh/sfz/highlight.js@master/dist/sfz.min.js"></script>
+		<script src="/assets/js/scripts.min.js"></script>		<script
+			src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js">
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/gh/sfz/highlight.js@master/dist/sfz.min.js">
+		</script>
 		<script>hljs.configure({languages:["sfz"]});hljs.highlightAll();</script>
-		<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+		<script defer
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js">
+		</script>
 		<script>
 		$(document).on('click', '[data-toggle="lightbox"]', function(event) {
 			event.preventDefault();
