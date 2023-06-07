@@ -471,8 +471,8 @@ eg01_time4=1 eg01_level4=0
 <p>How to interpret the opcodes in the example above:</p>
 
 <ul>
-  <li>All of these opcodes begin with “eg01<em>”, indicating the first flex EG
-for the current region. A second flex EG would begin with “eg02</em>”, and so on.</li>
+  <li>All of these opcodes begin with “eg01_”, indicating the first flex EG
+for the current region. A second flex EG would begin with “eg02_”, and so on.</li>
   <li>The first opcode determines that the envelope will affect note pitch
 to a maximum of 1200 cents (one octave).</li>
   <li>Each envelope point is numbered, and these numbers appear at the end
@@ -503,8 +503,7 @@ The pitch will remain at this level as long as the note is held.</li>
         
       </h2>
 
-<p>SFZ –at least the ARIA Engine and sfizz implementations–
-uses the following curves for SFZ 1.0 envelopes
+<p>SFZ—at least the ARIA Engine and sfizz implementations—uses the following curves for SFZ 1.0 envelopes
 (<strong>ampeg</strong>, <strong>pitcheg</strong>, <strong>fileg</strong>, probably others but not tested):</p>
 
 <ul>
@@ -522,10 +521,10 @@ with positive and negative values resulting in concave and convex curves, respec
 but this can be bent into a logarithmic curve using positive/negative values
 as described in the above paragraph. For example, the following opcode
 will set the shape of the first eg01 phase to match the convex curve
-used in the SFZ 1.0 ampeg decay/release: <code>eg01_shape2</code>=-10.36</p>
+used in the SFZ 1.0 ampeg decay/release: <code>eg01_shape2=-10.36</code></p>
 
 <p>Note that the shape opcode should be placed on the second point affected by the curve.
-In other words, <code>eg01_shape2</code>=-10.36 will affect the curve between envelope points 1 and 2.</p>
+In other words, <code>eg01_shape2=-10.36</code> will affect the curve between envelope points 1 and 2.</p>
 
 <p>It is also important to know that ampeg/pitcheg/fileg decay (both SFZ &amp; SF2)
 behaves differently than flex EG in relation to the sustain level:</p>
@@ -533,12 +532,12 @@ behaves differently than flex EG in relation to the sustain level:</p>
 <ul>
   <li><strong>ampeg decay:</strong> The level in the decay phase descends at the rate
 determined by <code>ampeg_decay</code> but stops once it hits the sustain level.
-If your decay phase length is 1 second and sustain=50%,
+If your decay phase length is 1 second and sustain is 50%,
 the sustain level is reached after only half a second in the decay phase
 (assuming linear phase curve).</li>
   <li><strong>flex EG phase:</strong> The level always scales from starting to ending value
 over the full duration of the phase. When emulating an ADSR envelope
-using a flex EG, if your decay phase length is 1 second and sustain=50%,
+using a flex EG, if your decay phase length is 1 second and sustain is 50%,
 the volume level won’t reach 50% until the end of that one second.</li>
 </ul>
 
@@ -547,7 +546,7 @@ set the phase’s shape to 6 (concave) or -6 (convex).
 This is only an approximation, as the curve is not identical.</p>
 
 <p>If you wish to use a flex EG to replace the SFZ 1.0 ampeg,
-set the destination as <strong>eg01_ampeg=100</strong> rather than <strong>eg01_amplitude=100</strong>.
+set the destination as <code>eg01_ampeg=100</code> rather than <code>eg01_amplitude=100</code>.
 This will disable the SFZ 1.0 ampeg and allow the flex EG to provide a release phase.</p>
 					</article>
 				</div>
