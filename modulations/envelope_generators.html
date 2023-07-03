@@ -433,13 +433,131 @@
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
 					<article><h1>Envelope Generators</h1><p>Envelope Generator opcodes are part of the <a href="/misc/categories#modulation">Modulation</a> category of opcodes:</p>
-      <h4 id="sfz-1-egs">
+      <h2 id="traditional-sfz-10">
         
         
-          SFZ 1 EGs <a href="#sfz-1-egs" class="toc-anchor">#</a>
+          Traditional (SFZ 1.0) <a href="#traditional-sfz-10" class="toc-anchor">#</a>
         
         
-      </h4>
+      </h2>
+
+<p>Traditional envelope generators using ADSR phases can be set using the SFZ 1.0
+<strong>ampeg</strong> (amplitude), <strong>pitcheg</strong> (pitch) and <strong>fileg</strong> (filter) opcodes.
+These opcodes also support additional delay and hold phases.
+The phases in order are: <strong>Delay-Attack-Hold-Decay-Sustain-Release</strong>. See below
+for the full list of relevant opcodes.</p>
+    
+      <h2 id="flex-sfz-20">
+        
+        
+          Flex (SFZ 2.0) <a href="#flex-sfz-20" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>With SFZ 2.0, you can create one or more “flex” envelope generators.
+Each flex EG is mapped to a destination (amplitude, pitch, etc.)
+and contains two or more points with a duration and level determined at each point.
+The duration indicates the amount of time it takes from the previous envelope point to the current.
+In this way, you can use flex EGs to essentially draw any envelope shape you desire.</p>
+
+<p>Here is an example flex EG:</p>
+
+<pre><code class="language-sfz">eg01_pitch=1200
+eg01_time1=0 eg01_level1=0
+eg01_time2=1 eg01_level2=1
+eg01_time3=2 eg01_level3=0.5 eg01_sustain=3
+eg01_time4=1 eg01_level4=0
+</code></pre>
+
+<p>How to interpret the opcodes in the example above:</p>
+
+<ul>
+  <li>All of these opcodes begin with “eg01_”, indicating the first flex EG
+for the current region. A second flex EG would begin with “eg02_”, and so on.</li>
+  <li>The first opcode determines that the envelope will affect note pitch
+to a maximum of 1200 cents (one octave).</li>
+  <li>Each envelope point is numbered, and these numbers appear at the end
+of the opcode name (this opcode has four envelope points). There should be
+both a “time” and and a “level” opcode specified for each envelope point.</li>
+  <li>The “time” opcodes indicate time duration in seconds from the previous envelope point.</li>
+  <li>The “level” opcodes indicate the level percentage at each envelope point
+(0-1, with “1” meaning “100%”).</li>
+  <li>The optional “sustain” opcode determines which envelope point will function
+as “sustain” in the traditional ADSR model.</li>
+</ul>
+
+<p>So here is what happens in the four envelope points in the example:</p>
+
+<ol>
+  <li>Note starts at original pitch.</li>
+  <li>Pitch takes one second to rise 1200 cents (one octave).</li>
+  <li>Pitch takes two seconds to lower to 50% of 1200 cents.
+The pitch will remain at this level as long as the note is held.</li>
+  <li>After releasing the note, the note will take one second to lower to the original pitch.</li>
+</ol>
+    
+      <h2 id="envelope-curves">
+        
+        
+          Envelope Curves <a href="#envelope-curves" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<p>SFZ—at least the ARIA Engine and sfizz implementations—uses the following curves for SFZ 1.0 envelopes
+(<strong>ampeg</strong>, <strong>pitcheg</strong>, <strong>fileg</strong>, probably others but not tested):</p>
+
+<ul>
+  <li><strong>Attack:</strong> linear (convex in dB)</li>
+  <li><strong>Decay:</strong> convex (linear in dB)</li>
+  <li><strong>Release:</strong> convex (linear in dB)</li>
+</ul>
+
+<p>ARIA supports changing the shape of each phase curve via opcodes
+such as <code>ampeg_attack_shape</code>, <code>fileg_decay_shape</code>, etc.
+Setting the value for any of these to 0 will result in a linear curve shape,
+with positive and negative values resulting in concave and convex curves, respectively.</p>
+
+<p>Flex EGs (SFZ 2.0) phases all use a linear curve shape by default,
+but this can be bent into a logarithmic curve using positive/negative values
+as described in the above paragraph. For example, the following opcode
+will set the shape of the first eg01 phase to match the convex curve
+used in the SFZ 1.0 ampeg decay/release: <code>eg01_shape2=-10.36</code></p>
+
+<p>Note that the shape opcode should be placed on the second point affected by the curve.
+In other words, <code>eg01_shape2=-10.36</code> will affect the curve between envelope points 1 and 2.</p>
+
+<p>It is also important to know that ampeg/pitcheg/fileg decay (both SFZ &amp; SF2)
+behaves differently than flex EG in relation to the sustain level:</p>
+
+<ul>
+  <li><strong>ampeg decay:</strong> The level in the decay phase descends at the rate
+determined by <code>ampeg_decay</code> but stops once it hits the sustain level.
+If your decay phase length is 1 second and sustain is 50%,
+the sustain level is reached after only half a second in the decay phase
+(assuming linear phase curve).</li>
+  <li><strong>flex EG phase:</strong> The level always scales from starting to ending value
+over the full duration of the phase. When emulating an ADSR envelope
+using a flex EG, if your decay phase length is 1 second and sustain is 50%,
+the volume level won’t reach 50% until the end of that one second.</li>
+</ul>
+
+<p>If trying to match a SoundFont instrument’s logarithmic curves,
+set the phase’s shape to 6 (concave) or -6 (convex).
+This is only an approximation, as the curve is not identical.</p>
+
+<p>If you wish to use a flex EG to replace the SFZ 1.0 ampeg,
+set the destination as <code>eg01_ampeg=100</code> rather than <code>eg01_amplitude=100</code>.
+This will disable the SFZ 1.0 ampeg and allow the flex EG to provide a release phase.</p>
+    
+      <h2 id="sfz-1-eg-opcodes">
+        
+        
+          SFZ 1 EG Opcodes <a href="#sfz-1-eg-opcodes" class="toc-anchor">#</a>
+        
+        
+      </h2>
 
 <p>The 3 EG destinations in the SFZ 1 standard are: ampeg (amplitude),
 fileg (filter) and pitcheg (pitch).</p>
@@ -474,13 +592,13 @@ the pitch envelope sustain level etc.</p>
   <li><a href="/opcodes/ampeg_vel2sustain">(eg type)_vel2sustain</a></li>
 </ul>
     
-      <h4 id="flex-egs-sfz-2">
+      <h2 id="flex-egs-sfz-2-opcodes">
         
         
-          Flex EGs (SFZ 2) <a href="#flex-egs-sfz-2" class="toc-anchor">#</a>
+          Flex EGs (SFZ 2) Opcodes <a href="#flex-egs-sfz-2-opcodes" class="toc-anchor">#</a>
         
         
-      </h4>
+      </h2>
 
 <p>Flexible EG can have as many points as needed. level and time for each point is
 set accordingly.</p>
@@ -497,13 +615,13 @@ set accordingly.</p>
   <li><a href="/opcodes/egN_timeX">egN_timeX_onccY</a></li>
 </ul>
     
-      <h4 id="flex-egs-destinations">
+      <h2 id="flex-egs-destinations">
         
         
-          Flex EGs destinations <a href="#flex-egs-destinations" class="toc-anchor">#</a>
+          Flex EGs Destinations <a href="#flex-egs-destinations" class="toc-anchor">#</a>
         
         
-      </h4>
+      </h2>
 
 <p>These destinations are added as a suffix to ‘egN_’ - for example,
 eg01_pitch=2400 would have envelope 01 modulate pitch,
