@@ -811,11 +811,6 @@ strings, and strumming across both the open and muted strings. Keyswitches in an
 be added to mute the strings, so that samples are only played when the switch matching that string is
 down.</p>
 
-<p>Although muting the strings for the keyswitches which are up and skipping the strings where the
-switch is down would be more analogous to the way the instruments are played in real life, this
-sort of “negative space” chord fingering is much more awkward for most composers to play on a
-keyboard.</p>
-
 <p>The keyswitches will not be displayed on the keyboard by most sfz players, so it will also likely
 be necessary to add some placeholder regions just to make them display.</p>
 <pre><code>&lt;group&gt;
@@ -881,7 +876,12 @@ key=47
 &lt;region&gt;
 key=48
 </code></pre>
-<p>For more realism, muted samples could be triggered for the strings which are not down.</p>
+<p>For more realism, muted samples could be triggered for the strings which are not down.
+Although muting the strings for the keyswitches which are up and skipping the strings where the
+switch is down would be more analogous to the way the instruments are played in real life, this
+sort of “negative space” chord fingering is much more awkward for most users to play on a keyboard.
+It could easily be accomplished by merely switching the sw_up and sw_down opcodes in the below
+example.</p>
 <pre><code>&lt;group&gt;
 key=24
 
@@ -987,14 +987,26 @@ key=47
 key=48
 </code></pre>
     
-      <h2 id="chromatic-strumming-on-diatonic-lyres">
+      <h2 id="chromatic-strumming-on-diatonic-instruments">
         
         
-          Chromatic Strumming On Diatonic Lyres <a href="#chromatic-strumming-on-diatonic-lyres" class="toc-anchor">#</a>
+          Chromatic Strumming On Diatonic Instruments <a href="#chromatic-strumming-on-diatonic-instruments" class="toc-anchor">#</a>
         
         
       </h2>
-<p>The cithara barbarica instrument at https://github.com/sfzinstruments/cithara-barbarica has a patch like this.</p>
+<p>The cithara barbarica instrument at https://github.com/sfzinstruments/cithara-barbarica has a patch like this.
+It simply duplicates each string’s regions to cover the “missing” pitches. This works fine as long as there are
+no muted samples used for the stopped strings, and having a muted string sound every half-step would not be
+idiomatic for instruments other than the very rare chromatic gusli.</p>
+
+<p>One way to have muted sounds while playing chromatically would be to always trigger a muted sound for whatever
+the “real” pitch of each string should be, but have it instantly muted if a pitch in that string’s range is
+played. This is not great, as the muted sound would be a half-step off, but as the muted strings are shortened
+and produce a higher pitch anyway, it might be tolerable. Need an example here.</p>
+
+<p>A more realistic way to handle this would be to have a MIDI CC for each string to set its tuning, so for example
+the C string could sound a B or C# note, like on a concert harp with pedals. However, this is probably not very
+convenient for most players who would rather hit a B note to sound a B.</p>
     
       <h2 id="further-possibilities">
         
