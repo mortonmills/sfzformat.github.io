@@ -1881,6 +1881,9 @@
 <loc>https://sfzformat.github.io/opcodes/offset_ccN.html</loc>
 </url>
 <url>
+<loc>https://sfzformat.github.io/opcodes/offset_mode.html</loc>
+</url>
+<url>
 <loc>https://sfzformat.github.io/opcodes/offset_onccN.html</loc>
 </url>
 <url>
@@ -2701,6 +2704,6 @@
 </url>
 <url>
 <loc>https://sfzformat.github.io/legacy/</loc>
-<lastmod>2023-07-25T10:54:23+00:00</lastmod>
+<lastmod>2023-07-29T07:18:12+00:00</lastmod>
 </url>
 </urlset>
