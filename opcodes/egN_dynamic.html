@@ -433,6 +433,8 @@
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
 					<article><h1>egN_dynamic</h1><p>Specifies when envelope durations are recalculated.</p>
+
+<p>When 1, causes envelope durations to be recalculated when a MIDI CC message modulating those envelopes is received. When 0, envelope durations are calculated only at the start of the particular envelope segment.</p>
       <h2 id="examples">
         
         
@@ -452,7 +454,7 @@ eg1_time2=4     // ..with a release time of 4 seconds
 
 eg1_time2_oncc1=-8  // assign modwheel to modulate release time
 
-eg1_dynamic=1   // 1 = modulation will affect all notes immediately, or 0 (default) = new notes only
+eg1_dynamic=1   // 1 = modulation will affect all notes immediately, or 0 (default) = new segments only
 </code></pre>
 
 
