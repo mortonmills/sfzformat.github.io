@@ -434,8 +434,8 @@
 				<div class="col-md-9">
 					<article><h1>Strums</h1><p>Strumming can be difficult to produce with samples. SFZ does have some capabilities to make it a little easier.</p>
 
-<p>Creating a strum by triggering several single-string samples with some of them delayed slightly. Similar but even
-simpler is a drum flam, which is two drum hits in rapid succession.</p>
+<p>Creating a strum is basically triggering several single-string samples with some of them delayed slightly.
+Similar but even simpler is a drum flam, which is two drum hits in rapid succession.</p>
 <pre><code>&lt;region&gt;
 sample=snare1.wav
 &lt;region&gt;
@@ -1095,11 +1095,71 @@ idiomatic for instruments other than the very rare chromatic gusli.</p>
 <p>One way to have muted sounds while playing chromatically would be to always trigger a muted sound for whatever
 the “real” pitch of each string should be, but have it instantly muted if a pitch in that string’s range is
 played. This is not great, as the muted sound would be a half-step off, but as the muted strings are shortened
-and produce a higher pitch anyway, it might be tolerable. Need an example here.</p>
+and produce a higher pitch anyway, it seems to work well enough.</p>
+<pre><code>&lt;group&gt;
+key=26
 
+//Muted regions, each with its own group and off_by
+
+&lt;region&gt;
+sample=d4_muted.wav
+group=11
+off_by=21
+
+&lt;region&gt;
+sample=e4_muted.wav
+group=12
+off_by=22
+delay_cc1=0.100
+
+&lt;region&gt;
+sample=f4_muted.wav
+group=13
+off_by=23
+delay_cc1=0.200
+
+//Non-muted regions, with groups that will mute the above regions if one of the keys covered by that sample is held down
+
+&lt;region&gt;
+sample=d4_finger.wav
+sw_down=36
+group=21
+transpose=-2
+
+&lt;region&gt;
+sample=d4_finger.wav
+sw_down=37
+group=21
+transpose=-1
+
+&lt;region&gt;
+sample=d4_finger.wav
+sw_down=38
+group=21
+
+&lt;region&gt;
+sample=e4_finger.wav
+sw_down=39
+group=22
+transpose=-1
+delay_cc1=0.100
+
+&lt;region&gt;
+sample=e4_finger.wav
+sw_down=40
+group=22
+delay_cc1=0.100
+
+&lt;region&gt;
+sample=f4_finger.wav
+sw_down=41
+group=23
+delay_cc1=0.200
+</code></pre>
 <p>A more realistic way to handle this would be to have a MIDI CC for each string to set its tuning, so for example
 the C string could sound a B or C# note, like on a concert harp with pedals. However, this is probably not very
-convenient for most players who would rather hit a B note to sound a B.</p>
+convenient for most players who would rather hit a B note to sound a B. This, of course, would not actually be
+chromatic - but not limited to a single scale.</p>
     
       <h2 id="further-possibilities">
         
