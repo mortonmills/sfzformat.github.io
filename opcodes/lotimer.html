@@ -439,18 +439,25 @@
 
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
-					<article><h1>lotimer / hitimer</h1><p>Region plays if timer is between <code>lotimer</code> and <code>hitimer</code>.</p>
-      <h2 id="practical-considerations">
+					<article><h1>lotimer / hitimer</h1><p>Region plays if the time passed since the last sample in the same group played is between <code>lotimer</code> and <code>hitimer</code>.</p>
+
+<p>Not implemented in ARIA, may have been implemented in some Cakewalk products.
+The timer is how long has passed since the last sample had played in the same
+group. It is, however, not known whether this is a group header or polyphony group.</p>
+      <h2 id="examples">
         
         
-          Practical Considerations <a href="#practical-considerations" class="toc-anchor">#</a>
+          Examples <a href="#examples" class="toc-anchor">#</a>
         
         
       </h2>
-
-<p>Not implemented in ARIA, may have been implemented in some Cakewalk products.
-If implemented, the unit would be seconds, but it is not clear what the timer
-is or how it’s intended to be used.</p>
+<pre><code>&lt;region&gt;
+hitimer=0.25
+sample=quick.wav
+&lt;region&gt;
+lotimer=0.25
+sample=slow.wav
+</code></pre>
 
 
 <table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
