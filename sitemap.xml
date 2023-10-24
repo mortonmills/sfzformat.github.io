@@ -1671,6 +1671,12 @@
 <loc>https://sfzformat.github.io/opcodes/lfoN_resonance_stepccX.html</loc>
 </url>
 <url>
+<loc>https://sfzformat.github.io/opcodes/lfoN_sample_dyn_paramX.html</loc>
+</url>
+<url>
+<loc>https://sfzformat.github.io/opcodes/lfoN_sample_dyn_paramX_onccY.html</loc>
+</url>
+<url>
 <loc>https://sfzformat.github.io/opcodes/lfoN_scale.html</loc>
 </url>
 <url>
@@ -2409,6 +2415,12 @@
 <loc>https://sfzformat.github.io/headers/sample.html</loc>
 </url>
 <url>
+<loc>https://sfzformat.github.io/opcodes/sample_dyn_paramN.html</loc>
+</url>
+<url>
+<loc>https://sfzformat.github.io/opcodes/sample_dyn_paramN_onccX.html</loc>
+</url>
+<url>
 <loc>https://sfzformat.github.io/opcodes/sample_fadeout.html</loc>
 </url>
 <url>
@@ -2758,6 +2770,6 @@
 </url>
 <url>
 <loc>https://sfzformat.github.io/legacy/</loc>
-<lastmod>2023-10-21T14:03:35+00:00</lastmod>
+<lastmod>2023-10-24T22:20:03+00:00</lastmod>
 </url>
 </urlset>
