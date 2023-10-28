@@ -172,6 +172,13 @@
 											Types & Categories
 										</a>
 									</li>
+									<li>
+										<a class="dropdown-item"
+											href="/versions"
+										>
+											Versions
+										</a>
+									</li>
 								</ul>
 							</li>
 								
@@ -513,10 +520,10 @@ div.checkbox-filter {
 			<td>0 to 4294967296 sample units</td><td>SFZ v1</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
 			<td><a href="/opcodes/loop_lengthccN">loop_lengthccN</a></td><td>Change of loop end point.</td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
 			<td><a href="/opcodes/loop_length_onccN">loop_length_onccN</a></td><td><a href="/opcodes/loop_lengthccN">loop_lengthccN</a> alias.</td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
 			<td><a href="/opcodes/loop_mode">loop_mode</a></td><td>Allows playing samples with loops defined in the unlooped mode.</td>
 			<td>string</td><td><b>no_loop</b> for samples without a loop defined, <br /><b>loop_continuous</b> for samples with defined loop(s).</td>
 			<td>no_loop, one_shot, loop_continuous, loop_sustain</td><td>SFZ v1</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
@@ -531,13 +538,13 @@ div.checkbox-filter {
 			<td>0 to 4294967296 sample units</td><td>SFZ v1</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
 			<td><a href="/opcodes/loop_startccN">loop_startccN</a></td><td>Change of loop start point.</td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
 			<td><a href="/opcodes/loop_start_onccN">loop_start_onccN</a></td><td><a href="/opcodes/loop_startccN">loop_startccN</a> alias.</td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
 			<td><a href="/opcodes/loop_tune">loop_tune</a></td><td>Tuning for only the loop segment.</td>
 			<td>float</td><td>0</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
 			<td><a href="/opcodes/looptune">looptune</a></td><td><a href="/opcodes/loop_tune">loop_tune</a> alias.</td>
 			<td>float</td><td>0</td>
 			<td>N/A</td><td>ARIA</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
@@ -567,7 +574,7 @@ div.checkbox-filter {
 			<td>N/A</td><td>SFZ v1</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
 			<td><a href="/opcodes/sample_fadeout">sample_fadeout</a></td><td>Number of seconds before the end of sample playback that the player should begin a realtime fadeout.</td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
 			<td><a href="/opcodes/sample_dyn_paramN">sample_dyn_paramN</a></td><td></td>
 			<td>float</td><td>N/A</td>
 			<td>N/A</td><td>ARIA</td></tr><tr><td class="spl"><span style="display:none">Sample Playback</span></td>
@@ -897,19 +904,19 @@ div.checkbox-filter {
 			<td>-100 to 100 %</td><td>SFZ v1</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/pan_onccN">pan_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/pan_ccN">pan_ccN</a></td><td><a href="/opcodes/pan_onccN">pan_onccN</a> alias.</td>
 			<td></td><td>N/A</td>
 			<td>N/A</td><td>ARIA</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/pan_curveccN">pan_curveccN</a></td><td>Specifies the ‹<a href="/headers/curve">curve</a>› number which MIDI CC N uses to modulate pan.</td>
 			<td>integer</td><td>0</td>
-			<td>0 to 255 </td><td>Cakewalk</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
+			<td>0 to 255 </td><td>SFZ v2</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/pan_smoothccN">pan_smoothccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/pan_stepccN">pan_stepccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/pan_random">pan_random</a></td><td>Random panoramic position for the region.</td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 %</td><td>ARIA</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
@@ -966,16 +973,16 @@ div.checkbox-filter {
 			<td>-100 to 100 %</td><td>SFZ v1</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/width_onccN">width_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/width_curveccN">width_curveccN</a></td><td>Specifies the ‹<a href="/headers/curve">curve</a>› number which MIDI CC N uses to modulate width.</td>
 			<td>integer</td><td>0</td>
-			<td>0 to 255 </td><td>Cakewalk</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
+			<td>0 to 255 </td><td>SFZ v2</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/width_smoothccN">width_smoothccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/width_stepccN">width_stepccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/amp_keycenter">amp_keycenter</a></td><td>Center key for amplifier keyboard tracking. In this key, the amplifier keyboard tracking will have no effect.</td>
 			<td>integer</td><td>60</td>
 			<td>0 to 127 </td><td>SFZ v1</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
@@ -1005,7 +1012,7 @@ div.checkbox-filter {
 			<td>0 to 24 dB</td><td>SFZ v1</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/gain_random">gain_random</a></td><td><a href="/opcodes/amp_random">amp_random</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 24 dB</td><td>Cakewalk</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
+			<td>0 to 24 dB</td><td>SFZ v2</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
 			<td><a href="/opcodes/rt_decay">rt_decay</a></td><td>Applies only to regions that triggered through trigger=release. The volume decrease (in decibels) per seconds after the corresponding attack region was triggered.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 200 dB</td><td>SFZ v1</td></tr><tr><td class="amp"><span style="display:none">Amplifier</span></td>
@@ -1287,31 +1294,31 @@ div.checkbox-filter {
 			<td>0 to 40 dB</td><td>ARIA</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
 			<td><a href="/opcodes/noise_filter">noise_filter</a></td><td></td>
 			<td>string</td><td>N/A</td>
-			<td>on, off, lpf_1p, hpf_1p, bpf_1p, brf_1p, apf_1p, lpf_2p, hpf_2p, bpf_2p, brf_2p, pkf_2p, lpf_4p, hpf_4p, lpf_6p, hpf_6p, comb, pink</td><td>Cakewalk</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
+			<td>on, off, lpf_1p, hpf_1p, bpf_1p, brf_1p, apf_1p, lpf_2p, hpf_2p, bpf_2p, brf_2p, pkf_2p, lpf_4p, hpf_4p, lpf_6p, hpf_6p, comb, pink</td><td>SFZ v2</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
 			<td><a href="/opcodes/noise_stereo">noise_stereo</a></td><td></td>
 			<td>string</td><td>N/A</td>
-			<td>on, off</td><td>Cakewalk</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
+			<td>on, off</td><td>SFZ v2</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
 			<td><a href="/opcodes/noise_level">noise_level</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>-96 to 24 dB</td><td>Cakewalk</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
+			<td>-96 to 24 dB</td><td>SFZ v2</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
 			<td><a href="/opcodes/noise_level_onccN">noise_level_onccN</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>-96 to 24 dB</td><td>Cakewalk</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
+			<td>-96 to 24 dB</td><td>SFZ v2</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
 			<td><a href="/opcodes/noise_level_smoothccN">noise_level_smoothccN</a></td><td></td>
 			<td>float</td><td>0</td>
-			<td>0 to  ms</td><td>Cakewalk</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
+			<td>0 to  ms</td><td>SFZ v2</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
 			<td><a href="/opcodes/noise_step">noise_step</a></td><td></td>
 			<td>integer</td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
 			<td><a href="/opcodes/noise_step_onccN">noise_step_onccN</a></td><td></td>
 			<td>integer</td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
 			<td><a href="/opcodes/noise_tone">noise_tone</a></td><td></td>
 			<td>integer</td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="flt"><span style="display:none">Filter</span></td>
 			<td><a href="/opcodes/noise_tone_onccN">noise_tone_onccN</a></td><td></td>
 			<td>integer</td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="ptc"><span style="display:none">Pitch</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="ptc"><span style="display:none">Pitch</span></td>
 			<td><a href="/opcodes/bend_up">bend_up</a></td><td>Pitch bend range when Bend Wheel or Joystick is moved up, in cents.</td>
 			<td>integer</td><td>200</td>
 			<td>-9600 to 9600 cents</td><td>SFZ v1</td></tr><tr><td class="ptc"><span style="display:none">Pitch</span></td>
@@ -1410,7 +1417,7 @@ div.checkbox-filter {
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_attack">amp_attack</a></td><td><a href="/opcodes/ampeg_attack">ampeg_attack</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_attackccN">ampeg_attackccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1425,13 +1432,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_vel2attack">amp_vel2attack</a></td><td><a href="/opcodes/ampeg_vel2attack">ampeg_vel2attack</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_decay">ampeg_decay</a></td><td>EG decay time.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_decay">amp_decay</a></td><td><a href="/opcodes/ampeg_decay">ampeg_decay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_decayccN">ampeg_decayccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 </td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1446,13 +1453,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_vel2decay">amp_vel2decay</a></td><td><a href="/opcodes/ampeg_vel2decay">ampeg_vel2decay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_delay">ampeg_delay</a></td><td>EG delay time.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_delay">amp_delay</a></td><td><a href="/opcodes/ampeg_delay">ampeg_delay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_delayccN">ampeg_delayccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 </td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1467,13 +1474,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_vel2delay">amp_vel2delay</a></td><td><a href="/opcodes/ampeg_vel2delay">ampeg_vel2delay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_hold">ampeg_hold</a></td><td>EG hold time.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_hold">amp_hold</a></td><td><a href="/opcodes/ampeg_hold">ampeg_hold</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_holdccN">ampeg_holdccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 </td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1488,13 +1495,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_vel2hold">amp_vel2hold</a></td><td><a href="/opcodes/ampeg_vel2hold">ampeg_vel2hold</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_release">ampeg_release</a></td><td>EG release time (after note release).</td>
 			<td>float</td><td>0.001</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_release">amp_release</a></td><td><a href="/opcodes/ampeg_release">ampeg_release</a> alias.</td>
 			<td>float</td><td>0.001</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_releaseccN">ampeg_releaseccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1509,13 +1516,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_vel2release">amp_vel2release</a></td><td><a href="/opcodes/ampeg_vel2release">ampeg_vel2release</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_sustain">ampeg_sustain</a></td><td>EG sustain level, in percentage.</td>
 			<td>float</td><td>100</td>
 			<td>0 to 100 %</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_sustain">amp_sustain</a></td><td><a href="/opcodes/ampeg_sustain">ampeg_sustain</a> alias.</td>
 			<td>float</td><td>100</td>
-			<td>0 to 100 %</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 %</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_sustainccN">ampeg_sustainccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 %</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1530,7 +1537,7 @@ div.checkbox-filter {
 			<td>-100 to 100 %</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/amp_vel2sustain">amp_vel2sustain</a></td><td><a href="/opcodes/ampeg_vel2sustain">ampeg_vel2sustain</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 %</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 %</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/ampeg_start">ampeg_start</a></td><td>Envelope start level, in percentage.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 %</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1602,7 +1609,7 @@ div.checkbox-filter {
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_attack">fil_attack</a></td><td><a href="/opcodes/fileg_attack">fileg_attack</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_attack_onccN">fileg_attack_onccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 seconds</td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1617,13 +1624,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_vel2attack">fil_vel2attack</a></td><td><a href="/opcodes/fileg_vel2attack">fileg_vel2attack</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_decay">fileg_decay</a></td><td>EG decay time.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_decay">fil_decay</a></td><td><a href="/opcodes/fileg_decay">fileg_decay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_decay_onccN">fileg_decay_onccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 </td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1638,13 +1645,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_vel2decay">fil_vel2decay</a></td><td><a href="/opcodes/fileg_vel2decay">fileg_vel2decay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_delay">fileg_delay</a></td><td>EG delay time.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_delay">fil_delay</a></td><td><a href="/opcodes/fileg_delay">fileg_delay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_delay_onccN">fileg_delay_onccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 </td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1659,13 +1666,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_vel2delay">fil_vel2delay</a></td><td><a href="/opcodes/fileg_vel2delay">fileg_vel2delay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_depth">fileg_depth</a></td><td>Envelope depth.</td>
 			<td>integer</td><td>0</td>
 			<td>-12000 to 12000 cents</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_depth">fil_depth</a></td><td><a href="/opcodes/fileg_depth">fileg_depth</a> alias.</td>
 			<td>integer</td><td>0</td>
-			<td>-12000 to 12000 cents</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-12000 to 12000 cents</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_depth_onccN">fileg_depth_onccN</a></td><td></td>
 			<td>integer</td><td>0</td>
 			<td>-12000 to 12000 cents</td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1680,13 +1687,13 @@ div.checkbox-filter {
 			<td>-12000 to 12000 cents</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_vel2depth">fil_vel2depth</a></td><td><a href="/opcodes/fileg_vel2depth">fileg_vel2depth</a> alias.</td>
 			<td>integer</td><td>0</td>
-			<td>-12000 to 12000 cents</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-12000 to 12000 cents</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_hold">fileg_hold</a></td><td>EG hold time.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_hold">fil_hold</a></td><td><a href="/opcodes/fileg_hold">fileg_hold</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_hold_onccN">fileg_hold_onccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 </td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1701,13 +1708,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_vel2hold">fil_vel2hold</a></td><td><a href="/opcodes/fileg_vel2hold">fileg_vel2hold</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_release">fileg_release</a></td><td>EG release time (after note release).</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_release">fil_release</a></td><td><a href="/opcodes/fileg_release">fileg_release</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_release_onccN">fileg_release_onccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 seconds</td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1722,7 +1729,7 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_vel2release">fil_vel2release</a></td><td><a href="/opcodes/fileg_vel2release">fileg_vel2release</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_start">fileg_start</a></td><td>Envelope start level, in percentage.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 %</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1740,7 +1747,7 @@ div.checkbox-filter {
 			<td>0 to 100 %</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_sustain">fil_sustain</a></td><td><a href="/opcodes/fileg_sustain">fileg_sustain</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 %</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 %</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/fileg_sustain_onccN">fileg_sustain_onccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 seconds</td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1755,13 +1762,13 @@ div.checkbox-filter {
 			<td>-100 to 100 %</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/fil_vel2sustain">fil_vel2sustain</a></td><td><a href="/opcodes/fileg_vel2sustain">fileg_vel2sustain</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 %</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 %</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_attack">pitcheg_attack</a></td><td>EG attack time.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_attack">pitch_attack</a></td><td><a href="/opcodes/pitcheg_attack">pitcheg_attack</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_attack_onccN">pitcheg_attack_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
 			<td>N/A</td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1773,13 +1780,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_vel2attack">pitch_vel2attack</a></td><td><a href="/opcodes/pitcheg_vel2attack">pitcheg_vel2attack</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_decay">pitcheg_decay</a></td><td>EG decay time.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_decay">pitch_decay</a></td><td><a href="/opcodes/pitcheg_decay">pitcheg_decay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_decay_onccN">pitcheg_decay_onccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 </td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1791,13 +1798,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_vel2decay">pitch_vel2decay</a></td><td><a href="/opcodes/pitcheg_vel2decay">pitcheg_vel2decay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_delay">pitcheg_delay</a></td><td>EG delay time.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_delay">pitch_delay</a></td><td><a href="/opcodes/pitcheg_delay">pitcheg_delay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_delay_onccN">pitcheg_delay_onccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 </td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1809,13 +1816,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_vel2delay">pitch_vel2delay</a></td><td><a href="/opcodes/pitcheg_vel2delay">pitcheg_vel2delay</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_depth">pitcheg_depth</a></td><td>Envelope depth.</td>
 			<td>integer</td><td>0</td>
 			<td>-12000 to 12000 cents</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_depth">pitch_depth</a></td><td><a href="/opcodes/pitcheg_depth">pitcheg_depth</a> alias.</td>
 			<td>integer</td><td>0</td>
-			<td>-12000 to 12000 cents</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-12000 to 12000 cents</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_depth_onccN">pitcheg_depth_onccN</a></td><td></td>
 			<td>integer</td><td>0</td>
 			<td>-12000 to 12000 cents</td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1830,13 +1837,13 @@ div.checkbox-filter {
 			<td>-12000 to 12000 cents</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_vel2depth">pitch_vel2depth</a></td><td><a href="/opcodes/pitcheg_vel2depth">pitcheg_vel2depth</a> alias.</td>
 			<td>integer</td><td>0</td>
-			<td>-12000 to 12000 cents</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-12000 to 12000 cents</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_hold">pitcheg_hold</a></td><td>EG hold time.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_hold">pitch_hold</a></td><td><a href="/opcodes/pitcheg_hold">pitcheg_hold</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_hold_onccN">pitcheg_hold_onccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 </td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1848,13 +1855,13 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_vel2hold">pitch_vel2hold</a></td><td><a href="/opcodes/pitcheg_vel2hold">pitcheg_vel2hold</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_release">pitcheg_release</a></td><td>EG release time (after note release).</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_release">pitch_release</a></td><td><a href="/opcodes/pitcheg_release">pitcheg_release</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_release_onccN">pitcheg_release_onccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 seconds</td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1866,7 +1873,7 @@ div.checkbox-filter {
 			<td>-100 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_vel2release">pitch_vel2release</a></td><td><a href="/opcodes/pitcheg_vel2release">pitcheg_vel2release</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 seconds</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 seconds</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_start">pitcheg_start</a></td><td>Envelope start level, in percentage.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 %</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1881,7 +1888,7 @@ div.checkbox-filter {
 			<td>0 to 100 %</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_sustain">pitch_sustain</a></td><td><a href="/opcodes/pitcheg_sustain">pitcheg_sustain</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 %</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>0 to 100 %</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/pitcheg_sustain_onccN">pitcheg_sustain_onccN</a></td><td></td>
 			<td>float</td><td>0</td>
 			<td>-100 to 100 seconds</td><td>ARIA</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -1893,7 +1900,7 @@ div.checkbox-filter {
 			<td>-100 to 100 %</td><td>SFZ v1</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td class="table-danger"><a href="/opcodes/pitch_vel2sustain">pitch_vel2sustain</a></td><td><a href="/opcodes/pitcheg_vel2sustain">pitcheg_vel2sustain</a> alias.</td>
 			<td>float</td><td>0</td>
-			<td>-100 to 100 %</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>-100 to 100 %</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_points">egN_points</a></td><td></td>
 			<td></td><td>N/A</td>
 			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
@@ -2019,52 +2026,52 @@ div.checkbox-filter {
 			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_decim">egN_decim</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_decim_onccX">egN_decim_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_bitred">egN_bitred</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_bitred_onccX">egN_bitred_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_rectify">egN_rectify</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_rectify_onccX">egN_rectify_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_ringmod">egN_ringmod</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_ringmod_onccX">egN_ringmod_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_noiselevel">egN_noiselevel</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_noiselevel_onccX">egN_noiselevel_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_noisestep">egN_noisestep</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_noisestep_onccX">egN_noisestep_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_noisetone">egN_noisetone</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_noisetone_onccX">egN_noisetone_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_driveshape">egN_driveshape</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="eg"><span style="display:none">Envelope Generators</span></td>
 			<td><a href="/opcodes/egN_driveshape_onccX">egN_driveshape_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/amplfo_delay">amplfo_delay</a></td><td>The time before the LFO starts oscillating.</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 seconds</td><td>SFZ v1</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
@@ -2382,76 +2389,76 @@ div.checkbox-filter {
 			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_decim">lfoN_decim</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_decim_onccX">lfoN_decim_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_decim_smoothccX">lfoN_decim_smoothccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_decim_stepccX">lfoN_decim_stepccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_bitred">lfoN_bitred</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_bitred_onccX">lfoN_bitred_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_bitred_smoothccX">lfoN_bitred_smoothccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_bitred_stepccX">lfoN_bitred_stepccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noiselevel">lfoN_noiselevel</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noiselevel_onccX">lfoN_noiselevel_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noiselevel_smoothccX">lfoN_noiselevel_smoothccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noiselevel_stepccX">lfoN_noiselevel_stepccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noisestep">lfoN_noisestep</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noisestep_onccX">lfoN_noisestep_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noisestep_smoothccX">lfoN_noisestep_smoothccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noisestep_stepccX">lfoN_noisestep_stepccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noisetone">lfoN_noisetone</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noisetone_onccX">lfoN_noisetone_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noisetone_smoothccX">lfoN_noisetone_smoothccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_noisetone_stepccX">lfoN_noisetone_stepccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_drive">lfoN_drive</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_drive_onccX">lfoN_drive_onccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_drive_smoothccX">lfoN_drive_smoothccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_drive_stepccX">lfoN_drive_stepccX</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
 			<td><a href="/opcodes/lfoN_offset">lfoN_offset</a></td><td>DC offset - Add to LFO output; not affected by scale.</td>
 			<td>float</td><td>N/A</td>
 			<td>N/A</td><td>ARIA</td></tr><tr><td class="lfo"><span style="display:none">LFO</span></td>
@@ -2484,253 +2491,253 @@ div.checkbox-filter {
 			<td>-1 to 1 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/apan_depth">apan_depth</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/apan_depth_onccN">apan_depth_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/apan_dry">apan_dry</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/apan_dry_onccN">apan_dry_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/apan_freq">apan_freq</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/apan_freq_onccN">apan_freq_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/apan_phase">apan_phase</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>0 to 180 °</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 180 °</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/apan_phase_onccN">apan_phase_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/apan_waveform">apan_waveform</a></td><td>LFO wave number.</td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/apan_wet">apan_wet</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/apan_wet_onccN">apan_wet_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/bitred">bitred</a></td><td>Bit reduction.</td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/bitred_onccN">bitred_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/bitred_curveccN">bitred_curveccN</a></td><td>Specifies the ‹<a href="/headers/curve">curve</a>› number which MIDI CC N uses to modulate bitred.</td>
 			<td>integer</td><td>0</td>
-			<td>0 to 255 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 255 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/bitred_smoothccN">bitred_smoothccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/bitred_stepccN">bitred_stepccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/bus">bus</a></td><td>The target bus for the effect.</td>
 			<td>string</td><td>main</td>
 			<td>main, aux1, aux2, aux3, aux4, aux5, aux6, aux7, aux8, fx1, fx2, fx3, fx4, midi</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/bypass_onccN">bypass_onccN</a></td><td>Sets up a bypass controller for the effect.</td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/comp_attack">comp_attack</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/comp_gain">comp_gain</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/comp_ratio">comp_ratio</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/comp_release">comp_release</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/comp_stlink">comp_stlink</a></td><td></td>
 			<td>string</td><td>N/A</td>
-			<td>on, off</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>on, off</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/comp_threshold">comp_threshold</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/decim">decim</a></td><td>Decimator.</td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/decim_onccN">decim_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/decim_curveccN">decim_curveccN</a></td><td>Specifies the ‹<a href="/headers/curve">curve</a>› number which MIDI CC N uses to modulate decim.</td>
 			<td>integer</td><td>0</td>
-			<td>0 to 255 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 255 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/decim_smoothccN">decim_smoothccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/decim_stepccN">decim_stepccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_cutoff">delay_cutoff</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_cutoff_onccN">delay_cutoff_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_damphi">delay_damphi</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_damphi_onccN">delay_damphi_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_damplo">delay_damplo</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_damplo_onccN">delay_damplo_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_dry">delay_dry</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_dry_onccN">delay_dry_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_feedback">delay_feedback</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_feedback_onccN">delay_feedback_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_filter">delay_filter</a></td><td>Name of filter type.</td>
 			<td>string</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_input">delay_input</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_input_onccN">delay_input_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_levelc">delay_levelc</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_levell">delay_levell</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_levelr">delay_levelr</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_lfofreq">delay_lfofreq</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_lfofreq_onccN">delay_lfofreq_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_moddepth">delay_moddepth</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_moddepth_onccN">delay_moddepth_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_mode">delay_mode</a></td><td></td>
 			<td>string</td><td>N/A</td>
-			<td>detune, chorus, cross, flanger, lrc, mod, multimod, panning, ping, rlc, stereo, tlcr</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>detune, chorus, cross, flanger, lrc, mod, multimod, panning, ping, rlc, stereo, tlcr</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_panc">delay_panc</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_panc_onccN">delay_panc_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_panl">delay_panl</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_panl_onccN">delay_panl_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_panr">delay_panr</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_panr_onccN">delay_panr_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_resonance">delay_resonance</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_resonance_onccN">delay_resonance_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_spread">delay_spread</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_spread_onccN">delay_spread_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_syncc_onccN">delay_syncc_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_syncl_onccN">delay_syncl_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_syncr_onccN">delay_syncr_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_time_tap">delay_time_tap</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_timec">delay_timec</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_timec_onccN">delay_timec_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_timel">delay_timel</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_timel_onccN">delay_timel_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_timer">delay_timer</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_timer_onccN">delay_timer_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_wet">delay_wet</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/delay_wet_onccN">delay_wet_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/directtomain">directtomain</a></td><td>Gain of the main bus into the output.</td>
 			<td>float</td><td>100</td>
-			<td>0 to 100 %</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 %</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/disto_depth">disto_depth</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/disto_depth_onccN">disto_depth_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/disto_dry">disto_dry</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/disto_dry_onccN">disto_dry_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/disto_stages">disto_stages</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/disto_tone">disto_tone</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/disto_tone_onccN">disto_tone_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/disto_wet">disto_wet</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/disto_wet_onccN">disto_wet_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/dsp_order">dsp_order</a></td><td>Signal flow type in Rapture's DSP block.</td>
 			<td>integer</td><td>N/A</td>
-			<td>0 to 14 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 14 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/effect1">effect1</a></td><td>Level of effect1 send, in percentage (reverb in Cakewalk sfz).</td>
 			<td>float</td><td>0</td>
 			<td>0 to 100 %</td><td>SFZ v1</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
@@ -2745,199 +2752,199 @@ div.checkbox-filter {
 			<td>0 to 100 %</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/eq_bw">eq_bw</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/eq_bw_onccN">eq_bw_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/eq_freq">eq_freq</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/eq_freq_onccN">eq_freq_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/eq_gain">eq_gain</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/eq_gain_onccN">eq_gain_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/eq_type">eq_type</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/filter_cutoff">filter_cutoff</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/filter_cutoff_onccN">filter_cutoff_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/filter_resonance">filter_resonance</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/filter_resonance_onccN">filter_resonance_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/filter_type">filter_type</a></td><td>Name of filter type.</td>
 			<td>string</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/fxNtomain">fxNtomain</a></td><td>Gain of the Nth effect bus into the output.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 %</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 %</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/fxNtomix">fxNtomix</a></td><td>Gain of the Nth effect bus into the Mix node.</td>
 			<td>float</td><td>0</td>
-			<td>0 to 100 %</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 %</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/gate_onccN">gate_onccN</a></td><td>Gate manual control.</td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/gate_attack">gate_attack</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/gate_release">gate_release</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/gate_stlink">gate_stlink</a></td><td></td>
 			<td>string</td><td>N/A</td>
-			<td>on, off</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>on, off</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/gate_threshold">gate_threshold</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/internal">internal</a></td><td>Cakewalk internal features switch.</td>
 			<td>string</td><td>off</td>
-			<td>on, off</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>on, off</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/param_offset">param_offset</a></td><td>Adds a number to the parameter numbers of built-in or vendor-specific effects.</td>
 			<td>integer</td><td>N/A</td>
 			<td>N/A</td><td>ARIA</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/phaser_depth">phaser_depth</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/phaser_depth_onccN">phaser_depth_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/phaser_feedback">phaser_feedback</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/phaser_feedback_onccN">phaser_feedback_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/phaser_freq">phaser_freq</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/phaser_freq_onccN">phaser_freq_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/phaser_phase_onccN">phaser_phase_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/phaser_stages">phaser_stages</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/phaser_waveform">phaser_waveform</a></td><td>LFO wave number.</td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/phaser_wet">phaser_wet</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/phaser_wet_onccN">phaser_wet_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_damp">reverb_damp</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_damp_onccN">reverb_damp_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_dry">reverb_dry</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_dry_onccN">reverb_dry_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_input">reverb_input</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_input_onccN">reverb_input_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_predelay">reverb_predelay</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_predelay_onccN">reverb_predelay_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_size">reverb_size</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_size_onccN">reverb_size_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_tone">reverb_tone</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_tone_onccN">reverb_tone_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_type">reverb_type</a></td><td></td>
 			<td>string</td><td>N/A</td>
-			<td>chamber, large_hall, large_room, mid_hall, mid_room, small_hall, small_room</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>chamber, large_hall, large_room, mid_hall, mid_room, small_hall, small_room</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_wet">reverb_wet</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/reverb_wet_onccN">reverb_wet_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/static_cyclic_level">static_cyclic_level</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/static_cyclic_time">static_cyclic_time</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/static_filter">static_filter</a></td><td>Name of filter type.</td>
 			<td>string</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/static_level">static_level</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/static_level_onccN">static_level_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/static_random_level">static_random_level</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/static_random_maxtime">static_random_maxtime</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/static_random_mintime">static_random_mintime</a></td><td></td>
 			<td>float</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/static_stereo">static_stereo</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/static_tone">static_tone</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/strings_number">strings_number</a></td><td>Number of synthesized resonant strings.</td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/strings_wet_onccN">strings_wet_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/tdfir_dry">tdfir_dry</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/tdfir_dry_onccN">tdfir_dry_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/tdfir_gain">tdfir_gain</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/tdfir_impulse">tdfir_impulse</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/tdfir_wet">tdfir_wet</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>0 to 100 </td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>0 to 100 </td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/tdfir_wet_onccN">tdfir_wet_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
 			<td><a href="/opcodes/type">type</a></td><td>Effect type or vendor-specific effect name. Varies across SFZ players.</td>
 			<td>string</td><td>N/A</td>
 			<td>apan, comp, delay, disto, eq, filter, fverb, gate, limiter, lofi, mverb, phaser, static, strings, tdfir, com.mda.Limiter, com.mda.Overdrive, com.mda.Leslie, com.mda.RingMod, com.mda.Delay, com.mda.Bandisto, com.mda.Ambience, com.mda.DubDelay, com.mda.Detune, com.mda.Dither, com.mda.Combo, com.mda.Degrade, com.mda.SubSynth, com.mda.RezFilter</td><td>SFZ v2</td></tr><tr><td class="efx"><span style="display:none">Effects</span></td>
@@ -2946,52 +2953,52 @@ div.checkbox-filter {
 			<td>N/A</td><td>ARIA</td></tr><tr><td class="ldg"><span style="display:none">Loading</span></td>
 			<td><a href="/opcodes/load_mode">load_mode</a></td><td></td>
 			<td>integer</td><td>N/A</td>
-			<td>0 to 1 </td><td>Cakewalk</td></tr><tr><td class="ldg"><span style="display:none">Loading</span></td>
+			<td>0 to 1 </td><td>SFZ v2</td></tr><tr><td class="ldg"><span style="display:none">Loading</span></td>
 			<td><a href="/opcodes/load_start">load_start</a></td><td></td>
 			<td>integer</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="ldg"><span style="display:none">Loading</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="ldg"><span style="display:none">Loading</span></td>
 			<td><a href="/opcodes/load_end">load_end</a></td><td></td>
 			<td>integer</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="ldg"><span style="display:none">Loading</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="ldg"><span style="display:none">Loading</span></td>
 			<td><a href="/opcodes/sample_quality">sample_quality</a></td><td>Sample playback quality settings.</td>
 			<td>integer</td><td>N/A</td>
-			<td>1 to 10 </td><td>Cakewalk</td></tr><tr><td class="ldg"><span style="display:none">Loading</span></td>
+			<td>1 to 10 </td><td>SFZ v2</td></tr><tr><td class="ldg"><span style="display:none">Loading</span></td>
 			<td><a href="/opcodes/image">image</a></td><td>Sets the background image of the instrument.</td>
 			<td>string</td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
 			<td><a href="/opcodes/oscillator">oscillator</a></td><td></td>
 			<td>string</td><td>N/A</td>
-			<td>on, off</td><td>Cakewalk</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
+			<td>on, off</td><td>SFZ v2</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
 			<td><a href="/opcodes/oscillator_detune">oscillator_detune</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
 			<td><a href="/opcodes/oscillator_detune_onccN">oscillator_detune_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
 			<td><a href="/opcodes/oscillator_mode">oscillator_mode</a></td><td>The modulation type.</td>
 			<td>integer</td><td>0</td>
-			<td>0 to 2 </td><td>Cakewalk</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
+			<td>0 to 2 </td><td>SFZ v2</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
 			<td><a href="/opcodes/oscillator_mod_depth">oscillator_mod_depth</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
 			<td><a href="/opcodes/oscillator_mod_depth_onccN">oscillator_mod_depth_onccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
 			<td><a href="/opcodes/oscillator_mod_smoothccN">oscillator_mod_smoothccN</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
+			<td>N/A</td><td>SFZ v2</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
 			<td><a href="/opcodes/oscillator_multi">oscillator_multi</a></td><td>Configure a region to use more than one oscillator.</td>
 			<td>integer</td><td>1</td>
-			<td>1 to 9 </td><td>Cakewalk</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
+			<td>1 to 9 </td><td>SFZ v2</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
 			<td><a href="/opcodes/oscillator_phase">oscillator_phase</a></td><td>Oscillator phase. Negative values for random phase.</td>
 			<td>float</td><td>N/A</td>
-			<td>-1 to 360 °</td><td>Cakewalk</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
+			<td>-1 to 360 °</td><td>SFZ v2</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
 			<td><a href="/opcodes/oscillator_quality">oscillator_quality</a></td><td></td>
 			<td>integer</td><td>N/A</td>
-			<td>0 to 3 </td><td>Cakewalk</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
+			<td>0 to 3 </td><td>SFZ v2</td></tr><tr><td class="wos"><span style="display:none">Wavetable Oscillator</span></td>
 			<td><a href="/opcodes/oscillator_table_size">oscillator_table_size</a></td><td></td>
 			<td></td><td>N/A</td>
-			<td>N/A</td><td>Cakewalk</td></tr></tbody>
+			<td>N/A</td><td>SFZ v2</td></tr></tbody>
 </table>
 </div>
 					</article>
@@ -3029,16 +3036,6 @@ div.checkbox-filter {
 										id="chk-calfbox"
 										value="Calfbox">
 										Calfbox
-								</div>
-
-	
-								<div>
-									<input
-										type="checkbox"
-										class="versions-checkbox"
-										id="chk-cakewalk"
-										value="Cakewalk">
-										Cakewalk
 								</div>
 
 	
