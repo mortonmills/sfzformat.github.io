@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Engines sample formats support - SFZ Format</title>
+		<title>label_outputN - SFZ Format</title>
 
 		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
 		<meta name="web-author" content="RedTide and SFZ Format Team">
@@ -439,16 +439,53 @@
 
 			<div class="row mt-4" id="content">
 				<div class="col-md-9">
-					<article><h1>Engines sample formats support</h1><table class="table table-bordered table-hover table-responsive-xl table-sm table-striped">
+					<article><h1>label_outputN</h1><p>Creates a label for the <a href='/opcodes/output'>output</a> N.</p>
+
+<p>Used under the ‹<a href="/headers/control">control</a>› header.</p>
+      <h2 id="example">
+        
+        
+          Example <a href="#example" class="toc-anchor">#</a>
+        
+        
+      </h2>
+
+<pre><code class="language-sfz">&lt;control&gt;
+// Keep output labels short
+label_output0=Snare
+label_output1=Kick Drum
+
+&lt;master&gt;
+output=0
+// ...
+
+&lt;master&gt;
+output=1
+// ...
+</code></pre>
+
+
+
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
 	<thead class="table-dark">
 		<tr>
-			<th scope="col">Name</th><th scope="col" style="text-align:center">AIFF</th><th scope="col" style="text-align:center">FLAC</th><th scope="col" style="text-align:center">MP3</th><th scope="col" style="text-align:center">Ogg</th><th scope="col" style="text-align:center">WAV</th><th scope="col" style="text-align:center">WavPack</th></tr>
+			<th scope="col">Name</th>
+			<th scope="col">Version</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+			<th scope="col">Unit</th>
+		</tr>
 	</thead>
 	<tbody><tr>
-			<td>ARIA</td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center"></td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center"></td></tr><tr>
-			<td>Calfbox</td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center"></td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center"></td></tr><tr>
-			<td>sfizz</td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center">•</td><td style="text-align:center">•</td></tr></tbody>
-</table>
+			<td>label_outputN</td>
+			<td>Calfbox</td>
+			<td>string</td>
+			<td>N/A</td>
+			<td>N/A</td>
+			<td></td>
+		</tr></tbody>
+</table><p>Category: <a href='/misc/categories#instrument-settings'>Instrument Settings</a></p>
 					</article>
 				</div>
 				<div class="col-md-3">
@@ -556,7 +593,7 @@
 			<footer>
 				<p>
 					This site is open source.
-					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/software/engines/index.md">
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/opcodes/label_outputN.md">
 					Improve this page</a>
 				</p>
 			</footer>
